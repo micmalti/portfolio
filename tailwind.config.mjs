@@ -2,7 +2,8 @@
 const defaultTheme = require("tailwindcss/defaultTheme")
 
 export default {
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+    content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+    // mode: "jit",
 	theme: {
         extend: {
             fontFamily: {
@@ -10,7 +11,11 @@ export default {
             },
             gridTemplateColumns: {
                 '70/30': '70% 28%'
-            }
+            },
+            // colors: {
+            //     primary: "",
+            //     secondary: ""
+            // }
         },
 	},
 	plugins: [],

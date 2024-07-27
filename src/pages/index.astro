@@ -1,13 +1,11 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from '../layouts/default.astro';
 import Greeting from '../components/Greeting';
 import Button from '../components/Button';
-const pageTitle = "Michael Gauci";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-    <h1 class="font-serif text-5xl grid place-items-center h-screen content-center">Michael Gauci</h1>
-    <h2 class="font-serif">Welcome</h2>
+<BaseLayout title="Michael Gauci">
+    <h2 class="text-teal-400 font-serif ">Welcome</h2>
     <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
     <div class="grid place-items-center h-screen content-center">
         <Button client:load>Tailwind Button in Astro!</Button>

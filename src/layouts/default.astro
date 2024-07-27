@@ -2,8 +2,13 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import "@fontsource/dm-serif-display";
-import '../styles/global.css'
-const { pageTitle } = Astro.props;
+// import '../styles/global.css'
+
+export interface Props {
+  title: string
+}
+
+const { title } = Astro.props;
 ---
 
 <html class=lang="en">
@@ -12,11 +17,11 @@ const { pageTitle } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
+		<title>{title}</title>
 	</head>
 	<body>
 		<Header />
-		<h1></h1>{pageTitle}</h1>
+		<h1 class="font-serif text-5xl grid place-items-center h-screen content-center">{title}</h1>
         <slot />
 		<Footer />
 		<script>

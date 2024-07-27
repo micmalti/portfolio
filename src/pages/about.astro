@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from '../layouts/default.astro';
 
 const pageTitle = "About Me";
 const identity = {
@@ -17,7 +17,7 @@ const fontWeight = "bold";
 const textCase = "uppercase";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout title={pageTitle}>
     <style define:vars={{skillColor, fontWeight, textCase}}>
         h1 {
           color: green;
