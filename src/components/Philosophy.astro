@@ -1,0 +1,33 @@
+---
+import PageLayout from "../layouts/pagination.astro";
+---
+
+<PageLayout pageId="philosophy">
+  <div class="mb-4">
+    <button
+      id="prevButton"
+      class="mr-2 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+    >
+      Previous
+    </button>
+    <button
+      id="nextButton"
+      class="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+      >Next
+    </button>
+  </div>
+  <div class="w-3/4 text-center md:w-1/2">
+    <div class="rule-section hidden" id="rule-1">
+      Rule 1: Lorem ipsum dolor sit amet...
+    </div>
+    <div class="rule-section hidden" id="rule-2">
+      Rule 2: Consectetur adipiscing elit...
+    </div>
+    <div class="rule-section hidden" id="rule-3">
+      Rule 3: Integer nec odio...
+    </div>
+  </div>
+  <script>
+    import "../scripts/navigator.js";
+  </script>
+</PageLayout>

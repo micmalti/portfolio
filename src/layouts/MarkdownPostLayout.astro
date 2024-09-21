@@ -1,10 +1,10 @@
 ---
 import { Image } from 'astro:assets';
 const { frontmatter } = Astro.props;
-import BaseLayout from './BaseLayout.astro';
+import BaseLayout from './default.astro';
 ---
 
-<BaseLayout pageTitle={frontmatter.title}>
+<BaseLayout title={frontmatter.title}>
     <p>{frontmatter.pubDate.toString().slice(0,10)}</p>
     <p><em>{frontmatter.description}</em></p>
     <p>Written by: {frontmatter.author}</p>
@@ -35,4 +35,4 @@ import BaseLayout from './BaseLayout.astro';
       font-size: 1.15em;
       background-color: #F8FCFD;
     }
-  </style>
+</style>

@@ -1,0 +1,25 @@
+---
+const { sections } = Astro.props;
+---
+
+<div class="timeline__year-wrap">
+  <ul class="timeline__years">
+    <span class="timeline__line" style=""></span>
+    {
+      sections.map((section: {year: string, content: string}) => (
+        <li class="timeline__year">
+          <span
+            class="timeline__button"
+            style="translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px);"
+          />
+          <span
+            class="timeline__button-text"
+            style="translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(-50%, 0%) translate(-0.2417px);"
+          >
+            {section.year}
+          </span>
+        </li>
+      ))
+    }
+  </ul>
+</div>
