@@ -1,66 +1,77 @@
 .timeline__year-wrap {
-    -webkit-text-size-adjust: 100%;
-    line-height: 1.15;
-    --grid-val: calc(100/var(--grid-unit));
-    --grid-val-vertical: calc((var(--vh, 1vh)*100)/var(--grid-unit-vertical));
-    --grid-unit: 32;
-    --grid-unit-vertical: 18;
-    --vh: 9.27px;
-    -webkit-font-smoothing: antialiased;
-    font-feature-settings: "kern" 1;
-    color: #212121;
-    font-family: "Neue Montreal",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-    text-rendering: optimizeLegibility;
-    -webkit-tap-highlight-color: transparent;
-    box-sizing: border-box;
-  }
-  
-  .timeline__years {
-    border: none;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-  }
-  
-  .timeline__year {
-    cursor: pointer;
-    z-index: 1;
-  }
-  
-  .timeline__button {
-    background-color: #0f284c;
-    border: 1px solid #ffffff;
-    border-radius: calc(var(--grid-val)*.5vw);
-    display: block;
-    height: calc(var(--grid-val)*.33vw);
-    margin-bottom: calc(var(--grid-val)*.1vw);
-    position: relative;
-    width: calc(var(--grid-val)*.5vw);
-    translate: none;
-    rotate: none;
-    scale: none;
-    opacity: 1;
-    visibility: inherit;
-    transform: translate(0px, 0px);
-  }
-  
-  .timeline__button-text {
-    color: #fff;
-    font-weight: 500;
-    left: 50%;
-    position: absolute;
-    text-transform: uppercase;
-    top: 100%;
-    font-size: max(12px,1.25vw);
-    line-height: 1.25;
-    translate: none;
-    rotate: none;
-    scale: none;
-    opacity: 1;
-    visibility: inherit;
-    transform: translate(-50%, 0%) translate(0.0703px, 0px);
-  }
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.15;
+  --grid-val: calc(100 / var(--grid-unit));
+  --grid-val-vertical: calc((var(--vh, 1vh) * 100) / var(--grid-unit-vertical));
+  --grid-unit: 32;
+  --grid-unit-vertical: 18;
+  --vh: 9.27px;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern" 1;
+  color: #212121;
+  font-family:
+    "Neue Montreal",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+
+.timeline__years {
+  border: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.timeline__year {
+  cursor: pointer;
+  z-index: 1;
+}
+
+.timeline__button {
+  background-color: #0f284c;
+  border: 1px solid #ffffff;
+  border-radius: calc(var(--grid-val) * 0.5vw);
+  display: block;
+  height: calc(var(--grid-val) * 0.33vw);
+  margin-bottom: calc(var(--grid-val) * 0.1vw);
+  position: relative;
+  width: calc(var(--grid-val) * 0.5vw);
+  translate: none;
+  rotate: none;
+  scale: none;
+  opacity: 1;
+  visibility: inherit;
+  transform: translate(0px, 0px);
+}
+
+.timeline__button-text {
+  color: #fff;
+  font-weight: 500;
+  left: 50%;
+  position: absolute;
+  text-transform: uppercase;
+  top: 100%;
+  font-size: max(12px, 1.25vw);
+  line-height: 1.25;
+  translate: none;
+  rotate: none;
+  scale: none;
+  opacity: 1;
+  visibility: inherit;
+  transform: translate(-50%, 0%) translate(0.0703px, 0px);
+}

@@ -6,7 +6,7 @@ const { sections } = Astro.props;
   <ul class="timeline__years">
     <span class="timeline__line" style=""></span>
     {
-      sections.map((section: {year: string, content: string}) => (
+      sections.map((section: { year: string; content: string }) => (
         <li class="timeline__year">
           <span
             class="timeline__button"

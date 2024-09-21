@@ -1,19 +1,19 @@
 {
-    "singleQuote": false,
-    "plugins": [
-      "prettier-plugin-astro",
-      "prettier-plugin-tailwindcss",
-      "prettier-plugin-astro-organize-imports"
-    ],
-    "astroOrganizeImportsMode": "SortAndCombine",
-    "proseWrap": "always",
-    "printWidth": 85,
-    "overrides": [
-      {
-        "files": "*.astro",
-        "options": {
-          "parser": "astro"
-        }
+  "singleQuote": false,
+  "plugins": [
+    "prettier-plugin-astro",
+    "prettier-plugin-tailwindcss",
+    "prettier-plugin-astro-organize-imports"
+  ],
+  "astroOrganizeImportsMode": "SortAndCombine",
+  "proseWrap": "always",
+  "printWidth": 85,
+  "overrides": [
+    {
+      "files": "*.astro",
+      "options": {
+        "parser": "astro"
       }
-    ]
-  }  
+    }
+  ]
+}
