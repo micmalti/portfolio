@@ -1,14 +1,14 @@
-html {
-  scrollbar-gutter: stable;
+* {
+  cursor: inherit;  /* ensure custom cursor also applies to scrollable areas */
 }
 
-.in-view {
-  opacity: 1 !important;
-}
-
-body {
+html, body {
   cursor: -webkit-image-set(
     url('https://i-p.rmcdn.net/65638d5ee91e4a0021d51a69/image-1e1b8104-3424-41be-bf06-d49b561a5d0b.png?w=26') 1x,
     url('https://i-p.rmcdn.net/65638d5ee91e4a0021d51a69/image-1e1b8104-3424-41be-bf06-d49b561a5d0b.png') 2x
   ), auto;
+  -ms-overflow-style: none;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: #555 #222224;
 }
