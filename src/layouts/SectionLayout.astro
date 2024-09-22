@@ -1,7 +1,10 @@
 ---
-const { pageId } = Astro.props;
+const { sectionTag } = Astro.props;
 ---
 
-<section id={pageId} class="section min-h-screen bg-black p-4 text-white">
+<section class="relative h-screen z-0" id={sectionTag}>
+  <div class="absolute left-0 top-1/2 transform -translate-y-1/2 -rotate-90 text-secondary text-xs font-extralight uppercase">
+    {sectionTag !== "home" && (<span>{sectionTag}</span>)}
+  </div>
   <slot />
 </section>
