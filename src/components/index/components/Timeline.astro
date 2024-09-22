@@ -2,24 +2,36 @@
 const { sections } = Astro.props;
 ---
 
-<div class="timeline__year-wrap">
-  <ul class="timeline__years">
-    <span class="timeline__line" style=""></span>
-    {
-      sections.map((section: { year: string; content: string }) => (
-        <li class="timeline__year">
-          <span
-            class="timeline__button"
-            style="translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px);"
-          />
-          <span
-            class="timeline__button-text"
-            style="translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(-50%, 0%) translate(-0.2417px);"
-          >
-            {section.year}
-          </span>
-        </li>
-      ))
-    }
-  </ul>
+<!-- <svg display="none">
+  <symbol id="arrow">
+    <polyline points="7 10,12 15,17 10" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+  </symbol>
+</svg> -->
+<div id="timeline" class="timeline">
+  {
+    sections.map((section: { year: string; title: string; content: string }, index: number) => (
+      <div class="timeline__item">
+      <div class="timeline__item-header">
+        <button class="timeline__arrow" type="button" id={`item${index + 1}`} aria-labelledby="item6-name" aria-expanded="false" aria-controls={`item${index + 1}-ctrld`} aria-haspopup="true" data-item={index + 1}>
+          <svg class="timeline__arrow-icon" viewBox="0 0 24 24" width="24px" height="24px">
+            <use href="#arrow" />
+          </svg>
+        </button>
+        <span class="timeline__dot">
+          <button type="button" aria-controls={`item${index + 1}-ctrld`} aria-haspopup="true"></button>
+        </span>
+        <span id={`item${index + 1}-name`} class="timeline__meta">
+          <time class="timeline__date" datetime="2038-01-19">{section.year}</time><br>
+          <h2 class="whitespace-nowrap font-serif">{section.title}</h2>
+        </span>
+      </div>
+      <div class="timeline__item-body" id={`item${index + 1}-ctrld`} role="region" aria-labelledby={`item${index + 1}`} aria-hidden="true">
+        <div class="timeline__item-body-content">
+          <p class="timeline__item-p">{section.content}</p>
+        </div>
+      </div>
+    </div>
+    ))
+  }
 </div>
+<script type="module" src="/src/scripts/timeline.js"></script> 

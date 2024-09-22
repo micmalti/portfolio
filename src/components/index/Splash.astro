@@ -1,18 +1,16 @@
 ---
 import { Image } from "astro:assets";
 import ProfileImage from "../../images/profile.png";
-import PageLayout from "../../layouts/SectionLayout.astro";
+import SectionLayout from "../../layouts/SectionLayout.astro";
 import Banner from "./components/AvailabilityTag.astro";
 ---
 
-<PageLayout pageId="home">
-  <div
-    class="md:items-centerflex flex flex-col items-center justify-center text-center md:flex-row"
-  >
+<SectionLayout sectionTag="home">
+  <div class="md:items-centerflex flex flex-col items-center justify-center text-center md:flex-row">
     <Image src={ProfileImage} alt="Profile image" />
     <div class="flex min-h-screen flex-col items-center justify-center">
       <h1 class="whitespace-nowrap p-4 font-serif text-6xl">Michael Gauci</h1>
       <h4 class="font-sans">ASPIRING RENAISSANCE MAN</h4>
     </div>
   </div>
-</PageLayout>
+</SectionLayout>
