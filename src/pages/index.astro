@@ -4,14 +4,15 @@ import About from "../components/index/About.astro";
 import Book from "../components/index/Book.astro";
 import Blog from "../components/index/Blog.astro";
 import Contact from "../components/index/Contact.astro";
+import ContactButton from "../components/ContactButton.astro";
+import Layout from "../layouts/PageLayout.astro";
 ---
 
-<body
-  class="bg-default text-default h-full overflow-x-hidden text-base selection:bg-secondary selection:text-white"
->
+<Layout pageTitle="Michael Gauci">
+  <ContactButton />
   <Splash />
   <About />
   <Book />
   <Blog />
   <Contact />
-</body>
+</Layout>
