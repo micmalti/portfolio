@@ -13,6 +13,10 @@ html, body {
   scrollbar-color: #555 #222224;
 }
 
+p {
+  @apply font-sans text-base font-light leading-6;
+}
+
 #ContactBtn {
   transform-origin:top right;
   right:0;
