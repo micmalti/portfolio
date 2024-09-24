@@ -1,17 +1,19 @@
 ---
 import { Image } from "astro:assets";
+import { Icon } from 'astro-icon/components'
+
 import ProfileImage from "../../images/profile.png";
 import SectionLayout from "../../layouts/SectionLayout.astro";
-import Banner from "./components/AvailabilityTag.astro";
+import AvailabilityTag from "./components/AvailabilityTag.astro";
 ---
 
 <SectionLayout sectionTag="home">
-  <div class="md:items-centerflex flex flex-col items-center justify-center text-center md:flex-row">
+  <div class="flex">
+    <AvailabilityTag/>
     <Image src={ProfileImage} alt="" />
-    <div class="flex min-h-screen flex-col items-center justify-center">
-      <span class="whitespace-nowrap p-4 font-serif text-6xl">Michael Gauci</span>
-      <span class="font-sans text-sm font-light">BSc (Chem), MSc (Metamaterials)</span>
-    </div>
+    <span class="whitespace-nowrap p-4 font-serif text-6xl">Michael Gauci</span>
+    <span class="font-sans text-sm font-light">BSc (Chem), MSc (Metamaterials)</span>
+    <Icon name="down-arrow" class="animate-bounce size-8"/>
   </div>
-  <!-- <script type="module" src="/src/scripts/blackout.js"></script> -->
+  <script type="module" src="/src/scripts/blackout.js"></script>
 </SectionLayout>
