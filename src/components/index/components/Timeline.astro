@@ -1,5 +1,48 @@
 ---
-const { sections } = Astro.props;
+const sections = [
+  {
+    year: "2024",
+    title: "An open mind to new experiences",
+    content:
+      "Lorem ipsum dolor sit amet, ad sed dolore deseruisse, et mei tempor lobortis, his ne wisi illud aliquam. Vero commune te has. Quo te modus mentitum. Eum ut perpetua consequat, inani tacimates patrioque sed ea. Ludus veniam ornatus no mei, ex labitur eligendi molestiae ius. Cum probo graeci eu, has eu petentium salutandi. Vim tritani sanctus deterruisset an, quas principes sed ad. Habeo pertinacia posidonium ea eam, mei ei choro ponderum, cu doming dolores adversarium mea.",
+  },
+  {
+    year: "2023",
+    title: "The self-study that inspired a book",
+    content:
+      "Lorem ipsum dolor sit amet, ad sed dolore deseruisse, et mei tempor lobortis, his ne wisi illud aliquam. Vero commune te has. Quo te modus mentitum. Eum ut perpetua consequat, inani tacimates patrioque sed ea. Ludus veniam ornatus no mei, ex labitur eligendi molestiae ius. Cum probo graeci eu, has eu petentium salutandi. Vim tritani sanctus deterruisset an, quas principes sed ad. Habeo pertinacia posidonium ea eam, mei ei choro ponderum, cu doming dolores adversarium mea.",
+  },
+  {
+    year: "2022",
+    title: "Managing an investment portfolio in the cloud",
+    content:
+      "Lorem ipsum dolor sit amet, ad sed dolore deseruisse, et mei tempor lobortis, his ne wisi illud aliquam. Vero commune te has. Quo te modus mentitum. Eum ut perpetua consequat, inani tacimates patrioque sed ea. Ludus veniam ornatus no mei, ex labitur eligendi molestiae ius. Cum probo graeci eu, has eu petentium salutandi. Vim tritani sanctus deterruisset an, quas principes sed ad. Habeo pertinacia posidonium ea eam, mei ei choro ponderum, cu doming dolores adversarium mea.",
+  },
+  {
+    year: "2021",
+    title: "A Master's perspective into big data analytics",
+    content:
+      "Lorem ipsum dolor sit amet, ad sed dolore deseruisse, et mei tempor lobortis, his ne wisi illud aliquam. Vero commune te has. Quo te modus mentitum. Eum ut perpetua consequat, inani tacimates patrioque sed ea. Ludus veniam ornatus no mei, ex labitur eligendi molestiae ius. Cum probo graeci eu, has eu petentium salutandi. Vim tritani sanctus deterruisset an, quas principes sed ad. Habeo pertinacia posidonium ea eam, mei ei choro ponderum, cu doming dolores adversarium mea.",
+  },
+  {
+    year: "2020",
+    title: "Navigating the lockdowns and machine learning",
+    content:
+      "Lorem ipsum dolor sit amet, ad sed dolore deseruisse, et mei tempor lobortis, his ne wisi illud aliquam. Vero commune te has. Quo te modus mentitum. Eum ut perpetua consequat, inani tacimates patrioque sed ea. Ludus veniam ornatus no mei, ex labitur eligendi molestiae ius. Cum probo graeci eu, has eu petentium salutandi. Vim tritani sanctus deterruisset an, quas principes sed ad. Habeo pertinacia posidonium ea eam, mei ei choro ponderum, cu doming dolores adversarium mea.",
+  },
+  {
+    year: "2019",
+    title: "Wearing the entrepreneurial hat",
+    content:
+      "Lorem ipsum dolor sit amet, ad sed dolore deseruisse, et mei tempor lobortis, his ne wisi illud aliquam. Vero commune te has. Quo te modus mentitum. Eum ut perpetua consequat, inani tacimates patrioque sed ea. Ludus veniam ornatus no mei, ex labitur eligendi molestiae ius. Cum probo graeci eu, has eu petentium salutandi. Vim tritani sanctus deterruisset an, quas principes sed ad. Habeo pertinacia posidonium ea eam, mei ei choro ponderum, cu doming dolores adversarium mea.",
+  },
+  {
+    year: "2018",
+    title: "Developing core competencies in computational modelling",
+    content:
+      "Lorem ipsum dolor sit amet, ad sed dolore deseruisse, et mei tempor lobortis, his ne wisi illud aliquam. Vero commune te has. Quo te modus mentitum. Eum ut perpetua consequat, inani tacimates patrioque sed ea. Ludus veniam ornatus no mei, ex labitur eligendi molestiae ius. Cum probo graeci eu, has eu petentium salutandi. Vim tritani sanctus deterruisset an, quas principes sed ad. Habeo pertinacia posidonium ea eam, mei ei choro ponderum, cu doming dolores adversarium mea.",
+  },
+];
 ---
 
 <!-- <svg display="none">
@@ -22,11 +65,11 @@ const { sections } = Astro.props;
         </span>
         <span id={`item${index + 1}-name`} class="timeline__meta">
           <time class="timeline__date" datetime="2038-01-19">{section.year}</time><br>
-          <h2 class="whitespace-nowrap font-serif">{section.title}</h2>
         </span>
       </div>
       <div class="timeline__item-body" id={`item${index + 1}-ctrld`} role="region" aria-labelledby={`item${index + 1}`} aria-hidden="true">
         <div class="timeline__item-body-content">
+          <span class="whitespace-nowrap font-serif">{section.title}</span>
           <p class="timeline__item-p">{section.content}</p>
         </div>
       </div>
@@ -34,4 +77,4 @@ const { sections } = Astro.props;
     ))
   }
 </div>
-<script type="module" src="/src/scripts/timeline.js"></script> 
+<script type="module" src="/src/scripts/timeline.js"></script>
