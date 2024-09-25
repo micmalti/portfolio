@@ -19,7 +19,7 @@ const { pageTitle } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
   </head>
-  <body class="block bg-primary text-secondary">
+  <body class="block bg-primary text-secondary selection:bg-secondary selection:text-primary">
     <ContactButton/>
     <Header/>
     <slot />
