@@ -21,6 +21,10 @@ export default {
       transitionProperty: {
         opacity: "opacity",
       },
+      cursor: {
+        'default': 'url(/src/images/cursor-1x.webp), default',
+        'pointer': 'url(/src/images/cursor-hover-1x.webp), pointer'
+      }
     },
   },
   plugins: [],

@@ -1,44 +1,27 @@
-* {
-  cursor: inherit;  /* ensure custom cursor also applies to scrollable areas */
+*,
+*:before,
+*:after {
+  @apply cursor-default;
+  
+}
+
+a, button {
+  @apply cursor-pointer;
 }
 
 html, body {
-  cursor: -webkit-image-set(
-    /* url('https://i-p.rmcdn.net/65638d5ee91e4a0021d51a69/image-1e1b8104-3424-41be-bf06-d49b561a5d0b.png?w=26') 1x, */
-    /* url('https://i-p.rmcdn.net/65638d5ee91e4a0021d51a69/image-1e1b8104-3424-41be-bf06-d49b561a5d0b.png') 2x */
-    url('/src/images/cursor-1x.webp') 1x,
-    url('/src/images/cursor-2x.png') 2x,
-  ), auto;
-  /* cursor: url('src/icons/cursor.svg'), auto; */
   -ms-overflow-style: none;
   scrollbar-gutter: stable;
   scrollbar-width: none;
   scrollbar-color: #555 #222224;
 }
 
-/* button:hover {
-  cursor: url('src/icons/cursor-hover.svg'), pointer;
-} */
-button:hover {
-  cursor: -webkit-image-set(
-    url('/src/images/cursor-hover-1x.webp') 1x,
-    url('/src/images/cursor-hover-2x.png') 2x
-  ), auto;
-}
-
 p {
   @apply font-sans text-base font-light leading-6;
 }
 
-#ContactBtn {
-  transform-origin:top right;
-  right:0;
-  bottom:15%;
-  transform: rotate(90deg) translateX(100%);
-}
-
 .box-btn {
-  @apply font-sans font-extrabold text-xs/4 border border-solid border-secondary border-opacity-25 text-secondary bg-transparent px-6 py-3.5 transition-all duration-300 hover:bg-secondary hover:text-primary uppercase;
+  @apply uppercase font-sans font-extrabold text-xs/4 text-secondary border border-solid border-secondary border-opacity-25 bg-transparent px-6 py-3.5 transition-all duration-300 hover:bg-secondary hover:text-primary;
 }
 
 .disabled{
