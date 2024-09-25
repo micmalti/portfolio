@@ -38,7 +38,7 @@ p {
 }
 
 .box-btn {
-  @apply font-sans font-extrabold text-xs/4 border border-solid border-secondary border-opacity-25 text-secondary bg-transparent px-6 py-3.5 transition-all duration-300 hover:bg-secondary hover:border-primary hover:text-primary uppercase;
+  @apply font-sans font-extrabold text-xs/4 border border-solid border-secondary border-opacity-25 text-secondary bg-transparent px-6 py-3.5 transition-all duration-300 hover:bg-secondary hover:text-primary uppercase;
 }
 
 .disabled{
