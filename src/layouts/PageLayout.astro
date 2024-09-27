@@ -1,8 +1,6 @@
 ---
 import "@fontsource/dm-serif-display";
-import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
-import ContactButton from "../components/ContactButton.astro";
 import "../styles/global.css";
 const { pageTitle } = Astro.props;
 ---
@@ -15,15 +13,13 @@ const { pageTitle } = Astro.props;
     <script is:inline src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script is:inline src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
     <script is:inline src="/src/scripts/helpers/horizontalLoop.js"></script>
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 " />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
   </head>
   <body class="block bg-primary text-secondary selection:bg-secondary selection:text-primary">
-    <ContactButton/>
-    <Header/>
+    <!-- <Header/> -->
     <slot />
-    <Footer/>
     <!-- <script type="module" src="/src/scripts/scrolling.js"></script> -->
   </body>
 </html>

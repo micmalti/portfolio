@@ -1,72 +1,88 @@
-window.addEventListener("DOMContentLoaded",() => {
-	const ctl = new CollapsibleTimeline("#timeline");
-});
+gsap.registerPlugin(ScrollTrigger);
 
-class CollapsibleTimeline {
-	constructor(el) {
-		this.el = document.querySelector(el);
+function initTimeline(){
 
-		this.init();
-	}
-	init() {
-		this.el?.addEventListener("click",this.itemAction.bind(this));
-	}
-	animateItemAction(button,ctrld,contentHeight,shouldCollapse) {
-		const expandedClass = "timeline__item-body--expanded";
-		const animOptions = {
-			duration: 300,
-			easing: "cubic-bezier(0.65,0,0.35,1)"
-		};
+  let parent_container = document.getElementById("section-timeline");
+  let timeline_container = parent_container.querySelector(".timeline-container");
+  var sections = timeline_container.querySelectorAll(".year");
 
-		if (shouldCollapse) {
-			button.ariaExpanded = "false";
-			ctrld.ariaHidden = "true";
-			ctrld.classList.remove(expandedClass);
-			animOptions.duration *= 2;
-			this.animation = ctrld.animate([
-				{ height: `${contentHeight}px` },
-				{ height: `${contentHeight}px` },
-				{ height: "0px" }
-			],animOptions);
-		} else {
-			button.ariaExpanded = "true";
-			ctrld.ariaHidden = "false";
-			ctrld.classList.add(expandedClass);
-			this.animation = ctrld.animate([
-				{ height: "0px" },
-				{ height: `${contentHeight}px` }
-			],animOptions);
-		}
-	}
-	itemAction(e) {
-		const { target } = e;
-		const action = target?.getAttribute("data-action");
-		const item = target?.getAttribute("data-item");
+  const vh = (coef) => window.innerHeight * (coef/100);
 
-		if (action) {
-			const targetExpanded = action === "expand" ? "false" : "true";
-			const buttons = Array.from(this.el?.querySelectorAll(`[aria-expanded="${targetExpanded}"]`));
-			const wasExpanded = action === "collapse";
+  let parentST = ScrollTrigger.create({
+    id: "parent-timeline",
+    trigger: parent_container,
+    start:'top top',
+    toggleClass: 'started',
+    pin:true,
+    markers: false,
+    end: () => "+=" + ((sections.length - 1) * vh(80)),
+  });
+  
+  let currentSection;
+  
+  function changeBackground(section) {
+    const backgroundImage = section.getAttribute('data-bg');
+    if (backgroundImage) {
+      parent_container.style.backgroundImage = `url(${backgroundImage})`;
+    }
+  }
 
-			for (let button of buttons) {
-				const buttonID = button.getAttribute("data-item");
-				const ctrld = this.el?.querySelector(`#item${buttonID}-ctrld`);
-				const contentHeight = ctrld.firstElementChild?.offsetHeight;
+  function goto(section, i) {
+    if (currentSection !== section) { // if the section is the currentSection, skip
+       // move the container
+      gsap.to(timeline_container, {
+        y: -48 * i,
+        duration: 0.6,
+        overwrite: true
+      });
+      let tl = gsap.timeline({defaults:{overwrite: true}});
+      // animate OUT the current section (if there is one)
+      if (currentSection) {
+        tl.to(currentSection.querySelector("h2"), {
+          fontSize: "2rem",
+        });
+        tl.to(currentSection, {
+          maxHeight: "3rem"
+        }, 0);
+        tl.to(currentSection.querySelectorAll("p"), {
+          opacity: 0,
+          duration: 0.25,
+          maxHeight: "0%"
+        }, 0);
+      }
+      currentSection = section;
+      // animate IN the new section (if there is one)
+      if (section) {
+        tl.to(section.querySelector("h2"), {
+          fontSize: "10rem",
+        }, 0);
+        tl.to(section, {
+          maxHeight: "80vh"
+        }, 0);
+        tl.fromTo(section.querySelectorAll("p"), {maxHeight:"0%"}, {
+          opacity: 1,
+          maxHeight: "100%"
+        });
 
-				this.animateItemAction(button,ctrld,contentHeight,wasExpanded);
-			}
+        changeBackground(section);
+      }
+    }
+  }
 
-		} else if (item) {
-			const button = this.el?.querySelector(`[data-item="${item}"]`);
-			const expanded = button?.getAttribute("aria-expanded");
 
-			if (!expanded) return;
+  sections.forEach((sct, i) => {
+    let sct_index = sct.getAttribute('data-count');
+    if (i === 0) {
+      goto(sct, sct_index);
+    }
+    ScrollTrigger.create({
+      start: () => parentST.start + i * window.innerHeight * 0.4,
+      end: () => "+=" + window.innerHeight * 0.4,
+      markers: false,
+      onToggle: self => self.isActive && goto(sct, sct_index)
+    });
+  });
 
-			const wasExpanded = expanded === "true";
-			const ctrld = this.el?.querySelector(`#item${item}-ctrld`);
-			const contentHeight = ctrld.firstElementChild?.offsetHeight;
-
-			this.animateItemAction(button,ctrld,contentHeight,wasExpanded);
-		}
-	}
 }
+
+initTimeline();
