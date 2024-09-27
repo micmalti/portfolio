@@ -7,6 +7,7 @@ import icon from "astro-icon";
 // https://astro.build/config
 export default defineConfig({
   site: "https://michaelgauci.com",
+  base: '/portfolio/',
   integrations: [react(), tailwind({
     applyBaseStyles: true
   }), icon()],
