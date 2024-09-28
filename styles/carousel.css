@@ -1,0 +1,17 @@
+.wrapper {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+}
+
+.boxes {
+  display: flex;
+}
+
+.box {
+  width: auto;
+  height: 50vh;
+  flex-shrink: 0;
+  object-fit: cover;
+}

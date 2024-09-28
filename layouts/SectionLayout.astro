@@ -1,0 +1,18 @@
+---
+const { sectionTag } = Astro.props;
+---
+
+<section class="z-0" id={sectionTag}>
+  <!-- <div class=" text-secondary text-xs font-extralight uppercase">
+    {sectionTag !== "home" && (<span>{sectionTag}</span>)}
+  </div> -->
+  <!-- Only render the button if sectionTag is not 'contact' -->
+  {sectionTag !== "contact" && (
+    <div class="fixed z-20 bottom-[15%] right-0 origin-bottom-right rotate-90 hidden md:flex">
+      <button class="box-btn translate-y-full">
+        <span>Contact</span>
+      </button>
+    </div>
+  )}
+  <slot />
+</section>
