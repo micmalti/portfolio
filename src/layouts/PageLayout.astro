@@ -1,6 +1,7 @@
 ---
 import "@fontsource/dm-serif-display";
 import Header from "../components/Header.astro";
+import ContactButton from "../components/ContactButton.astro";
 import "../styles/global.css";
 const { pageTitle } = Astro.props;
 ---
@@ -19,6 +20,7 @@ const { pageTitle } = Astro.props;
   </head>
   <body class="block bg-primary text-secondary selection:bg-secondary selection:text-primary">
     <!-- <Header/> -->
+    <ContactButton/>
     <slot />
     <!-- <script type="text/javascript" src="/scripts/scrolling.js"></script> -->
   </body>
