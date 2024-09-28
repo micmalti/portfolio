@@ -8,11 +8,11 @@ const { pageTitle } = Astro.props;
 <html class='lang="en"'>
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
     <script is:inline src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script is:inline src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script is:inline src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
-    <script is:inline src="/src/scripts/helpers/horizontalLoop.js"></script>
+    <script is:inline src="/scripts/helpers/horizontalLoop.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0 " />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
@@ -20,6 +20,6 @@ const { pageTitle } = Astro.props;
   <body class="block bg-primary text-secondary selection:bg-secondary selection:text-primary">
     <!-- <Header/> -->
     <slot />
-    <!-- <script type="text/javascript" src="/src/scripts/scrolling.js"></script> -->
+    <!-- <script type="text/javascript" src="/scripts/scrolling.js"></script> -->
   </body>
 </html>

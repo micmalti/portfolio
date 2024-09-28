@@ -22,8 +22,8 @@ export default {
         opacity: "opacity",
       },
       cursor: {
-        'default': 'url(/src/images/cursor-1x.webp), default',
-        'pointer': 'url(/src/images/cursor-hover-1x.webp), pointer'
+        'default': 'url(/images/cursor-1x.webp), default',
+        'pointer': 'url(/images/cursor-hover-1x.webp), pointer'
       }
     },
   },
