@@ -22,8 +22,10 @@ export default {
         opacity: "opacity",
       },
       cursor: {
-        'default': 'url(/images/cursor-1x.webp), default',
-        'pointer': 'url(/images/cursor-hover-1x.webp), pointer'
+        'default': 'url(/src/icons/cursor.svg) 16 16, default',
+        'pointer': 'url(/src/icons/cursor-hover.svg) 16 16, pointer',
+        'text': 'url(/src/icons/cursor.svg) 16 16, default',
+        'copy': 'url(/src/icons/cursor.svg) 16 16, default',
       }
     },
   },
