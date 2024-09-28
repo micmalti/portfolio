@@ -3,18 +3,18 @@
 ---
 
 <div>
-  <form action="#" method="POST" class="flex flex-col gap-8">
+  <form action="https://kwesforms.com/api/f/A69rvbf3llfpczSRvyNa" method="POST" class="flex flex-col gap-8">
     <div class="flex flex-row flex-grow flex-wrap gap-4">
       <div class="flex flex-col gap-4">
         <fieldset class="flex flex-wrap gap-4 font-bold text-xs">
-          <div>
+          <label>
             <input type="radio" id="individual" name="contact" value="individual">
-            <label for="individual">I'm an individual</label>
-          </div>
-          <div>
+            I'm an individual
+          </label>
+          <label>
             <input type="radio" id="company" name="contact" value="company">
-            <label for="company">I'm a company representative</label>
-          </div>
+            I'm a company representative
+          </label>
         </fieldset>
         <div class="flex flex-wrap gap-4">
           <input class="form-field w-50 flex-grow-1" type="text" id="name" name="name" autocomplete="name" placeholder="Name" required>
@@ -36,5 +36,4 @@
       <button class="box-btn [&&]:px-12 inline-block">Send message</button>
     </div>
   </form>
-  <script is:inline src='https://kwesforms.com/v2/kwes-script.js' defer></script>
 </div>
