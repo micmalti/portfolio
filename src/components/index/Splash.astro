@@ -7,16 +7,18 @@ import AvailabilityTag from "./components/AvailabilityTag.astro";
 ---
 
 <SectionLayout sectionTag="home">
-  <div class="flex flex-col justify-center items-center min-h-full" >
+  <div class="flex flex-col items-center h-screen pb-[env(safe-area-inset-bottom)] min-w-0" >
     <AvailabilityTag/>
     <div class="flex align-middle justify-center content-center flex-wrap my-auto">
-      <Image src={import('/src/images/profile.webp')} alt="" />
+      <div >
+        <Image src={import('/src/images/profile.webp')} alt="" class="flex w-full h-auto"/>
+      </div>
       <div class="flex flex-col justify-center items-center">
-        <span class="whitespace-nowrap mt-12 mb-4 font-serif text-6xl">Michael Gauci</span>
+        <span class="whitespace-nowrap md:mt-0 mt-12 mb-4 font-serif text-6xl">Michael Gauci</span>
         <span class="font-sans text-sm font-light">BSc (Chem), MSc (Metamaterials)</span>
       </div>
     </div>
-    <Icon name="down-arrow" class="animate-bounce size-8 mb-6"/>
+    <Icon name="down-arrow" class="animate-bounce size-12 mb-6 flex-none"/>
   </div>
-  <script type="text/javascript" src="/scripts/blackout.js"></script>
+  <!-- <script type="text/javascript" src="/scripts/blackout.js"></script> -->
 </SectionLayout>
