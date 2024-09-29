@@ -56,19 +56,3 @@ const sections = [
   },
 ];
 ---
-
-<div id="section-timeline" class="section-timeline">
-  <div class="timeline-container">
-    {
-      sections.map((section: { year: string; title: string; content: string; background: string }, index: number) => (
-        <article class={`year year-${index + 1} bg-cover bg-center bg-no-repeat`} data-count={`${index + 1}`} style={`background-image: url(${section.background})`}>
-          <hgroup>
-            <h2>{section.year}</h2>
-              <p class="bg-primary bg-opacity-75 p-6">{section.content}</p>
-          </hgroup>
-        </article>
-      ))
-    }
-  </div>
-</div>
-<script type="text/javascript" src="/scripts/timeline.js"></script>
