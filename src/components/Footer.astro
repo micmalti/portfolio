@@ -4,12 +4,23 @@ import { Icon } from 'astro-icon/components'
 ---
 
 <div class="flex justify-between mb-8">
-  <span class="text-sm flex-none">Privacy policy</span>
+  <!-- <span class="text-sm flex-none">Privacy policy</span> -->
+  <a href="#">
+    <span class="relative py-1 after:absolute after:bottom-0 after:left-0 after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition-all after:origin-left after:h-[2px] after:bg-secondary">Privacy policy</span>
+  </a> 
   <span class="text-sm flex-grow text-center">© 2024 Michael Gauci. All rights reserved.</span>
   <div class="grid grid-cols-4 gap-5">
-    <Icon name="cv" class="text-secondary size-5"/>
-    <Icon name="github" class="text-secondary size-5"/>
-    <Icon name="linkedin" class="text-secondary size-5"/>
-    <Icon name="x" class="text-secondary size-5"/>
+    <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+      <Icon name="cv" class="icon-link"/>
+    </a>
+    <a href="https://github.com/micmalti/" target="_blank" rel="noopener noreferrer">
+      <Icon name="github" class="icon-link"/>
+    </a>
+    <a href="https://www.linkedin.com/in/michaelgaucimt/" target="_blank" rel="noopener noreferrer">
+      <Icon name="linkedin" class="icon-link"/>
+    </a>
+    <a href="https://twitter.com/MichaelGauciMT" target="_blank" rel="noopener noreferrer">
+      <Icon name="x" class="icon-link"/>
+    </a>
   </div>
 </div>
