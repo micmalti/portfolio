@@ -56,3 +56,15 @@ const sections = [
   },
 ];
 ---
+
+<div>
+  <div class="flex flex-col">
+    {
+      sections.map((section: { year: string; title: string; content: string; background: string }, index: number) => (
+        <span class="font-sans font-bold text-2xl">{section.year}</span>
+        <span class="text-5xl font-serif font-normal">{section.title}</span>
+        <span class="text-2xl font-sans font-light">{section.content}</span>
+      ))
+    }
+  </div>
+</div>
