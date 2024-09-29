@@ -26,8 +26,13 @@ export default {
         'pointer': 'url(/src/icons/cursor-hover.svg) 16 16, pointer',
         'text': 'url(/src/icons/cursor.svg) 16 16, default',
         'copy': 'url(/src/icons/cursor.svg) 16 16, default',
+      },
+      fontSize: {
+        '2xl': ['24px', '34px']
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };
