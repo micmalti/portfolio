@@ -1,9 +1,10 @@
 ---
+const siteUrl = Astro.site
 ---
 
 <div class="flex">
   <form action="https://submit-form.com/IPuWegcRy" data-botpoison-public-key="pk_c2748b4c-5a20-471e-9c06-9bc9c9ca3de9" method="POST" class="flex flex-col gap-8">
-    <input type="hidden" name="_redirect" value=/sent/>
+    <input type="hidden" name="_redirect" value={`${siteUrl}/sent`}/>
     <div class="flex flex-row flex-wrap gap-4">
       <div class="flex flex-col gap-4">
         <fieldset class="flex flex-wrap gap-8 font-sans text-base">
