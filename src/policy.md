@@ -11,7 +11,7 @@ The website collects the following data:
 - Personal identification information (Name, email address, phone number, etc.)
 - Information you provide in the subject and message fields
 
-All of the data that is collected about you by this website is obtained directly from you when you voluntarily complete the form available at [www.michaelgauci.com/#contact](www.michaelgauci.com/#contact). The form submission data will be processed by KwesForms. For details on how KwesForms handles your data, please refer to their privacy policy.
+All of the data that is collected about you by this website is obtained directly from you when you voluntarily complete the form available at [www.michaelgauci.com/#contact](www.michaelgauci.com/#contact). Form submission data is processed by Formspark, which stores its data in Ireland. For more details on how Formspark handles your data, please refer to their privacy policy.
 
 ### Use of Your Personal Data
 

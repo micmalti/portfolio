@@ -4,13 +4,13 @@ import tailwind from "@astrojs/tailwind";
 import icon from "astro-icon";
 
 import sitemap from "@astrojs/sitemap";
+import lottie from "astro-integration-lottie";
 
-// https://astro.build/config
 export default defineConfig({
   site: "https://michaelgauci.com",
   integrations: [react(), tailwind({
     applyBaseStyles: true
-  }), icon(), sitemap()],
+  }), icon(), sitemap(), lottie()],
   server: {
     port: 3000
   }
