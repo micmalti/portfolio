@@ -1,3 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .font-sans {
+    font-feature-settings: "tnum" on;  /* for more, check out: https://rsms.me/inter/#features */
+    /* font-variation-settings: "opsz" auto, "wght" 125;   variable weight */
+  }
+
+  .font-serif {
+    /* font-feature-settings: "liga" 0; */
+    /* font-kerning: auto; */
+    /* letter-spacing: .2rem;   defines how letters are spaced */
+  }
+}
+
 *,
 *:before,
 *:after {
