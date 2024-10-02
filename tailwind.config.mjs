@@ -29,7 +29,16 @@ export default {
       },
       fontSize: {
         // '2xl': ['24px', '34px']
-      }
+      },
+      typography: ({ theme }) => ({
+        DEFAULT: {
+          css: {
+            a: {
+              'hyperlink': '',
+            },
+          },
+        },
+      }),
     },
   },
   plugins: [

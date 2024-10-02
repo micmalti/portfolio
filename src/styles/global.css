@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .hyperlink {
+    @apply bg-[linear-gradient(transparent_0%,_transparent_calc(50%_-_9px),_rgba(232,_113,_10,_1)_calc(50%_-_9px),_rgba(232,_113,_10,_1)_100%)] bg-[length:100%_200%] transition-[background-position,padding] duration-300 ease-in-out hover:bg-[linear-gradient(transparent_0%,_transparent_calc(50%_-_9px),_rgb(232,_113,_10)_calc(50%_-_9px),_rgb(232,_113,_10)_100%)] hover:bg-[position:0_100%] text-secondary no-underline cursor-pointer
+  }
+}
+
 @layer utilities {
   .font-sans {
     font-feature-settings: "tnum" on;  /* for more, check out: https://rsms.me/inter/#features */
@@ -49,8 +55,4 @@ p {
 
 .icon-link {
   @apply text-secondary size-5 transition-all duration-300 hover:-translate-y-1;
-}
-
-.hyperlink {
-  @apply bg-[linear-gradient(transparent_0%,_transparent_calc(50%_-_9px),_rgba(232,_113,_10,_1)_calc(50%_-_9px),_rgba(232,_113,_10,_1)_100%)] bg-[length:100%_200%] transition-[background-position,padding] duration-300 ease-in-out hover:bg-[linear-gradient(transparent_0%,_transparent_calc(50%_-_9px),_rgb(232,_113,_10)_calc(50%_-_9px),_rgb(232,_113,_10)_100%)] hover:bg-[position:0_100%] cursor-pointer
 }

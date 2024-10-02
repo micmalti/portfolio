@@ -11,7 +11,7 @@ The website collects the following data:
 - Personal identification information (Name, email address, phone number, etc.)
 - Information you provide in the subject and message fields
 
-All of the data that is collected about you by this website is obtained directly from you when you voluntarily complete the form available at [www.michaelgauci.com/#contact](www.michaelgauci.com/#contact). Form submission data is processed by Formspark, which stores its data in Ireland. For more details on how Formspark handles your data, please refer to their privacy policy.
+All of the data that is collected about you by this website is obtained directly from you when you voluntarily complete the form available [here](www.michaelgauci.com#contact). Form submission data is processed by Formspark, which stores its data in Ireland. For more details on how Formspark handles your data, please refer to their privacy policy.
 
 ### Use of Your Personal Data
 
@@ -34,6 +34,6 @@ Under the GDPR, you are entitled to the following rights regarding your personal
 - **The right to data portability** -- You can request that the data collected from you to be transferred to another organisation or directly to you.
 - **The right to object to processing** -- You have the right to object to the processing of your personal data in some circumstances, including where data is processed for direct marketing purposes.
 
-If you would like to exercise any of these rights, or have any inquiries or clarifications regarding this policy, kindly submit a form at: [www.michaelgauci.com/#contact](www.michaelgauci.com/#contact).
+If you would like to exercise any of these rights, or have any inquiries or clarifications regarding this policy, kindly [submit a form](www.michaelgauci.com#contact).
 
 
