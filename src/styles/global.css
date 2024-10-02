@@ -22,6 +22,10 @@
     letter-spacing: -.02em;   /* defines how letters are spaced */
     text-rendering: optimizelegibility
   }
+
+  .font-header {
+    letter-spacing: -.05em !important;   /* defines how letters are spaced */
+  }
 }
 
 *,
