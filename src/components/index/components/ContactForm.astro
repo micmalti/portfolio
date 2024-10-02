@@ -32,9 +32,9 @@ const siteUrl = Astro.site
           <input class="form-field" id="email" name="email" type="email" autocomplete="email" placeholder="Email" required>
           <input class="form-field" type="tel" id="phone" name="phone" placeholder="Phone (Optional)">
         <div class="flex items-center gap-3">
-          <div class="relative flex items-center w-12 h-6">
+          <div class="relative flex items-center w-12 h-6 flex-shrink-0">
             <input type="checkbox" class="z-10 absolute left-1/2 -translate-x-1/2 w-12 h-6 peer appearance-none rounded-md" id="policy" name="policy" required/>
-            <span class="z-0 relative w-full h-full flex items-center flex-shrink-0 bg-primary border border-white border-opacity-25 rounded-full duration-300 ease-in-out peer-checked:border-opacity-100"></span>
+            <span class="z-0 relative w-full h-full flex items-center bg-primary border border-white border-opacity-25 rounded-full duration-300 ease-in-out peer-checked:border-opacity-100"></span>
             <span class="absolute w-4 h-4 bg-primary border border-white border-opacity-25 rounded-full shadow-md duration-300 transform translate-x-1 peer-checked:translate-x-7 peer-checked:border-opacity-100 peer-checked:bg-white"></span>
           </div>
           <span>By selecting this, you agree to the site's privacy policy.</span>
