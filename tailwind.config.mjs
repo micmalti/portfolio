@@ -16,7 +16,7 @@ export default {
       colors: {
         primary: "#222224",
         secondary: "#F3F4F6",
-        tertiary: "#F9AB00",
+        tertiary: "#E8710A",
       },
       transitionProperty: {
         opacity: "opacity",
