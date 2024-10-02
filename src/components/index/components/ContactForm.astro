@@ -6,8 +6,8 @@ const siteUrl = Astro.site
   <form action="https://submit-form.com/IPuWegcRy" data-botpoison-public-key="pk_c2748b4c-5a20-471e-9c06-9bc9c9ca3de9" method="POST" class="flex flex-col gap-8">
     <input type="hidden" name="_redirect" value={`${siteUrl}/sent`}/>
     <div class="flex flex-row flex-wrap gap-4">
-      <div class="flex flex-col gap-4">
-        <fieldset class="flex flex-wrap gap-8 font-sans text-base">
+      <div class="flex flex-col gap-4 font-sans text-base">
+        <fieldset class="flex flex-wrap gap-8">
           <div class="inline-flex items-center gap-2">
             <label class="relative flex items-center" for="company">
               <input class="peer h-5 w-5 appearance-none rounded-full border border-white transition duration-300 border-opacity-25 checked:border-opacity-100" type="radio" id="company" name="contact" value="company" checked>
@@ -37,9 +37,7 @@ const siteUrl = Astro.site
             <span class="z-0 relative w-full h-full flex items-center bg-primary border border-white border-opacity-25 rounded-full duration-300 ease-in-out peer-checked:border-opacity-100"></span>
             <span class="absolute w-4 h-4 bg-primary border border-white border-opacity-25 rounded-full shadow-md duration-300 transform translate-x-1 peer-checked:translate-x-7 peer-checked:border-opacity-100 peer-checked:bg-white"></span>
           </div>
-          <div>
-            <span class="flex-none">By selecting this, you agree to the site's <a href="/policy" class="hyperlink">privacy policy</a>.</span>
-          </div>
+          <span>By selecting this, you agree to the site's <a href="/policy" class="hyperlink">privacy policy</a>.</span>
         </div>
       </div>
       <div class="flex flex-col gap-4">
