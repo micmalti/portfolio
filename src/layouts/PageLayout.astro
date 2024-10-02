@@ -1,7 +1,6 @@
 ---
 import '@fontsource-variable/inter/opsz.css';
 import '@fontsource-variable/source-serif-4/opsz.css';
-import Header from "../components/Header.astro";
 import ContactButton from "../components/ContactButton.astro";
 import "../styles/global.css";
 const { pageTitle } = Astro.props;
@@ -22,7 +21,6 @@ const { pageTitle } = Astro.props;
     <title>{pageTitle}</title>
   </head>
   <body class="block bg-primary text-secondary selection:bg-secondary selection:text-primary px-2">
-    <Header/>
     <ContactButton/>
     <slot />
     <!-- <script type="text/javascript" src="/scripts/animations.js"></script> -->
