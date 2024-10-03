@@ -22,10 +22,6 @@
     letter-spacing: -.02em;   /* defines how letters are spaced */
     text-rendering: optimizelegibility
   }
-
-  .font-header {
-    letter-spacing: -.05em !important;   /* defines how letters are spaced */
-  }
 }
 
 *,
@@ -59,4 +55,12 @@ p {
 
 .icon-link {
   @apply text-secondary size-5 transition-all duration-300 hover:-translate-y-1;
+}
+
+.highlight {
+  background-size: 0% 100%; /* Initially hide the background */
+  background-repeat: no-repeat;
+  background-position: left;
+  background-image: linear-gradient(to right, #ffdd57 100%);
+  transition: background-size 1s ease;
 }
