@@ -28,7 +28,19 @@ export default {
         'copy': 'url(/src/icons/cursor.svg) 16 16, default',
       },
       fontSize: {
-        // '2xl': ['24px', '34px']
+        // 'article-heading-1': ['var(--step-0)', {
+        //   lineHeight: '2rem',
+        //   letterSpacing: '-0.01em',
+        //   fontWeight: '500',
+        // }],
+        'serif-xl': ['var(--step-6)'],  // landing-title
+        'serif-lg': ['var(--step-5)'],  // tagline
+        'serif-md': ['var(--step-4)'],  // section-title, timeline-heading, article-title
+        'serif-sm': ['var(--step-3)'],  // h2
+        'serif-xs': ['var(--step-2)'],  // h3
+        'sans-lg': ['var(--step-1)'],  // landing-subtitle, availability-tag
+        'sans-md': ['var(--step-0)'],  // section-body, article-body, form,
+        'sans-sm': ['var(--step--1)'],  // footer, navigation, section-tag, timeline-year, article-date, button
       },
       typography: ({ theme }) => ({
         DEFAULT: {
