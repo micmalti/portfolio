@@ -35,8 +35,13 @@ export default {
         // }],
         'serif-xl': ['var(--step-6)'],  // landing-title
         'serif-lg': ['var(--step-5)'],  // tagline
-        'serif-md': ['var(--step-4)'],  // section-title, timeline-heading, article-title
-        'serif-sm': ['var(--step-3)'],  // h2
+        'serif-md': ['var(--step-4)', {
+          lineHeight: '132%'
+        }],  // section-title, timeline-heading, article-title
+        'serif-sm': ['var(--step-3)', {
+          lineHeight: '132%',
+          fontWeight: '600',
+        }],  // h2
         'serif-xs': ['var(--step-2)'],  // h3
         'sans-lg': ['var(--step-1)'],  // landing-subtitle, availability-tag
         'sans-md': ['var(--step-0)'],  // section-body, article-body, form,
