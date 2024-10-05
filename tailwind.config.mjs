@@ -43,10 +43,10 @@ export default {
           fontWeight: '600',
         }],  // h2
         'serif-xs': ['var(--step-2)'],  // h3
-        'sans-lg': ['var(--step-1)'],  // landing-subtitle, availability-tag
-        'sans-md': ['var(--step-0)'],  // section-body, article-body, form,
+        'sans-lg': ['var(--step-1)'],   // landing-subtitle, availability-tag
+        'sans-md': ['var(--step-0)'],   // section-body, article-body, form,
         'sans-sm': ['var(--step--1)'],  // footer, navigation, section-tag, timeline-year, article-date, button
-      },
+      },  // 320px, 14px, 1.125  2560px, 16px, 1.2
       typography: ({ theme }) => ({
         DEFAULT: {
           css: {

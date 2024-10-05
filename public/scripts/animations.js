@@ -1,5 +1,6 @@
 // Text: https://thinkingbox.com/
 // Timeline: https://www.rcco.uk/about-us
+// Smooth scrolling: https://productiveshop.com/padding-vs-margin/
 
 document.addEventListener('DOMContentLoaded', (event) => {
   gsap.registerPlugin(ScrollTrigger);
