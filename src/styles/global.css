@@ -4,6 +4,7 @@
 
 @layer base {
   :root {
+    --step--2: clamp(0.6914rem, 0.6909rem + 0.0022vw, 0.6944rem);
     --step--1: clamp(0.7778rem, 0.7698rem + 0.0397vw, 0.8333rem);
     --step-0: clamp(0.875rem, 0.8571rem + 0.0893vw, 1rem);
     --step-1: clamp(0.9844rem, 0.9536rem + 0.154vw, 1.2rem);
@@ -16,12 +17,16 @@
     /* --step-8: clamp(2.2451rem, 1.9515rem + 1.4677vw, 4.2998rem); */
     --step-5: clamp(2.5257rem, 2.1494rem + 1.8815vw, 5.1598rem);
     --step-6: clamp(2.8414rem, 2.3628rem + 2.3931vw, 6.1917rem);
+    /* --step-11: clamp(3.192rem, 2.594rem + 2.9737vw, 7.413rem); */
+    --step-7: clamp(3.591rem, 2.853rem + 3.5562vw, 8.890rem);
+    /* --step-7: clamp(4.012rem, 3.136rem + 4.2154vw, 10.668rem); */
+
   }
 }
 
 @layer components {
   .hyperlink {
-    @apply bg-[linear-gradient(transparent_0%,_transparent_calc(50%_-_9px),_rgba(232,_113,_10,_1)_calc(50%_-_9px),_rgba(232,_113,_10,_1)_100%)] bg-[length:100%_200%] transition-[background-position,padding] duration-300 ease-in-out hover:bg-[linear-gradient(transparent_0%,_transparent_calc(50%_-_9px),_rgb(232,_113,_10)_calc(50%_-_9px),_rgb(232,_113,_10)_100%)] hover:bg-[position:0_100%] text-secondary no-underline cursor-pointer
+    @apply bg-[linear-gradient(transparent_0%,_transparent_calc(55%_-_9px),_rgba(232,_113,_10,_1)_calc(55%_-_9px),_rgba(232,_113,_10,_1)_100%)] bg-[length:100%_200%] transition-[background-position,padding] duration-300 ease-in-out hover:bg-[linear-gradient(transparent_0%,_transparent_calc(55%_-_9px),_rgb(232,_113,_10)_calc(55%_-_9px),_rgb(232,_113,_10)_100%)] hover:bg-[position:0_100%] text-secondary no-underline cursor-pointer
   }
 }
 
@@ -66,18 +71,27 @@ p {
   @apply uppercase font-sans font-extrabold text-sans-sm/4 text-secondary border border-solid border-secondary border-opacity-25 bg-transparent px-6 py-3.5 transition-all duration-300 hover:bg-secondary hover:text-primary;
 }
 
+/* .contact-btn {
+  @apply uppercase font-sans font-extrabold md:text-sans-sm/4 text-sans-xs/4 text-secondary border border-solid border-secondary border-opacity-25 bg-transparent py-2 px-6 md:px-6 md:py-3.5 transition-all duration-300 hover:bg-secondary hover:text-primary;
+} */
+
 .form-field {
   @apply text-secondary border border-solid border-secondary border-opacity-25 bg-transparent transition duration-300 focus:outline-none focus:border-opacity-100 px-3 py-2
 }
 
 .icon-link {
-  @apply text-secondary size-5 transition-all duration-300 hover:-translate-y-1;
+  @apply text-secondary md:size-[var(--step-1)] size-4 transition-all duration-300 hover:-translate-y-1;
 }
 
-.highlight {
-  background-size: 0% 100%; /* Initially hide the background */
+/* .highlight {
+  background-size: 0% 100%;
   background-repeat: no-repeat;
   background-position: left;
   background-image: linear-gradient(to right, #ffdd57 100%);
   transition: background-size 1s ease;
-}
+} */
+
+/* .writing-mode-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+} */

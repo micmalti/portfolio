@@ -5,17 +5,19 @@ import Footer from "../components/Footer.astro";
 ---
 
 <Layout pageTitle="Michael Gauci">
-  <div class="flex flex-col min-h-screen">
-    <div class="flex flex-col align-middle items-center">
-      <span class="font-serif text-serif-md">Thank you</span>
-      <div style="width: 50%; height: 20%;">
-          <LottieAnimation src='/assets/sent.json' autoplay="visible" />
+  <div class="flex flex-col flex-between min-h-screen">
+    <div class="flex flex-col justify-center items-center flex-grow">
+      <span class="font-serif text-serif-lg">Thank you</span>
+      <div class="py-16" style="width: 100%; height:auto; max-width: 400px;">
+          <LottieAnimation src='/assets/sent-fixed.json' autoplay="visible" />
       </div>
-    <span class="font-sans text-sans-md">Your message has been sent. You should expect a reply within the next few hours.</span>
+    <span class="font-sans text-sans-md text-center">Your message has been sent. Expect a reply within the next 24 hours.</span>
     <a href="/">
-      <button class="box-btn [&&]:px-12 inline-block">Back to home</button>
+      <button class="box-btn [&&]:px-12 inline-block mt-8">Back to home</button>
     </a>
+  </div>
+    <div class="flex-none">
+      <Footer/>
     </div>
-    <Footer/>
   </div>
 </Layout>
