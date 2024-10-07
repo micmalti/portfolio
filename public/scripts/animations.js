@@ -33,41 +33,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
 })
 
 document.addEventListener('DOMContentLoaded', function() {
-  var contactSection = document.getElementById('contact'); // The section where the button should be hidden
-  var contactButton = document.querySelector('a[href="#contact"]'); // The contact button itself
-  
-  // Get position of #contact section
+  let contactSection = document.getElementById('contact');
+  let contactButton = document.querySelector('a[href="#contact"]');
+
   function getSectionPosition() {
-      var rect = contactSection.getBoundingClientRect();
-      var scrollTop = window.scrollY || document.documentElement.scrollTop;
-      return {
-          top: rect.top + scrollTop,
-          height: rect.height,
-          bottom: rect.top + scrollTop + rect.height
-      };
-  }
-  
-  // Update the button visibility based on the scroll position
+    let rect = contactSection.getBoundingClientRect();
+    let scrollTop = window.scrollY || document.documentElement.scrollTop;
+    return {
+      top: rect.top + scrollTop,
+      height: rect.height,
+      bottom: rect.top + scrollTop + rect.height
+    };
+  }  // get position of #contact section
+
   function toggleButtonVisibility() {
-      var sectionPos = getSectionPosition();
-      var scrollTop = window.scrollY || document.documentElement.scrollTop;
-      var viewportHeight = window.innerHeight;
-      var scrollBottom = scrollTop + viewportHeight;
+    let sectionPos = getSectionPosition();
+    let scrollTop = window.scrollY || document.documentElement.scrollTop;
+    let viewportHeight = window.innerHeight;
+    let scrollBottom = scrollTop + viewportHeight;
 
-      // Check if the contact section is in view
-      var inView = (scrollBottom > sectionPos.top) && (scrollTop < sectionPos.bottom);
-      
-      // Toggle the visibility of the contact button
+    if (window.innerWidth >= 768) {
+      let inView = (scrollBottom > sectionPos.top) && (scrollTop < sectionPos.bottom);
       if (inView) {
-          contactButton.classList.add('hidden');
+        contactButton.classList.add('hidden');
       } else {
-          contactButton.classList.remove('hidden');
+        contactButton.classList.remove('hidden');
       }
-  }
+    } else {
+      contactButton.classList.add('hidden');
+    }
+  }  // update button visibility based on the scroll position
 
-  // Initial check on page load
   toggleButtonVisibility();
-
-  // Add scroll event listener to update the button visibility
-  window.addEventListener('scroll', toggleButtonVisibility);
+  window.addEventListener('scroll', toggleButtonVisibility);  // listener to update button visibility
+  window.addEventListener('resize', toggleButtonVisibility);  // listener to recheck visibility if screen resized
 });
+
