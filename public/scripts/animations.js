@@ -55,12 +55,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (window.innerWidth >= 768) {
       let inView = (scrollBottom > sectionPos.top) && (scrollTop < sectionPos.bottom);
       if (inView) {
-        contactButton.classList.add('hidden');
+        contactButton.classList.add('md:hidden');
       } else {
-        contactButton.classList.remove('hidden');
+        contactButton.classList.remove('md:hidden');
       }
     } else {
-      contactButton.classList.add('hidden');
+      contactButton.classList.add('md:hidden');
     }
   }  // update button visibility based on the scroll position
 
