@@ -43,7 +43,7 @@ export default {
           }],  // landing-title
         'serif-lg': ['var(--step-5)'],  // tagline
         'serif-md': ['var(--step-4)', {
-          lineHeight: '132%',
+          lineHeight: '110%',
           fontWeight: '650'
         }],  // section-title, timeline-heading, article-title, sent-title
         'serif-sm': ['var(--step-3)', {
