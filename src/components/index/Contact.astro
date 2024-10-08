@@ -2,29 +2,18 @@
 import SectionLayout from "../../layouts/SectionLayout.astro";
 import Footer from "../../components/Footer.astro";
 import ContactForm from "./components/ContactForm.astro";
-import { Icon } from 'astro-icon/components'
 ---
 
 <SectionLayout sectionTag="contact">
-  <div class="flex flex-col justify-between min-h-screen">
-    <span class="text-serif-md font-serif pt-16 pb-2">Get in touch</span>
-    <div class="md:hidden flex gap-4 pb-8">
-      <a href="/Michael_Gauci_CV.pdf" target="_blank" rel="noopener noreferrer">
-        <Icon name="cv" class="icon-link"/>
-      </a>
-      <a href="https://github.com/micmalti/" target="_blank" rel="noopener noreferrer">
-        <Icon name="github" class="icon-link"/>
-      </a>
-      <a href="https://www.linkedin.com/in/michaelgaucimt/" target="_blank" rel="noopener noreferrer">
-        <Icon name="linkedin" class="icon-link"/>
-      </a>
-      <a href="https://twitter.com/MichaelGauciMT" target="_blank" rel="noopener noreferrer">
-        <Icon name="x" class="icon-link"/>
-      </a>
+  <div class="flex flex-col min-h-screen">
+    <div class="flex-none">
+      <span class="text-serif-md font-serif py-16">Get in touch</span>
     </div>
-    <ContactForm/>
-    <Footer/>
+    <div class="flex flex-col justify-center flex-grow">
+      <ContactForm/>
+    </div>
+    <div class="flex-none">
+      <Footer/>
+    </div>
   </div>
 </SectionLayout>
-
-

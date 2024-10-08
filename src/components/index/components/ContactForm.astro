@@ -54,8 +54,9 @@ const siteUrl = Astro.site
 <div>
   <form action="https://submit-form.com/IPuWegcRy" data-botpoison-public-key="pk_c2748b4c-5a20-471e-9c06-9bc9c9ca3de9" method="POST">
     <input type="hidden" name="_redirect" value={`${siteUrl}/sent`}/>
-    <div class="font-sans text-sans-md grid md:grid-cols-2 grid-cols-1 grid-rows-8 md:grid-rows-5 gap-2">
-        <fieldset class="flex flex-col md:flex-row gap-2 md:gap-8">
+    <div class="@container">
+      <div class="font-sans text-sans-md grid @5xl:grid-cols-[2fr_3fr] grid-cols-1 grid-rows-8 @5xl:grid-rows-5 gap-2">
+        <fieldset class="flex flex-col @5xl:flex-row gap-2 @5xl:gap-8">
           <div class="inline-flex items-center gap-2">
             <label class="relative flex items-center" for="company">
               <input class="peer h-5 w-5 appearance-none rounded-full border border-white transition duration-300 border-opacity-25 checked:border-opacity-100" type="radio" id="company" name="contact" value="company" checked>
@@ -78,7 +79,7 @@ const siteUrl = Astro.site
         <input class="form-field" id="email" name="email" type="email" autocomplete="email" placeholder="Email" required>
         <input class="form-field" type="tel" id="phone" name="phone" placeholder="Phone (Optional)">
         <input class="form-field" id="subject" name="subject" placeholder="Subject (Optional)">
-        <textarea class="form-field md:row-span-4 row-span-2 resize-none h-full" id="message" name="message" placeholder="Message" required></textarea>
+        <textarea class="form-field @5xl:row-span-4 row-span-2 resize-none h-full" id="message" name="message" placeholder="Message" required></textarea>
         <div class="flex items-center gap-3">
           <div class="relative flex items-center w-12 h-6 flex-shrink-0">
             <input type="checkbox" class="z-10 absolute left-1/2 -translate-x-1/2 w-12 h-6 peer appearance-none rounded-md" id="policy" name="policy" required/>
@@ -87,6 +88,7 @@ const siteUrl = Astro.site
           </div>
           <span>By selecting this, you agree to the site's <a href="/policy" class="hyperlink">privacy policy</a>.</span>
         </div>
+    </div>
     </div>
     <button class="box-btn [&&]:px-12 inline-block mt-4">Send message</button>
   </form>
