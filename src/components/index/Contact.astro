@@ -5,15 +5,15 @@ import ContactForm from "./components/ContactForm.astro";
 ---
 
 <SectionLayout sectionTag="contact">
-  <div class="flex flex-col min-h-screen mx-4">
-    <div class="flex-none">
-      <span class="text-serif-md font-serif py-16">Get in touch</span>
-    </div>
-    <div class="flex flex-col justify-center flex-grow">
+  <div class="flex flex-col md:min-h-screen mx-4 min-h-[650px]">
+    <span class="text-serif-md font-serif pt-16 md:pt-32 pb-8 md:pb-16">Get in touch</span>
+    <!-- <div class="flex flex-col justify-center flex-grow"> -->
+     <div class="flex flex-col justify-between flex-grow">
       <ContactForm/>
-    </div>
-    <div class="flex-none">
       <Footer/>
-    </div>
+     </div>
+    <!-- </div> -->
+    <!-- <div class="flex-none">
+    </div> -->
   </div>
 </SectionLayout>

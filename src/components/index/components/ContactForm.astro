@@ -2,56 +2,52 @@
 const siteUrl = Astro.site
 ---
 
-<!-- <div class="flex">
-  <form action="https://submit-form.com/IPuWegcRy" data-botpoison-public-key="pk_c2748b4c-5a20-471e-9c06-9bc9c9ca3de9" method="POST" class="flex flex-col gap-8">
-    <input type="hidden" name="_redirect" value={`${siteUrl}/sent`}/>
-    <div class="flex flex-row flex-wrap gap-4 font-sans text-sans-md">
-      <div class="flex flex-col gap-4">
-        <fieldset class="flex flex-wrap gap-8">
-          <div class="inline-flex items-center gap-2">
-            <label class="relative flex items-center" for="company">
-              <input class="peer h-5 w-5 appearance-none rounded-full border border-white transition duration-300 border-opacity-25 checked:border-opacity-100" type="radio" id="company" name="contact" value="company" checked>
-              <span class="absolute bg-white w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-300 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              </span>
-            </label>
-            <label for="company">I'm a company representative</label>
-          </div>
-          <div class="flex items-center gap-2">
-            <label class="relative flex items-center" for="individual">
-              <input class="peer h-5 w-5 appearance-none rounded-full border border-white border-opacity-25 transition duration-300 checked:border-opacity-100" type="radio" id="individual" name="contact" value="individual">
-              <span class="absolute bg-white w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-300 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              </span>
-            </label>
-            <label for="individual">I'm an individual</label>
-          </div>
-        </fieldset>
-        <div class="flex flex-wrap gap-4">
-          <input class="form-field w-50 flex-grow-1" type="text" id="name" name="name" autocomplete="name" placeholder="Name" required>
-          <input class="form-field w-50 flex-grow-1 bg-primary" type="text" id="surname" name="surname" autocomplete="surname" placeholder="Surname" required>
-        </div>
-          <input class="form-field" id="email" name="email" type="email" autocomplete="email" placeholder="Email" required>
-          <input class="form-field" type="tel" id="phone" name="phone" placeholder="Phone (Optional)">
-        <div class="flex items-center gap-3">
-          <div class="relative flex items-center w-12 h-6 flex-shrink-0">
-            <input type="checkbox" class="z-10 absolute left-1/2 -translate-x-1/2 w-12 h-6 peer appearance-none rounded-md" id="policy" name="policy" required/>
-            <span class="z-0 relative w-full h-full flex items-center bg-primary border border-white border-opacity-25 rounded-full duration-300 ease-in-out peer-checked:border-opacity-100"></span>
-            <span class="absolute w-4 h-4 bg-primary border border-white border-opacity-25 rounded-full shadow-md duration-300 transform translate-x-1 peer-checked:translate-x-7 peer-checked:border-opacity-100 peer-checked:bg-white"></span>
-          </div>
-          <span>By selecting this, you agree to the site's <a href="/policy" class="hyperlink">privacy policy</a>.</span>
-        </div>
-      </div>
-      <div class="flex flex-col gap-4">
-        <input class="form-field" id="subject" name="subject" placeholder="Subject (Optional)">
-        <input class="form-field" id="message" name="message" placeholder="Message" required>
-      </div>
-    </div>
-    <div>
-      <button class="box-btn [&&]:px-12 inline-block">Send message</button>
-    </div>
-  </form>
-</div> -->
-
 <div>
+  <form action="https://submit-form.com/IPuWegcRy" data-botpoison-public-key="pk_c2748b4c-5a20-471e-9c06-9bc9c9ca3de9" method="POST">
+    <input type="hidden" name="_redirect" value={`${siteUrl}/sent`} />
+    <div class="@container">
+        <div class="font-sans text-sans-md grid @5xl:grid-cols-[2fr_3fr] grid-cols-1 gap-2"> <!-- grid-rows-8 @5xl:grid-rows-5 -->
+            <fieldset class="flex flex-col @5xl:flex-row gap-2 @5xl:gap-8">
+                <div class="inline-flex items-center gap-2">
+                    <label class="relative flex items-center" for="company">
+                        <input class="peer h-5 w-5 appearance-none rounded-full border border-white transition duration-300 border-opacity-25 checked:border-opacity-100" type="radio" id="company" name="contact" value="company" checked>
+                        <span class="absolute bg-white w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-300 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+                    </label>
+                    <label for="company">I'm a company representative</label>
+                </div>
+                <div class="inline-flex items-center gap-2">
+                    <label class="relative flex items-center" for="individual">
+                        <input class="peer h-5 w-5 appearance-none rounded-full border border-white border-opacity-25 transition duration-300 checked:border-opacity-100" type="radio" id="individual" name="contact" value="individual">
+                        <span class="absolute bg-white w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-300 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+                    </label>
+                    <label for="individual">I'm an individual</label>
+                </div>
+            </fieldset>
+  
+            <div class="flex flex-col md:flex-row md:gap-2 gap-2">
+                <input class="form-field md:w-1/2" type="text" id="name" name="name" autocomplete="name" placeholder="Name" required>
+                <input class="form-field md:w-1/2" type="text" id="surname" name="surname" autocomplete="surname" placeholder="Surname" required>
+            </div>
+  
+            <input class="form-field @5xl:row-start-3 @5xl:col-start-1" id="email" name="email" type="email" autocomplete="email" placeholder="Email" required>
+            <input class="form-field @5xl:row-start-4 @5xl:col-start-1" type="tel" id="phone" name="phone" placeholder="Phone (Optional)">
+            <input class="form-field @5xl:row-start-1 @5xl:col-start-2" id="subject" name="subject" placeholder="Subject (Optional)">
+            <textarea class="form-field @5xl:row-start-2 @5xl:col-start-2 @5xl:row-span-3 row-span-2 resize-none h-full" id="message" name="message" placeholder="Message" required></textarea>
+            <div class="flex items-center gap-3 @5xl:row-start-5 @5xl:col-start-1">
+                <div class="relative flex items-center w-12 h-6 flex-shrink-0">
+                    <input type="checkbox" class="z-10 absolute left-1/2 -translate-x-1/2 w-12 h-6 peer appearance-none rounded-md" id="policy" name="policy" required />
+                    <span class="z-0 relative w-full h-full flex items-center bg-primary border border-white border-opacity-25 rounded-full duration-300 ease-in-out peer-checked:border-opacity-100"></span>
+                    <span class="absolute w-4 h-4 bg-primary border border-white border-opacity-25 rounded-full shadow-md duration-300 transform translate-x-1 peer-checked:translate-x-7 peer-checked:border-opacity-100 peer-checked:bg-white"></span>
+                </div>
+                <span>By selecting this, you agree to the site's <a href="/policy" class="hyperlink">privacy policy</a>.</span>
+            </div>
+        </div>
+    </div>
+    <button class="box-btn [&&]:px-12 inline-block mt-4 mb-16">Send message</button>
+  </form>
+</div>
+
+<!-- <div>
   <form action="https://submit-form.com/IPuWegcRy" data-botpoison-public-key="pk_c2748b4c-5a20-471e-9c06-9bc9c9ca3de9" method="POST">
     <input type="hidden" name="_redirect" value={`${siteUrl}/sent`}/>
     <div class="@container">
@@ -90,6 +86,6 @@ const siteUrl = Astro.site
         </div>
     </div>
     </div>
-    <button class="box-btn [&&]:px-12 inline-block mt-4">Send message</button>
+    <button class="box-btn [&&]:px-12 inline-block mt-4 mb-16">Send message</button>
   </form>
-</div>
+</div> -->

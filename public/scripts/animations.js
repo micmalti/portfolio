@@ -68,4 +68,3 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('scroll', toggleButtonVisibility);  // listener to update button visibility
   window.addEventListener('resize', toggleButtonVisibility);  // listener to recheck visibility if screen resized
 });
-
