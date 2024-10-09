@@ -1,10 +1,9 @@
 ---
 // import "../../styles/carousel.css";
-import SectionLayout from "../../layouts/SectionLayout.astro";
 import Carousel from "./components/Carousel.astro";
 ---
 
-<SectionLayout sectionTag="book">
+<section id="book">
   <div class="flex flex-col min-h-screen relative">
     <Carousel/>
     <span class="absolute text-serif-md font-serif pb-8 pt-[25vh] mx-4 md:pb-16 z-10"> <!--  top-16 left-4  w-full    -->
@@ -20,4 +19,4 @@ import Carousel from "./components/Carousel.astro";
           </button>
         </div>
   </div>
-</SectionLayout>
+</section>
