@@ -13,7 +13,8 @@ const { pageTitle } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
     <script is:inline src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script is:inline src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script is:inline src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script> 
+    <script is:inline src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+    <!-- <script is:inline src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script> -->
     <script is:inline src="/scripts/helpers/horizontalLoop.js"></script>
     <script is:inline src="https://unpkg.com/@botpoison/browser" async></script>
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.13/dist/lenis.css">
@@ -28,7 +29,8 @@ const { pageTitle } = Astro.props;
         <slot />
       </div>
     </div>
-    <script type="text/javascript" src="/scripts/SmoothScrolling.js"></script>
+    <!-- <script type="text/javascript" src="/scripts/SmoothScrolling.js"></script> -->
+    <script type="text/javascript" src="/scripts/SectionPinning.js"></script>
     <script type="text/javascript" src="/scripts/ContactButton.js"></script>
     <script type="text/javascript" src="/scripts/FormHandler.js"></script>
   </body>
