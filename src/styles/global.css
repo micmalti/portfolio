@@ -116,3 +116,7 @@ html.lenis, html.lenis body {
 .lenis.lenis-smooth iframe {
   pointer-events: none;
 }
+
+.active-section {
+  @apply bg-secondary h-12
+}
