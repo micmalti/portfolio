@@ -6,7 +6,7 @@ const siteUrl = Astro.site
   <form action="https://submit-form.com/IPuWegcRy" data-botpoison-public-key="pk_c2748b4c-5a20-471e-9c06-9bc9c9ca3de9" method="POST">
     <input type="hidden" name="_redirect" value={`${siteUrl}/sent`} />
     <div class="@container">
-        <div class="font-sans text-sans-md grid @5xl:grid-cols-[2fr_3fr] grid-cols-1 gap-2"> <!-- grid-rows-8 @5xl:grid-rows-5 -->
+        <div class="font-sans text-sans-md grid @5xl:grid-cols-[2fr_3fr] grid-cols-1 md:gap-4 gap-2"> <!-- grid-rows-8 @5xl:grid-rows-5 -->
             <fieldset class="flex flex-col @5xl:flex-row gap-2 @5xl:gap-8">
                 <div class="inline-flex items-center gap-2">
                     <label class="relative flex items-center" for="company">
@@ -43,7 +43,7 @@ const siteUrl = Astro.site
             </div>
         </div>
     </div>
-    <button class="box-btn [&&]:px-12 inline-block mt-4 mb-16">Send message</button>
+    <button class="box-btn [&&]:px-12 inline-block mt-4 md:mt-12 mb-16">Send message</button>
   </form>
 </div>
 

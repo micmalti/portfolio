@@ -41,7 +41,9 @@ export default {
           {
             lineHeight: '78%',
           }],  // landing-title
-        'serif-lg': ['var(--step-5)'],  // tagline
+        'serif-lg': ['var(--step-5)', {
+          lineHeight: '130%',
+        }],  // tagline
         'serif-md': ['var(--step-4)', {
           lineHeight: '110%',
           fontWeight: '650'

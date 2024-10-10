@@ -116,3 +116,16 @@ p {
 .lenis.lenis-smooth iframe {
   pointer-events: none;
 } */
+
+.active {
+  @apply bg-secondary h-12
+}
+
+/* #tagline {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.char {
+  transform: translateY(5rem);
+  transition: transform .5s
+} */
