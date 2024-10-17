@@ -3,18 +3,24 @@ import { frontmatter, Content } from '../policy.md';
 import Layout from "../layouts/PageLayout.astro";
 import ArticleLayout from '../layouts/ArticleLayout.astro';
 import Footer from "../components/Footer.astro";
+import { Icon } from 'astro-icon/components';
 ---
 
 <Layout pageTitle="Michael Gauci">
-  <div class="flex flex-col items-center mx-4">
-    <div class="relative text-left max-w-[850px]">
-      <span class="font-serif text-serif-md pt-24 pb-4 block">{frontmatter.title}</span>
-      <span class="font-sans font-light text-sans-sm block pb-12">Updated {frontmatter.date}</span>
-      <ArticleLayout>
-        <Content />
-      </ArticleLayout>
+    <div class="flex flex-col items-center mx-4">
+      <div class="relative text-left max-w-[850px]">
+        <div class="flex items-center pt-24">
+          <a href="/" class="absolute transform -translate-x-full pr-9">
+            <Icon name="left-arrow" class="text-secondary size-10 pt-1 transition-all duration-300 hover:-translate-x-4"/>
+          </a>
+          <span class="font-serif text-serif-md block">{frontmatter.title}</span>
+        </div>
+        <span class="font-sans font-light text-sans-sm block pt-4 pb-12">Updated {frontmatter.date}</span>
+        <ArticleLayout>
+          <Content />
+        </ArticleLayout>
+      </div>
     </div>
-  </div>
   <div class="md:mx-32">
     <Footer/>
   </div>
