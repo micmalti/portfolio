@@ -64,6 +64,9 @@ export default {
       },  // 320px, 14px, 1.125  2560px, 16px, 1.2
       spacing: {},
       margin: {},
+      size: {
+        'volume-icon': ['var(--step--1)']
+      },
       typography: ({ theme }) => ({
         DEFAULT: {
           css: {
