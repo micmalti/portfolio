@@ -1,13 +1,22 @@
-// const tagline = new SplitType('#tagline')
+document.addEventListener('DOMContentLoaded', () => {
+  gsap.registerPlugin(ScrollTrigger);
+  const split = new SplitType('#tagline');
 
-// gsap.from('.char', {
-//   yPercent: 130,
-//   stagger: 0.05,
-//   delay: 0.2,
-//   duration: 1,
-//   scrollTrigger: {
-//     trigger: '#tagline',
-//     start: 'top 80%'
-//   }
-
-// })
+  const tl = gsap.timeline({
+      scrollTrigger: {
+          trigger: "#home",
+          start: "20% top",
+          end: "120% center",
+          scrub: 0.5,
+      },
+  })
+  .set(
+      split.chars,
+      {
+          duration: 0.3,
+          color: "white",
+          stagger: 0.1,
+      },
+      0.1
+  );
+});
