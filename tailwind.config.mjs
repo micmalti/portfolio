@@ -14,8 +14,8 @@ export default {
         2: "repeat(2, minmax(0, 100%))"
       },
       colors: {
-        primary: "#222224",
-        secondary: "#F3F4F6",
+        primary: "#000000",  /* #222224 */
+        secondary: "#FFFFFF", /* #F3F4F6 */
         tertiary: "#E8710A",
       },
       transitionProperty: {
