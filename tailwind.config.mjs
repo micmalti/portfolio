@@ -58,6 +58,11 @@ export default {
             lineHeight: '100%',
           }
         ],   // landing-subtitle, availability-tag
+        'sans-timeline': ['var(--step-1)',
+          {
+            lineHeight: '147%',
+          }
+        ],  // timeline copy
         'sans-md': ['var(--step-0)'],   // section-body, article-body, form,
         'sans-sm': ['var(--step--1)'],  // footer, navigation, section-tag, timeline-year, article-date, button
         'sans-xs': ['var(--step--2)'],  // contact button
