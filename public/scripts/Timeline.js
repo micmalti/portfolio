@@ -62,8 +62,8 @@ window.addEventListener('load', function() {
       trigger: "#sections-wrapper",
       pin: true,
       scrub: 3,
-      snap: 1 / (sections.length - 1),
-      end: () => "+=" + (document.querySelector('#sections-wrapper').offsetWidth * 2), // increase end value to reduce scroll sensitivity
+      // snap: 1 / (sections.length - 1),
+      end: () => "+=" + (document.querySelector('#sections-wrapper').offsetWidth * 5), // increase end value to reduce scroll sensitivity
       onUpdate: self => {
         const progress = self.progress;
         progressBar.style.width = `${progress * 100}%`;
