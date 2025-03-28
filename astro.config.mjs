@@ -8,10 +8,16 @@ import lottie from "astro-integration-lottie";
 
 export default defineConfig({
   site: "https://michaelgauci.com",
-  integrations: [react(), tailwind({
-    applyBaseStyles: true
-  }), icon(), sitemap(), lottie()],
+  integrations: [
+    react(),
+    tailwind({
+      applyBaseStyles: true,
+    }),
+    icon(),
+    sitemap(),
+    lottie(),
+  ],
   server: {
-    port: 3000
-  }
+    port: 3000,
+  },
 });

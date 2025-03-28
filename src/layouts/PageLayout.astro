@@ -1,6 +1,6 @@
 ---
-import '@fontsource-variable/inter/opsz.css';
-import '@fontsource-variable/source-serif-4/opsz.css';
+import "@fontsource-variable/inter/opsz.css";
+import "@fontsource-variable/source-serif-4/opsz.css";
 import ContactButton from "../components/ContactButton.astro";
 import "../styles/global.css";
 // import { ViewTransitions } from 'astro:transitions';
@@ -24,7 +24,8 @@ const { pageTitle } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
   </head>
-  <body class="bg-primary text-secondary selection:bg-secondary selection:text-primary scroll-smooth"> <!-- max-w-[1140px] mx-auto -->
+  <body class="scroll-smooth bg-primary text-secondary selection:bg-secondary selection:text-primary">
+    <!-- max-w-[1140px] mx-auto -->
     <div id="smooth-wrapper">
       <div id="smooth-content">
         <!-- <ContactButton/> -->
@@ -41,6 +42,5 @@ const { pageTitle } = Astro.props;
     <!-- <script type="text/javascript" src="/scripts/ContactButton.js"></script> -->
     <script type="text/javascript" src="/scripts/FormHandler.js"></script>
     <!-- <ViewTransitions/> -->
-
   </body>
 </html>

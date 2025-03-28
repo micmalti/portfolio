@@ -1,13 +1,10 @@
 {
   "singleQuote": false,
-  "plugins": [
-    "prettier-plugin-astro",
-    "prettier-plugin-tailwindcss",
-    "prettier-plugin-astro-organize-imports"
-  ],
+  "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss", "prettier-plugin-astro-organize-imports"],
   "astroOrganizeImportsMode": "SortAndCombine",
   "proseWrap": "always",
-  "printWidth": 85,
+  "printWidth": 999,
+  "htmlWhitespaceSensitivity": "ignore",
   "overrides": [
     {
       "files": "*.astro",

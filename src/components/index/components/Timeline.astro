@@ -3,56 +3,44 @@ const sections = [
   {
     year: "2018",
     title: "Developing core competencies in computational modelling",
-    content:
-      "For his final year dissertation on the topic of patterned defects in graphene, Michael applied molecular dynamics (MD) simulation, a technique similar to Monte Carlo sampling but with the added benefit of adhering to the physical constraits of the chemical system. Due to the high computational demand required for this study, Michael was granted access to the university's high-performance computing facility, where he gained proficiency in the Linux command line.",
-    background: "/images/abstract-expressionism-kandinsky.webp"
+    content: "For his final year dissertation on the topic of patterned defects in graphene, Michael applied molecular dynamics (MD) simulation, a technique similar to Monte Carlo sampling but with the added benefit of adhering to the physical constraits of the chemical system. Due to the high computational demand required for this study, Michael was granted access to the university's high-performance computing facility, where he gained proficiency in the Linux command line.",
+    background: "/images/abstract-expressionism-kandinsky.webp",
   },
   {
     year: "2019",
     title: "Wearing the entrepreneurial hat",
-    content:
-      "Michael's involvement in a green tech startup, which he himself founded, was defined by long working hours spent alongside his team of software developers and regular meetings with various stakeholders. This experience showcased his ability to thrive in a stressful environment and deepened his understanding of the critical role that leadership plays in a company's success, fostering his appreciation for the quantamental approach to investing later in his career.",
-    background: "/images/abstract-expressionism-pollock.webp"
+    content: "Michael's involvement in a green tech startup, which he himself founded, was defined by long working hours spent alongside his team of software developers and regular meetings with various stakeholders. This experience showcased his ability to thrive in a stressful environment and deepened his understanding of the critical role that leadership plays in a company's success, fostering his appreciation for the quantamental approach to investing later in his career.",
+    background: "/images/abstract-expressionism-pollock.webp",
   },
   {
     year: "2020",
     title: "Navigating the lockdowns and machine learning",
-    content:
-      "Following his participation in a training program on the application of machine learning to gravitational wave research, Michael effectively used the time afforded by the Covid-19 lockdowns to further expand his knowledge in the domain of unsupervised learning. During this period, he developed a Python-based toolkit which combined the use of natural language processing and clustering techniques to aid in academic literature analysis.",
-    background: "/images/abstract-expressionism-rothko.webp"
-
+    content: "Following his participation in a training program on the application of machine learning to gravitational wave research, Michael effectively used the time afforded by the Covid-19 lockdowns to further expand his knowledge in the domain of unsupervised learning. During this period, he developed a Python-based toolkit which combined the use of natural language processing and clustering techniques to aid in academic literature analysis.",
+    background: "/images/abstract-expressionism-rothko.webp",
   },
   {
     year: "2021",
     title: "A Master's perspective into big data analytics",
-    content:
-      "Michael resumed his academic studies by pursuing a Master's program in which he examined novel forms of folded graphene from a theoretical perspective. The accompanying MD simulations yielded large volumes of data, compelling the use of Python to streamline the analysis process and advanced statistical techniques for their interpretation, while high-quality visuals were vital to clearly communicate the results of the study.",
-    background: "/images/avant-garde-malevich.webp"
-
+    content: "Michael resumed his academic studies by pursuing a Master's program in which he examined novel forms of folded graphene from a theoretical perspective. The accompanying MD simulations yielded large volumes of data, compelling the use of Python to streamline the analysis process and advanced statistical techniques for their interpretation, while high-quality visuals were vital to clearly communicate the results of the study.",
+    background: "/images/avant-garde-malevich.webp",
   },
   {
     year: "2022",
     title: "Managing an investment portfolio in the cloud",
-    content:
-      "Motivated by his lifelong interest in geopolitics and economics, Michael explored ways in which he could apply his multidisciplinary expertise within the world of finance. Consequently, he embarked on a long-term project for the creation of software to facilitate the management of his personal investment portfolio across different equity markets. Owing to its high availability requirement, he leveraged his deep understanding of AWS microservices to host the software in the cloud.",
-    background: "/images/cubism-picasso.webp"
-
+    content: "Motivated by his lifelong interest in geopolitics and economics, Michael explored ways in which he could apply his multidisciplinary expertise within the world of finance. Consequently, he embarked on a long-term project for the creation of software to facilitate the management of his personal investment portfolio across different equity markets. Owing to its high availability requirement, he leveraged his deep understanding of AWS microservices to host the software in the cloud.",
+    background: "/images/cubism-picasso.webp",
   },
   {
     year: "2023",
     title: "The self-study that inspired a book",
-    content:
-      "What initially began as supporting research for the technical aspect of his portfolio management system has since grown into a book about quantitative finance slated for publication in 2025. By planning to release the book under a public domain licence, he seeks to position it as a living document, receiving regular contributions from the wider quant community on the latest developments in the field.",
-    background: "/images/de-stijl-mondrian.webp"
-
+    content: "What initially began as supporting research for the technical aspect of his portfolio management system has since grown into a book about quantitative finance slated for publication in 2025. By planning to release the book under a public domain licence, he seeks to position it as a living document, receiving regular contributions from the wider quant community on the latest developments in the field.",
+    background: "/images/de-stijl-mondrian.webp",
   },
   {
     year: "2024",
     title: "An open mind to new experiences",
-    content:
-      "Having never shied away from a challenge, Michael took it upon himself to design and build his own personal site, all while being away from his home country of Malta on a weeks-long trip across Europe in search of novel opportunities in the quant sector. His travels have brought him into contact with a rich diversity of cultures, an experience he embraced with ease given his proficiency in multiple languages.",
-    background: "/images/futurism-boccioni.webp"
-
+    content: "Having never shied away from a challenge, Michael took it upon himself to design and build his own personal site, all while being away from his home country of Malta on a weeks-long trip across Europe in search of novel opportunities in the quant sector. His travels have brought him into contact with a rich diversity of cultures, an experience he embraced with ease given his proficiency in multiple languages.",
+    background: "/images/futurism-boccioni.webp",
   },
 ];
 ---
@@ -72,21 +60,20 @@ const sections = [
       ))
     }
 </div> -->
-
 <div id="timeline-container" class="relative w-full overflow-hidden">
-  <div id="progress-bar-wrapper" class="fixed top-0 left-0 w-full h-1 border-none bg-primary z-[100]">
+  <div id="progress-bar-wrapper" class="fixed left-0 top-0 z-[100] h-1 w-full border-none bg-primary">
     <div id="progress-bar" class="h-full w-0 bg-secondary"></div>
   </div>
   <div id="sections-wrapper" class="flex w-full">
     {
       sections.map((section: { year: string; title: string; content: string; background: string }, index: number) => (
-        <section id={`timeline-${index}`} class="timeline bg-cover bg-center min-h-screen min-w-full" style={{ backgroundImage: `url(${section.background})`}}>
+        <section id={`timeline-${index}`} class="timeline min-h-screen min-w-full bg-cover bg-center" style={{ backgroundImage: `url(${section.background})` }}>
           <div class="bg-gradient-to-l from-transparent to-primary">
-              <div class="flex flex-col min-h-screen mx-4 md:mx-32">
-                <span class="font-sans font-bold text-sans-lg w-full pt-16 md:pt-32">{section.year}</span>
-                <span class="text-serif-md font-serif w-full md:w-1/2 pt-2 md:pt-4 pb-8 md:pb-16">{section.title}</span>
-                <span class="text-sans-md font-sans w-full md:w-2/5">{section.content}</span>
-              </div>
+            <div class="mx-4 flex min-h-screen flex-col md:mx-32">
+              <span class="w-full pt-16 font-sans text-sans-lg font-bold md:pt-32">{section.year}</span>
+              <span class="w-full pb-8 pt-2 font-serif text-serif-md md:w-1/2 md:pb-16 md:pt-4">{section.title}</span>
+              <span class="w-full font-sans text-sans-md md:w-2/5">{section.content}</span>
+            </div>
           </div>
         </section>
       ))

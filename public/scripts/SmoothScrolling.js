@@ -2,12 +2,12 @@
 const lenis = new Lenis();
 
 // Listen for the 'scroll' event and log the event data to the console
-lenis.on('scroll', (e) => {
+lenis.on("scroll", (e) => {
   console.log(e);
 });
 
 // Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
-lenis.on('scroll', ScrollTrigger.update);
+lenis.on("scroll", ScrollTrigger.update);
 
 // Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
 // This ensures Lenis's smooth scroll animation updates on each GSAP tick

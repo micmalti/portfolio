@@ -1,23 +1,23 @@
 ---
-import Layout from "../layouts/PageLayout.astro"
 import LottieAnimation from "astro-integration-lottie/Lottie.astro";
 import Footer from "../components/Footer.astro";
+import Layout from "../layouts/PageLayout.astro";
 ---
 
 <Layout pageTitle="Michael Gauci">
-  <div class="flex flex-col flex-between min-h-screen mx-4 md:mx-32">
-    <div class="flex flex-col justify-center items-center flex-grow">
+  <div class="flex-between mx-4 flex min-h-screen flex-col md:mx-32">
+    <div class="flex flex-grow flex-col items-center justify-center">
       <span class="font-serif text-serif-md">Message sent.</span>
       <div class="py-24" style="width: 100%; height:auto; max-width: 400px;">
-          <LottieAnimation src='/assets/sent-fixed.json' autoplay="visible" />
+        <LottieAnimation src="/assets/sent-fixed.json" autoplay="visible" />
       </div>
-    <span class="font-sans text-sans-md text-center">Thank you for filling out the form. Expect a reply within the next 24 hours.</span>
-    <a href="/">
-      <button class="box-btn [&&]:px-12 inline-block mt-8">Back to home</button>
-    </a>
-  </div>
+      <span class="text-center font-sans text-sans-md">Thank you for filling out the form. Expect a reply within the next 24 hours.</span>
+      <a href="/">
+        <button class="box-btn mt-8 inline-block [&&]:px-12">Back to home</button>
+      </a>
+    </div>
     <div class="flex-none">
-      <Footer/>
+      <Footer />
     </div>
   </div>
 </Layout>

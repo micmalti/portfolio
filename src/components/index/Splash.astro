@@ -1,55 +1,56 @@
 ---
-import { Icon } from 'astro-icon/components'
-import PlayerIcon from '../../icons/player.svg?raw'
+import { Icon } from "astro-icon/components";
+import PlayerIcon from "../../icons/player.svg?raw";
 const baseURL = Astro.site;
 ---
 
 <section id="home">
-<div class="relative min-h-screen pb-[env(safe-area-inset-bottom)] flex flex-col justify-between mx-4 md:mx-32">
-  <div class="flex justify-between pt-6">
-    <div class="flex gap-4">
-      <a class="text-secondary font-sans text-sans-sm" href={`${baseURL}`}>EN</a> <!-- pr-2 border-r border-secondary -->
-      <!-- <a class="text-gray-500 font-sans text-sans-sm transition duration-300 hover:text-secondary" href={`${baseURL}fr`}>FR</a> -->
-      <!-- <a class="text-gray-500 font-sans text-sans-sm transition duration-300 hover:text-secondary" href={`${baseURL}mt`}>MT</a> -->
-      <a class="text-gray-500 font-sans text-sans-sm" href="#">FR</a>
-      <a class="text-gray-500 font-sans text-sans-sm" href="#">IT</a>
-    </div>
-    <div>
-      <a href="#contact" class="flex justify-center items-center">
-        <span class="relative flex h-3 w-3 items-center justify-center mr-2">
-          <span class="absolute h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
-          <span class="relative h-2 w-2 rounded-full bg-green-500"></span>
-        </span>
-        <div class="link">
-          <span class="relative h-[20px] overflow-hidden font-sans text-sans-sm select-none uppercase">
-            <div class="link-container">
-              <span class="link-title1 title">Available</span>
-              <span class="link-title2 title">Available</span>
-            </div>
+  <div class="relative mx-4 flex min-h-screen flex-col justify-between pb-[env(safe-area-inset-bottom)] md:mx-32">
+    <div class="flex justify-between pt-6">
+      <div class="flex gap-4">
+        <a class="font-sans text-sans-sm text-secondary" href={`${baseURL}`}>EN</a>
+        <!-- pr-2 border-r border-secondary -->
+        <!-- <a class="text-gray-500 font-sans text-sans-sm transition duration-300 hover:text-secondary" href={`${baseURL}fr`}>FR</a> -->
+        <!-- <a class="text-gray-500 font-sans text-sans-sm transition duration-300 hover:text-secondary" href={`${baseURL}mt`}>MT</a> -->
+        <a class="font-sans text-sans-sm text-gray-500" href="#">FR</a>
+        <a class="font-sans text-sans-sm text-gray-500" href="#">IT</a>
+      </div>
+      <div>
+        <a href="#contact" class="flex items-center justify-center">
+          <span class="relative mr-2 flex h-3 w-3 items-center justify-center">
+            <span class="absolute h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+            <span class="relative h-2 w-2 rounded-full bg-green-500"></span>
           </span>
+          <div class="link">
+            <span class="relative h-[20px] select-none overflow-hidden font-sans text-sans-sm uppercase">
+              <div class="link-container">
+                <span class="link-title1 title">Available</span>
+                <span class="link-title2 title">Available</span>
+              </div>
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div id="title-container" class="flex flex-grow flex-col items-center justify-center">
+      <span id="title" class="pb-9 font-serif text-serif-2xl font-semibold opacity-0">Michael Gauci</span>
+      <span id="subtitle" class="pl-2 font-sans text-sans-md font-normal opacity-0 md:pl-6 md:text-sans-lg">BSc (Hons) Chemistry, MSc Metamaterials</span>
+    </div>
+    <div class="flex justify-between">
+      <div id="icon-toggle" class="mt-1 transition hover:scale-110">
+        <Icon id="play" name="volume" class="size-5" />
+        <div id="mute" class="hidden size-5">
+          <Fragment set:html={PlayerIcon} />
         </div>
-      </a>
-    </div>
-  </div>
-  <div id="title-container" class="flex flex-col justify-center items-center flex-grow">
-    <span id="title" class="font-serif font-semibold text-serif-2xl pb-9 opacity-0">Michael Gauci</span>
-    <span id="subtitle" class="font-sans font-normal md:text-sans-lg text-sans-md md:pl-6 pl-2 opacity-0">BSc (Hons) Chemistry, MSc Metamaterials</span>
-  </div>
-  <div class="flex justify-between">
-    <div id="icon-toggle" class="mt-1 transition hover:scale-110">
-      <Icon id="play" name="volume" class="size-5" />
-       <div id="mute" class="size-5 hidden" >
-        <Fragment set:html={PlayerIcon}/>
-       </div>
-    </div>
-    <div id="arrow-container">
-      <div id="arrow" class="flex opacity-0">
-        <span class="pr-4 font-sans text-sans-sm uppercase">Scroll</span>
-        <div class="w-[1px] h-[60px] overflow-hidden">
-          <div class="w-full h-full bg-[0_-60px] bg-[length:100%_200%] bg-gradient-to-b from-secondary from-50% to-primary to-50% animate-scrolldown"></div>
+      </div>
+      <div id="arrow-container">
+        <div id="arrow" class="flex opacity-0">
+          <span class="pr-4 font-sans text-sans-sm uppercase">Scroll</span>
+          <div class="h-[60px] w-[1px] overflow-hidden">
+            <div class="animate-scrolldown h-full w-full bg-gradient-to-b from-secondary from-50% to-primary to-50% bg-[length:100%_200%] bg-[0_-60px]"></div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </section>

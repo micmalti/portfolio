@@ -48,10 +48,9 @@
 //   });
 // });
 
-
-window.addEventListener('load', function() {
-  const sections = document.querySelectorAll('.timeline');
-  const progressBar = document.querySelector('#progress-bar');
+window.addEventListener("load", function () {
+  const sections = document.querySelectorAll(".timeline");
+  const progressBar = document.querySelector("#progress-bar");
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -63,12 +62,11 @@ window.addEventListener('load', function() {
       pin: true,
       scrub: 3,
       // snap: 1 / (sections.length - 1),
-      end: () => "+=" + (document.querySelector('#sections-wrapper').offsetWidth * 5), // increase end value to reduce scroll sensitivity
-      onUpdate: self => {
+      end: () => "+=" + document.querySelector("#sections-wrapper").offsetWidth * 5, // increase end value to reduce scroll sensitivity
+      onUpdate: (self) => {
         const progress = self.progress;
         progressBar.style.width = `${progress * 100}%`;
-      }
-    }
+      },
+    },
   });
 });
-

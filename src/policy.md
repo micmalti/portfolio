@@ -1,13 +1,14 @@
 ---
-title: 'Privacy Policy'
-date: '29 Sep 2024'
+title: "Privacy Policy"
+date: "29 Sep 2024"
 ---
 
-This privacy policy describes the policies and procedures pertaining to the collection, use and disclosure of your information when using this website. 
+This privacy policy describes the policies and procedures pertaining to the collection, use and disclosure of your information when using this website.
 
 ## Collection of Your Personal Data
 
 The website collects the following data:
+
 - Personal identification information (Name, email address, phone number, etc.)
 - Information you provide in the subject and message fields
 
@@ -16,6 +17,7 @@ All of the data that is collected about you by this website is obtained directly
 ## Use of Your Personal Data
 
 Your personal data is processed solely for the following purposes:
+
 - Responding to inquiries submitted via the contact form.
 
 The legal basis for processing this personal data is your explicit consent when submitting the contact form.
@@ -27,6 +29,7 @@ Your personal data submitted through the contact form will be retained for as lo
 ## Your Data Protection Rights
 
 Under the GDPR, you are entitled to the following rights regarding your personal data:
+
 - **The right to access** -- You can request a copy of the personal data held about you.
 - **The right to rectification** -- You can request that any inaccurate or incomplete information is corrected.
 - **The right to erasure** -- You can request that your personal data is erased when it is no longer necessary for the purposes for which it was collected.
@@ -35,5 +38,3 @@ Under the GDPR, you are entitled to the following rights regarding your personal
 - **The right to object to processing** -- You have the right to object to the processing of your personal data in some circumstances, including where data is processed for direct marketing purposes.
 
 If you would like to exercise any of these rights, or have any inquiries or clarifications regarding this policy, kindly [submit a form](www.michaelgauci.com#contact).
-
-

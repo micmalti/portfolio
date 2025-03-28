@@ -1,5 +1,5 @@
-document.addEventListener('DOMContentLoaded', function() {
-  let contactSection = document.getElementById('contact');
+document.addEventListener("DOMContentLoaded", function () {
+  let contactSection = document.getElementById("contact");
   let contactButton = document.querySelector('a[href="#contact"]');
 
   function getSectionPosition() {
@@ -8,9 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
     return {
       top: rect.top + scrollTop,
       height: rect.height,
-      bottom: rect.top + scrollTop + rect.height
+      bottom: rect.top + scrollTop + rect.height,
     };
-  }  // get position of #contact section
+  } // get position of #contact section
 
   function toggleButtonVisibility() {
     let sectionPos = getSectionPosition();
@@ -19,18 +19,18 @@ document.addEventListener('DOMContentLoaded', function() {
     let scrollBottom = scrollTop + viewportHeight;
 
     if (window.innerWidth >= 768) {
-      let inView = (scrollBottom > sectionPos.top) && (scrollTop < sectionPos.bottom);
+      let inView = scrollBottom > sectionPos.top && scrollTop < sectionPos.bottom;
       if (inView) {
-        contactButton.classList.add('md:hidden');
+        contactButton.classList.add("md:hidden");
       } else {
-        contactButton.classList.remove('md:hidden');
+        contactButton.classList.remove("md:hidden");
       }
     } else {
-      contactButton.classList.add('md:hidden');
+      contactButton.classList.add("md:hidden");
     }
-  }  // update button visibility based on the scroll position
+  } // update button visibility based on the scroll position
 
   toggleButtonVisibility();
-  window.addEventListener('scroll', toggleButtonVisibility);  // listener to update button visibility
-  window.addEventListener('resize', toggleButtonVisibility);  // listener to recheck visibility if screen resized
+  window.addEventListener("scroll", toggleButtonVisibility); // listener to update button visibility
+  window.addEventListener("resize", toggleButtonVisibility); // listener to recheck visibility if screen resized
 });
