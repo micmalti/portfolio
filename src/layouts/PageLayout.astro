@@ -10,14 +10,17 @@ const { pageTitle } = Astro.props;
 <html class='lang="en"'>
   <head>
     <meta charset="utf-8" />
-    <!-- <meta name='description' content='Independent quant researcher, applying A computational chemist with a data-driven mindset and a strong background in quantitative finance.'> -->
+    <meta name="description" content="Computational chemist by training, doing personal quant research on topics related to portfolio construction." />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
     <script is:inline src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script is:inline src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"></script>
     <script is:inline src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <!-- <script is:inline src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script> -->
-    <!-- <script is:inline src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script> -->
+    <script is:inline src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.14/dist/lenis.css" />
     <script is:inline src="/scripts/helpers/horizontalLoop.js"></script>
     <script is:inline src="https://unpkg.com/@botpoison/browser" async></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0 " />
@@ -32,15 +35,21 @@ const { pageTitle } = Astro.props;
         <slot />
       </div>
     </div>
-    <!-- <script type="text/javascript" src="/scripts/SmoothScrolling.js"></script> -->
-    <!-- <script type="text/javascript" src="/scripts/SectionPinning.js"></script> -->
+    <div id="fade-overlay" class="pointer-events-none fixed inset-0 z-[9999] bg-primary opacity-0 transition-opacity duration-500"></div>
+    <script type="text/javascript" src="/scripts/SmoothScrolling.js"></script>
     <script type="text/javascript" src="/scripts/Blackout.js"></script>
     <script type="text/javascript" src="/scripts/VolumeToggle.js"></script>
     <script type="text/javascript" src="/scripts/Tagline.js"></script>
     <script type="text/javascript" src="/scripts/Timeline.js"></script>
     <script type="text/javascript" src="/scripts/SectionAnimations.js"></script>
+    <script type="text/javascript" src="/scripts/TextAnimations.js"></script>
     <!-- <script type="text/javascript" src="/scripts/ContactButton.js"></script> -->
     <script type="text/javascript" src="/scripts/FormHandler.js"></script>
+    <script type="text/javascript" src="/scripts/WordCounter.js"></script>
+    <script type="text/javascript" src="/scripts/FadeToSection.js"></script>
+    <script type="text/javascript" src="/scripts/TitleShrink.js"></script>
+    <script type="text/javascript" src="/scripts/BackgroundChange.js"></script>
+    <script type="text/javascript" src="/scripts/BlogDescription.js"></script>
     <!-- <ViewTransitions/> -->
   </body>
 </html>
