@@ -1,48 +1,83 @@
 ---
-import { Icon } from "astro-icon/components";
-import PlayerIcon from "../../icons/player.svg?raw";
 const baseURL = Astro.site;
+import { Image } from "astro:assets";
 ---
 
-<section id="home">
-  <div class="relative mx-4 flex min-h-screen flex-col justify-between pb-[env(safe-area-inset-bottom)] md:mx-32">
-    <div class="flex justify-between pt-6">
-      <div class="flex gap-4">
-        <a class="font-sans text-sans-sm text-secondary" href={`${baseURL}`}>EN</a>
-        <!-- pr-2 border-r border-secondary -->
-        <!-- <a class="text-gray-500 font-sans text-sans-sm transition duration-300 hover:text-secondary" href={`${baseURL}fr`}>FR</a> -->
-        <!-- <a class="text-gray-500 font-sans text-sans-sm transition duration-300 hover:text-secondary" href={`${baseURL}mt`}>MT</a> -->
-        <a class="font-sans text-sans-sm text-gray-500" href="#">FR</a>
-        <a class="font-sans text-sans-sm text-gray-500" href="#">IT</a>
-      </div>
-      <div>
-        <a href="#contact" class="flex items-center justify-center">
-          <span class="relative mr-2 flex h-3 w-3 items-center justify-center">
-            <span class="absolute h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
-            <span class="relative h-2 w-2 rounded-full bg-green-500"></span>
-          </span>
+<section id="home" data-color="rgb(17 17 17)">
+  <div class="relative mx-4 flex min-h-dvh flex-col justify-between md:mx-32">
+    <div class="flex pt-4 md:justify-between">
+      <div class="flex w-full justify-around md:justify-start md:gap-8">
+        <a href="#notes" class="fade-to-black-trigger">
           <div class="link">
             <span class="relative h-[20px] select-none overflow-hidden font-sans text-sans-sm uppercase">
               <div class="link-container">
-                <span class="link-title1 title">Available</span>
-                <span class="link-title2 title">Available</span>
+                <span class="link-title1 title">Notes</span>
+                <span class="link-title2 title">Notes</span>
+              </div>
+            </span>
+          </div>
+        </a>
+        <a href="#projects" class="fade-to-black-trigger">
+          <div class="link">
+            <span class="relative h-[20px] select-none overflow-hidden font-sans text-sans-sm uppercase">
+              <div class="link-container">
+                <span class="link-title1 title">Projects</span>
+                <span class="link-title2 title">Projects</span>
               </div>
             </span>
           </div>
         </a>
       </div>
-    </div>
-    <div id="title-container" class="flex flex-grow flex-col items-center justify-center">
-      <span id="title" class="pb-9 font-serif text-serif-2xl font-semibold opacity-0">Michael Gauci</span>
-      <span id="subtitle" class="pl-2 font-sans text-sans-md font-normal opacity-0 md:pl-6 md:text-sans-lg">BSc (Hons) Chemistry, MSc Metamaterials</span>
-    </div>
-    <div class="flex justify-between">
-      <div id="icon-toggle" class="mt-1 transition hover:scale-110">
-        <Icon id="play" name="volume" class="size-5" />
-        <div id="mute" class="hidden size-5">
-          <Fragment set:html={PlayerIcon} />
+      <div class="flex w-full justify-around md:justify-end md:gap-8">
+        <a href="#about" onclick="lenis.scrollTo('#about')">
+          <div class="link">
+            <span class="relative h-[20px] select-none overflow-hidden font-sans text-sans-sm uppercase">
+              <div class="link-container">
+                <span class="link-title1 title">About</span>
+                <span class="link-title2 title">About</span>
+              </div>
+            </span>
+          </div>
+        </a>
+        <div>
+          <a href="#contact" class="fade-to-black-trigger flex items-center">
+            <span class="relative mr-2 flex h-3 w-3 items-center justify-center">
+              <span class="absolute h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+              <span class="relative h-2 w-2 rounded-full bg-green-500"></span>
+            </span>
+            <div class="link">
+              <span class="relative h-[20px] select-none overflow-hidden font-sans text-sans-sm uppercase">
+                <div class="link-container">
+                  <span class="link-title1 title">Contact</span>
+                  <span class="link-title2 title">Contact</span>
+                </div>
+              </span>
+            </div>
+          </a>
         </div>
       </div>
+    </div>
+    <!-- <div id="title-container" class="relative flex flex-grow flex-col items-center justify-center">
+      <Image src={import("/src/images/edited-colour-profile.png")} class="absolute pb-40 z-0 md:scale-[60%] scale-75 animate-[fadeIn_2s_ease-in-out_forwards] brightness-[0.7] saturate-[0.5]" alt="Profile" />
+      <div class="overflow-hidden">
+        <a href="#home" id="title" class="relative z-10 font-serif text-serif-2xl font-semibold origin-center opacity-0 pointer-events-none mix-blend-difference fade-to-black-trigger pb-24">
+          <span class="block animate-textReveal">Michael Gauci</span>
+        </a>
+      </div>
+    </div> -->
+    <div id="title-container" class="relative flex flex-grow flex-col items-center justify-center">
+      <Image src={import("/src/images/edited-colour-profile.png")} class="absolute z-0 scale-75 animate-[fadeIn_2s_ease-in-out_forwards] pb-40 brightness-[0.7] saturate-[0.5] md:scale-[60%]" alt="Profile" />
+      <a href="#home" id="title" class="fade-to-black-trigger pointer-events-none relative z-10 origin-center pb-24 font-serif text-serif-2xl font-semibold opacity-0 mix-blend-difference">
+        <span>Michael Gauci</span>
+      </a>
+    </div>
+    <!-- <div id="title-container" class="flex flex-grow flex-col items-center justify-center"> -->
+    <!-- <a href="#home" id="title" class="font-serif text-serif-2xl font-semibold origin-center opacity-0 pointer-events-none mix-blend-difference fade-to-black-trigger pb-24"> -->
+    <!-- <span>Michael Gauci</span> -->
+    <!-- </a> -->
+    <!-- <span id="subtitle" class="pl-2 font-sans text-sans-md font-normal opacity-0 md:pl-6 md:text-sans-lg">BSc (Hons) Chemistry, MSc Metamaterials</span> -->
+    <!-- </div> -->
+    <div class="absolute bottom-0 right-0 items-center md:flex">
       <div id="arrow-container">
         <div id="arrow" class="flex opacity-0">
           <span class="pr-4 font-sans text-sans-sm uppercase">Scroll</span>

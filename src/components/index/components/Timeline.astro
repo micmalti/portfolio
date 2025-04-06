@@ -1,8 +1,10 @@
 ---
+import { Icon } from "astro-icon/components";
+
 const sections = [
   {
     year: "2018",
-    title: "Developing core competencies in computational modelling",
+    title: "Developing core competencies in molecular modeling",
     content: "For his final year dissertation on the topic of patterned defects in graphene, Michael applied molecular dynamics (MD) simulation, a technique similar to Monte Carlo sampling but with the added benefit of adhering to the physical constraits of the chemical system. Due to the high computational demand required for this study, Michael was granted access to the university's high-performance computing facility, where he gained proficiency in the Linux command line.",
     background: "/images/abstract-expressionism-kandinsky.webp",
   },
@@ -14,13 +16,15 @@ const sections = [
   },
   {
     year: "2020",
-    title: "Navigating the lockdowns and machine learning",
+    title: "Navigating lockdowns and machine learning",
+    // breakBefore: "machine learning",
     content: "Following his participation in a training program on the application of machine learning to gravitational wave research, Michael effectively used the time afforded by the Covid-19 lockdowns to further expand his knowledge in the domain of unsupervised learning. During this period, he developed a Python-based toolkit which combined the use of natural language processing and clustering techniques to aid in academic literature analysis.",
     background: "/images/abstract-expressionism-rothko.webp",
   },
   {
     year: "2021",
     title: "A Master's perspective into big data analytics",
+    // breakBefore: "perspective into big data analytics",
     content: "Michael resumed his academic studies by pursuing a Master's program in which he examined novel forms of folded graphene from a theoretical perspective. The accompanying MD simulations yielded large volumes of data, compelling the use of Python to streamline the analysis process and advanced statistical techniques for their interpretation, while high-quality visuals were vital to clearly communicate the results of the study.",
     background: "/images/avant-garde-malevich.webp",
   },
@@ -45,49 +49,54 @@ const sections = [
 ];
 ---
 
-<!-- <div>
-    {
-      sections.map((section: { year: string; title: string; content: string; background: string }, index: number) => (
-        <section class="timeline bg-cover bg-center min-h-screen" style={{ backgroundImage: `url(${section.background})`}} data-background={`url(${section.background})`}>
-          <div class="bg-gradient-to-l from-transparent to-primary">
-              <div class="flex flex-col min-h-screen mx-4">
-                <span class="font-sans font-bold text-sans-lg w-full pt-16 md:pt-32">{section.year}</span>
-                <span class="text-serif-md font-serif w-full md:w-1/2 pt-2 md:pt-4 pb-8 md:pb-16">{section.title}</span>
-                <span class="text-sans-md font-sans w-full md:w-1/3">{section.content}</span>
-              </div>
+<div id="timeline-container" class="relative flex min-h-dvh flex-col md:mx-32">
+  {
+    sections.map((section, index) => (
+      <section id={`timeline-${index}`} class="timeline absolute left-0 top-0 min-h-dvh min-w-full bg-cover bg-center opacity-0" style={{ backgroundImage: `url(${section.background})` }}>
+        <div class="bg-gradient-to-r from-black/100 via-black/70 to-black/0" style="--tw-gradient-via-position: 25%">
+          <div class="timeline-content mx-4 flex min-h-dvh flex-col md:mx-0">
+            <div class="h-full w-3 bg-white" />
+            <span class="w-full pt-16 font-sans text-sans-lg font-bold md:pt-48">{section.year}</span>
+            <span class="w-full pb-8 pt-2 font-serif text-serif-md md:max-w-readable md:pb-16 md:pt-4">{section.title}</span>
+            {/* <span 
+              class="w-full md:max-w-readable pb-8 pt-2 font-serif text-serif-md md:pb-16 md:pt-4"
+              set:html={
+                section.breakBefore 
+                  ? section.title.replace(
+                      section.breakBefore, 
+                      `<br class='hidden md:inline' />${section.breakBefore}`
+                    )
+                  : section.title
+              }
+            /> */}
+            <span class="w-full font-sans text-sans-md md:w-1/3 md:text-sans-timeline">{section.content}</span>
           </div>
-        </section>
-      ))
-    }
-</div> -->
-<div id="timeline-container" class="relative w-full overflow-hidden">
-  <div id="progress-bar-wrapper" class="fixed left-0 top-0 z-[100] h-1 w-full border-none bg-primary">
-    <div id="progress-bar" class="h-full w-0 bg-secondary"></div>
-  </div>
-  <div id="sections-wrapper" class="flex w-full">
-    {
-      sections.map((section: { year: string; title: string; content: string; background: string }, index: number) => (
-        <section id={`timeline-${index}`} class="timeline min-h-screen min-w-full bg-cover bg-center" style={{ backgroundImage: `url(${section.background})` }}>
-          <div class="bg-gradient-to-l from-transparent to-primary">
-            <div class="mx-4 flex min-h-screen flex-col md:mx-32">
-              <span class="w-full pt-16 font-sans text-sans-lg font-bold md:pt-32">{section.year}</span>
-              <span class="w-full pb-8 pt-2 font-serif text-serif-md md:w-1/2 md:pb-16 md:pt-4">{section.title}</span>
-              <span class="w-full font-sans text-sans-md md:w-2/5">{section.content}</span>
-            </div>
-          </div>
-        </section>
-      ))
-    }
-  </div>
-  <!-- <div id="scrollbar-container" class="absolute bottom-8 left-8 w-full pointer-events-auto">
-    <div class="box-border z-[99] absolute bottom-[2em] left-20 w-[85%] pointer-events-auto">
-      <div class="cursor-auto pointer-events-auto box-border flex flex-row justify-between items-start relative">
-        <div class="principle__nav box-border gap-[0.5em] flex-col flex-1 items-start flex relative">
-          {sections.map((section, index: number) => (
-            <a href={`#timeline-${index}`} data-mouse-class="click" class="principle__nav-dot max-w-full inline-block bg-gray-500 w-[2px] h-6 transition-[height, opacity] duration-500 ease-[cubic-bezier(.165,.84,.44,1)] pointer-events-auto box-border cursor-pointer"></a>
-          ))}
+        </div>
+      </section>
+    ))
+  }
+  <div class="z-50 mx-4 mr-6 mt-auto flex items-end justify-between pb-12 md:ml-0">
+    <div id="music-control" class="group flex items-center gap-2">
+      <div id="icon-toggle" class="flex cursor-pointer items-center">
+        <Icon id="play" name="play" class="size-4" />
+        <div id="pause" class="hidden size-4">
+          <Icon name="pause" class="size-4" />
         </div>
       </div>
+      <span id="music-text" class="translate-x-0 pr-4 text-end font-sans text-sans-sm uppercase opacity-0 transition-all duration-200 group-hover:translate-x-2 group-hover:opacity-100">Play music</span>
     </div>
-  </div> -->
+    <div id="navigation-dots" class="flex-col gap-4 md:flex">
+      <ul class="m-0 list-none p-0">
+        {
+          sections.map((_, index) => (
+            <li class="relative mt-4">
+              <a onclick={`handleDotClick(${index})`} href={`#section${index + 1}`} class="block h-3 w-3 rounded-full border border-transparent bg-secondary transition-all duration-300" aria-label={`Go to section ${index + 1}`} data-index={index}>
+                <span class="sr-only">Section {index + 1}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
 </div>
