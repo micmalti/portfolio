@@ -56,6 +56,12 @@ export default {
             lineHeight: "80%",
           },
         ], // landing-title
+        "serif-title": [
+          "var(--step-11)",
+          {
+            lineHeight: "80%",
+          },
+        ], // landing-title
         "serif-xl": [
           "var(--step-6)",
           {
