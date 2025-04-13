@@ -90,7 +90,7 @@ p {
 }
 
 .icon-link {
-  @apply size-4 text-primary transition-all duration-300 hover:-translate-y-1 md:size-[var(--step-1)];
+  @apply size-4 transition-all duration-300 ease-in-out hover:text-gray-400 md:size-[var(--step-1)];
 }
 
 /* .highlight {

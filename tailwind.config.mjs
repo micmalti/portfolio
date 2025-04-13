@@ -90,11 +90,12 @@ export default {
         ], // h2
         "serif-xs": ["var(--step-2)"], // h3
         "sans-lg": [
-          "var(--step-1)",
+          "var(--step-2)",
           {
             lineHeight: "100%",
+            fontWeight: "700",
           },
-        ], // landing-subtitle, availability-tag
+        ], // modal title
         "sans-timeline": [
           "var(--step-2)",
           {
@@ -123,7 +124,13 @@ export default {
           },
         ],
         "sans-md": ["var(--step-0)"], // section-body, article-body, form,
-        "sans-sm": ["var(--step--1)"], // footer, navigation, section-tag, timeline-year, article-date, button
+        "sans-sm": [
+          "var(--step--1)",
+          {
+            fontWeight: "600",
+          },
+        ], // footer, navigation, section-tag, timeline-year, article-date, button
+        "sans-copyright": ["var(--step--1)"],
         "sans-xs": ["var(--step--2)"], // contact button
       }, // 320px, 14px, 1.125  2560px, 16px, 1.2
       spacing: {},

@@ -1,34 +1,46 @@
 ---
 import { Icon } from "astro-icon/components";
+import Modal from "./index/components/Modal.astro";
+const { footerTheme = "light", ...rest } = Astro.props;
+const textColour = footerTheme === "dark" ? "text-primary" : "text-secondary";
 ---
 
 <div>
   <!-- <hr class="mb-8 h-px w-full border-0 bg-gradient-to-r from-transparent via-zinc-400/50 to-transparent" /> -->
-  <div class="mb-12 flex flex-col md:flex-row md:items-start md:justify-between">
+  <div class={`mb-2 md:mb-12 flex flex-col gap-2 md:flex-row md:items-start md:justify-between ${textColour}`} {...rest}>
     <div class="md:flex-grow md:basis-0">
       <div class="flex gap-4">
-        <a class="text-sans-sm text-primary" href="/policy">
-          <span class="relative after:absolute after:bottom-[-5px] after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-primary after:transition-all hover:after:scale-x-100">Privacy policy</span>
+        <button class="text-sans-sm" onclick="openModal()">
+          <span class="transition-all duration-300 ease-in-out hover:text-gray-400">Bitcoin wallet</span>
+        </button>
+        <Modal modalTheme=`${footerTheme}` />
+        <a class="flex items-center gap-1 text-sans-sm transition-all duration-300 ease-in-out hover:text-gray-400" href="/Michael_Gauci_CV.pdf" target="_blank" rel="noopener noreferrer">
+          <span>Curriculum vitæ</span>
+          <Icon name="external-link" />
         </a>
-        <a class="text-sans-sm text-primary" href="/Michael_Gauci_CV.pdf" target="_blank" rel="noopener noreferrer">
-          <span class="relative after:absolute after:bottom-[-5px] after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-primary after:transition-all hover:after:scale-x-100">Curriculum vitæ</span>
+        <a class="text-sans-sm" href="/policy">
+          <span class="transition-all duration-300 ease-in-out hover:text-gray-400">Privacy policy</span>
         </a>
       </div>
     </div>
-    <span class="pt-2 text-sans-sm text-primary opacity-60 md:pt-0 md:text-center">© 2024 Michael Gauci. All rights reserved.</span>
-    <div class="md:flex-grow md:basis-0">
-      <div class="flex justify-end gap-4">
+    <!-- <div class="pt-2 flex flex-col md:inline text-sans-copyright opacity-60 md:pt-0 md:text-center">
+      <span>© 2025 Michael Gauci.</span>
+      <span>All rights reserved.</span>
+    </div> -->
+    <span class="order-3 text-sans-copyright opacity-60 md:order-2 md:text-center">© 2025 Michael Gauci. All rights reserved.</span>
+    <div class="order-2 md:order-3 md:flex-grow md:basis-0">
+      <div class="flex justify-start gap-4 md:justify-end">
         <a href="https://github.com/micmalti/" target="_blank" rel="noopener noreferrer">
-          <Icon name="github" class="icon-link text-primary" />
+          <Icon name="github" class="icon-link" />
         </a>
         <a href="https://www.linkedin.com/in/michaelgaucimt/" target="_blank" rel="noopener noreferrer">
-          <Icon name="linkedin" class="icon-link text-primary" />
+          <Icon name="linkedin" class="icon-link" />
         </a>
         <a href="https://stackoverflow.com/users/10353368/micmalti" target="_blank" rel="noopener noreferrer">
-          <Icon name="stack-overflow" class="icon-link text-primary" />
+          <Icon name="stack-overflow" class="icon-link" />
         </a>
         <a href="https://twitter.com/MichaelGauciMT" target="_blank" rel="noopener noreferrer">
-          <Icon name="x" class="icon-link text-primary" />
+          <Icon name="x" class="icon-link" />
         </a>
       </div>
     </div>

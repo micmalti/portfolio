@@ -1,0 +1,39 @@
+---
+import { Image } from "astro:assets";
+const { modalTheme, ...rest } = Astro.props;
+const textColour = modalTheme === "dark" ? "text-secondary" : "text-primary";
+const bgColour = modalTheme === "dark" ? "bg-primary" : "bg-secondary";
+const btnColour = modalTheme === "dark" ? "hover:bg-gray-800" : "hover:bg-gray-200";
+const borderColour = modalTheme === "dark" ? "border-gray-800" : "border-gray-200";
+---
+
+<div id="qrModal" class="fixed inset-0 z-50 hidden">
+  <div class={`absolute inset-0 bg-opacity-50 backdrop-blur-sm ${bgColour}`} {...rest}></div>
+  <div class="mx-8 flex min-h-dvh items-center justify-center">
+    <div class={`rounded-sm p-6 w-full md:max-w-sm relative ${bgColour}`} {...rest}>
+      <div class="flex items-center justify-between">
+        <span class={`font-sans text-sans-lg ${textColour}`} {...rest}>BTC Receiving Address</span>
+        <button onclick="closeModal()" class={`p-1 rounded-full ${btnColour}`} {...rest}>
+          <svg xmlns="http://www.w3.org/2000/svg" class="pointer-events-none h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <hr class={`h-px w-full border my-4 ${borderColour}`} {...rest} />
+      <div class="my-8 flex justify-center">
+        <Image src={import("/src/images/btc-wallet.png")} class="h-48 w-48" alt="Bitcoin wallet address" />
+      </div>
+      <div class="flex items-center justify-between gap-4">
+        <span id="addressText" class={`p-2 text-sans-md truncate border border-solid ${borderColour} ${textColour}`} {...rest}>bc1qeshdlh0gdssm5ulpmjefqmpp7jnqgwrtfa90xl</span>
+        <button id="copyButton" onclick="copyToClipboard()" class=`p-2 ${btnColour}` {...rest} title="Copy to clipboard">
+          <svg id="defaultIcon" xmlns="http://www.w3.org/2000/svg" class="pointer-events-none h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
+          </svg>
+          <svg id="successIcon" xmlns="http://www.w3.org/2000/svg" class="hidden h-5 w-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
