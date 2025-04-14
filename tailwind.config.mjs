@@ -21,6 +21,7 @@ export default {
       },
       maxWidth: {
         readable: "17ch",
+        paragraph: "52ch",
       },
       fontFamily: {
         serif: ['"Source Serif 4 Variable"', ...defaultTheme.fontFamily.serif],
