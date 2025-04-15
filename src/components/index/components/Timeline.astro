@@ -17,14 +17,13 @@ const sections = [
   {
     year: "2020",
     title: "Navigating lockdowns and machine learning",
-    // breakBefore: "machine learning",
     content: "Following his participation in a training program on the application of machine learning to gravitational wave research, Michael effectively used the time afforded by the Covid-19 lockdowns to further expand his knowledge in the domain of unsupervised learning. During this period, he developed a Python-based toolkit which combined the use of natural language processing and clustering techniques to aid in academic literature analysis.",
     background: "/images/abstract-expressionism-rothko.webp",
   },
   {
     year: "2021",
     title: "A Master's perspective into big data analytics",
-    // breakBefore: "perspective into big data analytics",
+    breakBefore: "big data analytics",
     content: "Michael resumed his academic studies by pursuing a Master's program in which he examined novel forms of folded graphene from a theoretical perspective. The accompanying MD simulations yielded large volumes of data, compelling the use of Python to streamline the analysis process and advanced statistical techniques for their interpretation, while high-quality visuals were vital to clearly communicate the results of the study.",
     background: "/images/avant-garde-malevich.webp",
   },
@@ -37,6 +36,7 @@ const sections = [
   {
     year: "2023",
     title: "The self-study that inspired a book",
+    breakBefore: "a book",
     content: "What initially began as supporting research for the technical aspect of his portfolio management system has since grown into a book about quantitative finance slated for publication in 2025. By planning to release the book under a public domain licence, he seeks to position it as a living document, receiving regular contributions from the wider quant community on the latest developments in the field.",
     background: "/images/de-stijl-mondrian.webp",
   },
@@ -57,9 +57,9 @@ const sections = [
           <div class="timeline-content flex-start mx-4 flex min-h-dvh flex-col gap-4 md:mx-0 md:justify-center">
             <div class="h-full w-3" />
             <span class="w-full font-sans text-sans-lg font-bold">{section.year}</span>
-            <span class="w-full font-serif text-serif-md">{section.title}</span>
-            {/* <span 
-              class="w-full md:max-w-readable pb-8 pt-2 font-serif text-serif-md md:pb-16 md:pt-4"
+            {/* <span class="w-full font-serif text-serif-md max-w-title">{section.title}</span> */}
+            <span 
+              class="w-full font-serif text-serif-md max-w-title"
               set:html={
                 section.breakBefore 
                   ? section.title.replace(
@@ -68,7 +68,7 @@ const sections = [
                     )
                   : section.title
               }
-            /> */}
+            />
             <span class="max-w-paragraph font-sans text-sans-md md:text-sans-timeline">{section.content}</span>
           </div>
         </div>
@@ -87,15 +87,18 @@ const sections = [
     </div>
     <div id="navigation-dots" class="flex-col gap-4 md:flex">
       <ul class="m-0 list-none p-0">
-        {
-          sections.map((_, index) => (
-            <li class="relative mt-4">
-              <a onclick={`handleDotClick(${index})`} href={`#section${index + 1}`} class="block h-3 w-3 rounded-full border border-transparent bg-secondary transition-all duration-300" aria-label={`Go to section ${index + 1}`} data-index={index}>
-                <span class="sr-only">Section {index + 1}</span>
-              </a>
-            </li>
-          ))
-        }
+        {sections.map((_, index) => (
+          <li class="relative mt-4">
+            <a 
+              href={`#section${index + 1}`} 
+              class="block h-3 w-3 rounded-full border border-transparent bg-secondary transition-all duration-300" 
+              aria-label={`Go to section ${index + 1}`}
+              data-index={index}
+            >
+              <span class="sr-only">Section {index + 1}</span>
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
   </div>
