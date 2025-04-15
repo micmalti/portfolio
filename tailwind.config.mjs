@@ -21,6 +21,7 @@ export default {
       },
       maxWidth: {
         readable: "17ch",
+        title: "26ch",
         paragraph: "52ch",
       },
       fontFamily: {
