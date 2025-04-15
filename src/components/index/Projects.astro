@@ -1,5 +1,18 @@
 ---
-
+const projects = [
+  {
+    category: ["Sentiment analysis"],
+    title: "Facebook crawler",
+    stack: ["Selenium", "Python", "Jupyter"],
+    description: "Scrape Facebook page interactions",
+  },
+  {
+    category: "Productivity",
+    title: "Joplin AppImage icon changer",
+    stack: ["Bash", "Linux"],
+    description: "Replace the default Joplin application icon with a custom one",
+  },
+];
 ---
 
 <section id="projects" data-color="rgb(17 17 17)">
@@ -7,5 +20,13 @@
     <div class="mx-4 pb-8 pt-32 font-sans text-sans-projects text-primary text-outline-white md:mx-32 md:pb-16">
       <span class="fade-element block uppercase tracking-tight">Proj<br />ects</span>
     </div>
+    {
+      projects.map((project, _) => (
+        <li>
+          <span class="">{project.category}</span>
+          <span class="">{project.title}</span>
+        </li>
+      ))
+    }
   </div>
 </section>
