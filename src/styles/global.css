@@ -19,13 +19,16 @@
     --step-6: clamp(2.8414rem, 2.3628rem + 2.3931vw, 6.1917rem);
     --step-11: clamp(3.192rem, 2.594rem + 2.9737vw, 7.413rem);
     --step-7: clamp(3.591rem, 2.853rem + 3.5562vw, 8.89rem);
-    /* --step-7: clamp(4.012rem, 3.136rem + 4.2154vw, 10.668rem); */
+    --header: clamp(0.798rem, 0.6485rem + 0.7434vw, 1.853rem);
   }
 }
 
 @layer components {
   .hyperlink {
-    @apply cursor-pointer bg-[linear-gradient(transparent_0%,_transparent_calc(55%_-_9px),_rgba(255,_210,_63,_1)_calc(55%_-_9px),_rgba(255,_210,_63,_1)_100%)] bg-[length:100%_200%] text-secondary no-underline transition-[background-position,padding] duration-300 ease-in-out hover:bg-[linear-gradient(transparent_0%,_transparent_calc(55%_-_9px),_rgb(255,_210,_63)_calc(55%_-_9px),_rgb(255,_210,_63)_100%)] hover:bg-[position:0_100%];
+    @apply bg-[linear-gradient(transparent_0%,_transparent_calc(55%_-_9px),_rgba(255,_210,_63,_1)_calc(55%_-_9px),_rgba(255,_210,_63,_1)_100%)] bg-[length:100%_200%] text-secondary no-underline transition-[background-position,padding] duration-300 ease-in-out hover:bg-[linear-gradient(transparent_0%,_transparent_calc(55%_-_9px),_rgb(255,_210,_63)_calc(55%_-_9px),_rgb(255,_210,_63)_100%)] hover:bg-[position:0_100%];
+  }
+  .hyperlink-dark {
+    @apply bg-[linear-gradient(transparent_0%,_transparent_calc(55%_-_9px),_rgba(255,_210,_63,_1)_calc(55%_-_9px),_rgba(255,_210,_63,_1)_100%)] bg-[length:100%_200%] text-primary font-normal no-underline transition-[background-position,padding] duration-300 ease-in-out hover:bg-[linear-gradient(transparent_0%,_transparent_calc(55%_-_9px),_rgb(255,_210,_63)_calc(55%_-_9px),_rgb(255,_210,_63)_100%)] hover:bg-[position:0_100%];
   }
 }
 
@@ -42,6 +45,16 @@
     /* font-kerning: auto; */
     letter-spacing: -0.02em; /* defines how letters are spaced */
     text-rendering: optimizelegibility;
+  }
+  
+  .dark-cursor {
+    --cursor-default: url(/src/icons/cursor-dark.svg) 16 16;
+    --cursor-pointer: url(/src/icons/cursor-light.svg) 16 16;
+  }
+
+  .light-cursor {
+    --cursor-default: url(/src/icons/cursor-light.svg) 16 16;
+    --cursor-pointer: url(/src/icons/cursor-dark.svg) 16 16;
   }
 }
 
@@ -91,6 +104,10 @@ p {
 
 .icon-link {
   @apply size-4 transition-all duration-300 ease-in-out hover:text-gray-400 md:size-[var(--step-1)];
+}
+
+.toc-current {
+  @apply font-semibold;
 }
 
 /* .highlight {
