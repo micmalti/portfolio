@@ -5,12 +5,13 @@ const textColour = modalTheme === "dark" ? "text-secondary" : "text-primary";
 const bgColour = modalTheme === "dark" ? "bg-primary" : "bg-secondary";
 const btnColour = modalTheme === "dark" ? "hover:bg-gray-800" : "hover:bg-gray-200";
 const borderColour = modalTheme === "dark" ? "border-gray-800" : "border-gray-200";
+const cursorTheme = modalTheme === "dark" ? "cursor-default" : "dark-cursor";
 ---
 
 <div id="qrModal" class="fixed inset-0 z-50 hidden">
   <div class={`absolute inset-0 bg-opacity-50 backdrop-blur-sm ${bgColour}`} {...rest}></div>
   <div class="mx-8 flex min-h-dvh items-center justify-center">
-    <div class={`rounded-sm p-6 w-full md:max-w-sm relative ${bgColour}`} {...rest}>
+    <div class={`rounded-sm p-6 w-full md:max-w-sm relative ${bgColour} ${cursorTheme}`} {...rest}>
       <div class="flex items-center justify-between">
         <span class={`font-sans text-sans-lg ${textColour}`} {...rest}>BTC Receiving Address</span>
         <button onclick="closeModal()" class={`p-1 rounded-full ${btnColour}`} {...rest}>
