@@ -1,5 +1,7 @@
-<!-- ---
-import BlogPost from '../../components/BlogPost.astro';
+---
+import Header from '../../components/Header.astro';
+import Pagination from '../../components/Pagination.astro';
+import Footer from '../../components/Footer.astro';
 
 export async function getStaticPaths() {
   const allPosts = Object.values(import.meta.glob('../posts/*.md', { eager: true }));
@@ -51,9 +53,9 @@ const { posts } = Astro.props;
           </div>
           <div id="content" class="text-left items-center mx-4 md:mx-0 md:flex-row md:items-start mt-4 md:mt-12">
               <div class="flex justify-center gap-8">
-                <div id="blog-cards" class="flex-1 pb-24">
-                  <Pagination {posts=posts}/>
-                </div>
+                <!-- <div id="blog-cards" class="flex-1 pb-24">
+                  <Pagination posts={posts}></Pagination>
+                </div> -->
             </div>
           </div>
         </div>
@@ -66,4 +68,4 @@ const { posts } = Astro.props;
     <script type="text/javascript" src="/scripts/Modal.js"></script>
     <script type="text/javascript" src="/scripts/ScrollbackHeader.js"></script>
   </body>
-</html> -->
+</html>
