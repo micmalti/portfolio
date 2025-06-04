@@ -3,5 +3,5 @@
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
   "css.lint.unknownAtRules": "ignore",
-  "editor.wordWrap": "off"
+  "editor.wordWrap": "on"
 }

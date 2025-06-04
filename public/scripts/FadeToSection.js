@@ -21,6 +21,6 @@ document.querySelectorAll(".fade-to-black-trigger").forEach((link) => {
       // Fade out the overlay
       overlay.style.opacity = "0";
       overlay.style.pointerEvents = "none";
-    }, 500); // Match this with the CSS transition duration (0.5s)
+    }, 300); // Match this with the CSS transition duration (0.5s)
   });
 });

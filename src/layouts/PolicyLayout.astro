@@ -5,10 +5,14 @@ import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import ContextMenu from "../components/ContextMenu.astro";
-import type { CollectionEntry } from "astro:content";
+import type { PolicyFrontmatter } from "../types";
 
-const { post, headings } = Astro.props;
-const frontmatter = post.data;
+interface Props {
+  headings: import("astro").MarkdownHeading[];
+  frontmatter: PolicyFrontmatter
+}
+
+const { headings, frontmatter } = Astro.props as Props;
 ---
 
 <html class='lang="en"'>
@@ -36,10 +40,7 @@ const frontmatter = post.data;
             <Header />
             <div id="collapse-header" class="md:pl-12 pl-4 pt-8 pb-6 md:pt-4 md:pb-12">
               <span class="block font-serif text-serif-md">{frontmatter.title}</span>
-              <div class="flex pt-4 font-sans text-sans-sm font-light">
-                <span>Published {frontmatter.creation_date}</span>
-                <span>Updated {frontmatter.last_updated}</span>
-              </div>
+              <span class="block pt-4 font-sans text-sans-sm font-light">Updated {frontmatter.date}</span>
             </div>
           </div>
           <div id="content" class="text-left items-center mx-4 md:mx-0 md:flex-row md:items-start mt-4 md:mt-12">

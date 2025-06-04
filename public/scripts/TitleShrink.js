@@ -1,70 +1,31 @@
-// window.addEventListener("load", function () {
-//   gsap.registerPlugin(ScrollTrigger);
-//   gsap.create({
-//     animation: gsap.from("#title", {
-//       y: "50vh",
-//       scale: 4,
-//       yPercent: -50
-//     }),
-//     scrub: true,
-//     trigger: "#about",
-//     start: "top bottom",
-//     endTrigger: '#about',
-//     end: 'top center',
-//     markers: false,
-//     pin: true,
-//     pinSpacing: false
-//   });
-// });
-
-// window.addEventListener("load", function() {
-//   gsap.registerPlugin(ScrollTrigger);
-
-//   gsap.to("#title", {
-//     scrollTrigger: {
-//       trigger: "#about",
-//       start: "top bottom",
-//       end: "top center",
-//       scrub: true,
-//       markers: false
-//     },
-//     scale: 0.25,
-//     yPercent: -100,
-//     ease: "power4.out",
-//     onUpdate: function() {
-//       document.querySelector("#title").classList.add("pointer-events-none");
-//       document.querySelector("#title").classList.add("z-50");
-//       document.querySelector("#title").classList.add("pt-4");
-//     },
-//     onReverseComplete: function() {
-//       document.querySelector("#title").classList.remove("pointer-events-none");
-//       document.querySelector("#title").classList.remove("z-50");
-//       document.querySelector("#title").classList.remove("pt-4");
-//     }
-//   });
-// });
-
 window.addEventListener("load", function () {
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.to("#title", {
+  const title = document.getElementById("title");
+  const originalHeight = title.offsetHeight;
+  const scaledHeight = originalHeight * 0.20;
+  const offsetY = title.getBoundingClientRect().height * 0.375;
+
+  gsap.to(title, {
     scrollTrigger: {
       trigger: "#about",
       start: "top bottom",
       endTrigger: "#about",
-      end: "top center",
+      end: `top-=${scaledHeight} center`,
       scrub: true,
       onLeave: () => {
-        gsap.set("#title", {
+        gsap.set(title, {
           position: "fixed",
-          top: 40,
+          // top: 0,
+          top: `${offsetY}px`,
+          width: `${title.offsetWidth}px`,
           zIndex: 100,
           pointerEvents: "auto",
         });
       },
       onEnterBack: () => {
-        document.getElementById("title").classList.remove("fade-to-black-trigger");
-        gsap.set("#title", {
+        title.classList.remove("fade-to-black-trigger");
+        gsap.set(title, {
           position: "",
           top: "",
           width: "",
@@ -73,8 +34,9 @@ window.addEventListener("load", function () {
         });
       },
     },
-    scale: 0.25,
-    yPercent: -50,
+    // scale: 0.25,
+    fontSize: "clamp(0.798rem, 0.6485rem + 0.7434vw, 1.853rem)",
+    // lineHeight: "0.8",
     ease: "power2.out",
   });
 });

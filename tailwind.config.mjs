@@ -6,8 +6,8 @@ export default {
   theme: {
     extend: {
       animation: {
-        fadeIn: "fadeIn 3s ease-in-out forwards",
-        textReveal: "textReveal 2s ease-out forwards",
+        fadeIn: "fadeIn 2s ease-in-out forwards",
+        textReveal: "textReveal 1s ease-out forwards",
       },
       keyframes: {
         fadeIn: {
@@ -41,10 +41,8 @@ export default {
         opacity: "opacity",
       },
       cursor: {
-        default: "url(/src/icons/cursor.svg) 16 16, default",
-        pointer: "url(/src/icons/cursor-hover.svg) 16 16, pointer",
-        text: "url(/src/icons/cursor.svg) 16 16, default",
-        copy: "url(/src/icons/cursor.svg) 16 16, default",
+        default: 'var(--cursor-default), default',
+        pointer: 'var(--cursor-pointer), pointer',
       },
       fontSize: {
         // 'article-heading-1': ['var(--step-0)', {
@@ -58,6 +56,12 @@ export default {
             lineHeight: "80%",
           },
         ], // landing-title
+        "serif-header": [
+          "var(--header)",
+          {
+            lineHeight: "80%",
+          },
+        ],
         "serif-title": [
           "var(--step-11)",
           {
@@ -160,6 +164,17 @@ export default {
           "-webkit-text-stroke": "0.04em white",
           "paint-order": "stroke fill",
         },
+        ".color-profile-fix": {
+          "@supports (background-color: color(display-p3 1 1 1))": {
+            "@media (color-gamut: p3)": {
+              "--colorspace": "display-p3",
+              "color": "color(var(--colorspace, srgb) 1 1 1)",
+            },
+            "@media (color-gamut: rec2020)": {
+              "--colorspace": "rec2020",
+            },
+          },
+        }
       });
     },
   ],

@@ -27,7 +27,7 @@ const { pageTitle } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
   </head>
-  <body class="scroll-smooth bg-primary text-secondary selection:bg-secondary selection:text-primary">
+  <body class="scroll-smooth bg-primary text-secondary selection:bg-secondary selection:text-primary light-cursor">
     <!-- max-w-[1140px] mx-auto -->
     <div id="smooth-wrapper">
       <div id="smooth-content">
@@ -52,6 +52,7 @@ const { pageTitle } = Astro.props;
     <script type="text/javascript" src="/scripts/BlogDescription.js"></script>
     <script type="text/javascript" src="/scripts/Modal.js"></script>
     <script type="text/javascript" src="/scripts/NoteTags.js"></script>
+    <script type="text/javascript" src="/scripts/TitleHover.js"></script>
     <!-- <ViewTransitions/> -->
   </body>
 </html>

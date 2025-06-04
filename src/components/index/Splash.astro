@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 ---
 
 <section id="home" data-color="rgb(17 17 17)">
-  <div class="relative mx-4 flex min-h-dvh flex-col justify-between md:mx-32">
+  <div class="relative mx-4 flex min-h-dvh flex-col md:mx-32">
     <div class="flex pt-4 md:justify-between">
       <div class="flex w-full justify-around md:justify-start md:gap-8">
         <a href="#notes" class="fade-to-black-trigger">
@@ -17,7 +17,7 @@ import { Image } from "astro:assets";
             </span>
           </div>
         </a>
-        <a href="#projects" class="fade-to-black-trigger">
+        <a href="#" class="fade-to-black-trigger">
           <div class="link">
             <span class="relative h-[20px] select-none overflow-hidden font-sans text-sans-sm uppercase">
               <div class="link-container">
@@ -29,7 +29,7 @@ import { Image } from "astro:assets";
         </a>
       </div>
       <div class="flex w-full justify-around md:justify-end md:gap-8">
-        <a href="#about" onclick="lenis.scrollTo('#about')">
+        <a href="#about" onclick="lenis.scrollTo('#about', { duration: 1, easing: (t) => t })">
           <div class="link">
             <span class="relative h-[20px] select-none overflow-hidden font-sans text-sans-sm uppercase">
               <div class="link-container">
@@ -57,26 +57,17 @@ import { Image } from "astro:assets";
         </div>
       </div>
     </div>
-    <!-- <div id="title-container" class="relative flex flex-grow flex-col items-center justify-center">
-      <Image src={import("/src/images/edited-colour-profile.png")} class="absolute pb-40 z-0 md:scale-[60%] scale-75 animate-[fadeIn_2s_ease-in-out_forwards] brightness-[0.7] saturate-[0.5]" alt="Profile" />
-      <div class="overflow-hidden">
-        <a href="#home" id="title" class="relative z-10 font-serif text-serif-2xl font-semibold origin-center opacity-0 pointer-events-none mix-blend-difference fade-to-black-trigger pb-24">
-          <span class="block animate-textReveal">Michael Gauci</span>
-        </a>
-      </div>
-    </div> -->
-    <div id="title-container" class="relative mt-20 flex flex-grow flex-col items-center justify-center">
-      <Image src={import("/src/images/improved-profile.png")} id="profile" class="scale-80 absolute z-0 animate-[fadeIn_2s_ease-in-out_forwards] pb-40 brightness-[0.7] saturate-[0.5] md:scale-[60%]" alt="Profile" />
-      <a href="#home" id="title" class="fade-to-black-trigger pointer-events-none relative z-10 origin-center pb-40 font-serif text-serif-title font-semibold opacity-0 mix-blend-difference md:pb-24">
-        <span>Michael Gauci</span>
+    <div id="title-container" class="relative flex flex-grow flex-col items-center justify-center overflow-hidden">
+      <Image 
+        src={import("/src/images/cropped-profile.webp")} 
+        id="profile" 
+        class="max-h-[90vh] w-auto max-w-[90vw] absolute z-0 animate-[fadeIn_2s_ease-in-out_forwards] brightness-[0.7] saturate-[0.5] object-contain" 
+        alt="Profile"
+      />
+      <a href="#home" id="title" class="whitespace-nowrap fade-to-black-trigger pointer-events-none relative z-10 origin-center font-serif text-serif-title font-semibold opacity-0 mix-blend-difference overflow-hidden hover:mix-blend-normal">
+        <span class="block animate-textReveal">Michael Gauci</span>
       </a>
     </div>
-    <!-- <div id="title-container" class="flex flex-grow flex-col items-center justify-center"> -->
-    <!-- <a href="#home" id="title" class="font-serif text-serif-2xl font-semibold origin-center opacity-0 pointer-events-none mix-blend-difference fade-to-black-trigger pb-24"> -->
-    <!-- <span>Michael Gauci</span> -->
-    <!-- </a> -->
-    <!-- <span id="subtitle" class="pl-2 font-sans text-sans-md font-normal opacity-0 md:pl-6 md:text-sans-lg">BSc (Hons) Chemistry, MSc Metamaterials</span> -->
-    <!-- </div> -->
     <div class="absolute bottom-0 right-0 items-center md:flex">
       <div id="arrow-container">
         <div id="arrow" class="flex opacity-0">

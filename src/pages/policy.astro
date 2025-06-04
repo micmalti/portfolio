@@ -1,27 +1,11 @@
 ---
-import { Icon } from "astro-icon/components";
-import Footer from "../components/Footer.astro";
-import ArticleLayout from "../layouts/ArticleLayout.astro";
-import Layout from "../layouts/PageLayout.astro";
-import { Content, frontmatter } from "../policy.md";
+import PolicyLayout from "../layouts/PolicyLayout.astro";
+import { Content, frontmatter, getHeadings } from "../policy.md";
+import type { PolicyFrontmatter } from "../types";
+
+const headings = await getHeadings();
 ---
 
-<Layout pageTitle="Michael Gauci">
-  <div class="mx-4 flex flex-col items-center">
-    <div class="relative max-w-[850px] text-left">
-      <div class="flex items-center pt-24">
-        <a href="/" class="absolute -translate-x-full transform pr-9">
-          <Icon name="left-arrow" class="size-10 pt-1 text-secondary transition-all duration-300 hover:-translate-x-4" />
-        </a>
-        <span class="block font-serif text-serif-md">{frontmatter.title}</span>
-      </div>
-      <span class="block pb-12 pt-4 font-sans text-sans-sm font-light">Updated {frontmatter.date}</span>
-      <ArticleLayout>
-        <Content />
-      </ArticleLayout>
-    </div>
-  </div>
-  <div class="mx-4 pb-12 md:mx-32 md:pb-0">
-    <Footer footerTheme="light" />
-  </div>
-</Layout>
+<PolicyLayout frontmatter={frontmatter as PolicyFrontmatter} headings={headings}>
+  <Content />
+</PolicyLayout>
