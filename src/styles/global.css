@@ -68,12 +68,17 @@ button {
   @apply cursor-pointer;
 }
 
+.expressive-code .copy button,
+.expressive-code .copy button:hover {
+  cursor: var(--cursor-default), pointer !important;
+}
+
 html,
 body {
   -ms-overflow-style: none;
   scrollbar-gutter: stable;
   scrollbar-width: none;
-  scrollbar-color: #555 #222224;
+  /* scrollbar-color: #555 #222224; */
 }
 
 p {
