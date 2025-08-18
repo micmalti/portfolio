@@ -2,5 +2,7 @@
 const { post } = Astro.props
 ---
 
-<p>{post.frontmatter.title}</p>
-
+<div class="flex gap-2">
+  <a class="visited:text-gray-400" href={`/notes/${post.slug}`}>{post.data.title}</a>
+  <span>{post.data.created.short}</span>
+</div>
