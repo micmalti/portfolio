@@ -3,10 +3,18 @@ import { defineCollection, z } from "astro:content";
 const notesCollection = defineCollection({
   schema: z.object({
     title: z.string(),
-    creation_date: z.string(),
-    last_updated: z.string().optional(),
-    // tags: 
-    description: z.string().optional()
+    created: z.date()
+      .transform((date) => ({
+        raw: date,
+        formatted: date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+        short: date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+      })),
+    updated: z.date()
+      .transform((date) => ({
+        raw: date,
+        formatted: date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+        short: date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+      })),
   }),
 });
 

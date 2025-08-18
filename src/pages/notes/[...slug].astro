@@ -1,14 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
-import type { ArticleFrontmatter } from "../../types";
 import { type CollectionEntry } from "astro:content";
-
-interface Props {
-  post: CollectionEntry<"notes">;
-  headings: import("astro").MarkdownHeading[];
-  frontmatter: ArticleFrontmatter;
-}
 
 export async function getStaticPaths() {
   const posts = await getCollection("notes");
@@ -19,8 +12,8 @@ export async function getStaticPaths() {
       post,
       frontmatter: {
         title: post.data.title,
-        creation_date: post.data.creation_date,
-        last_updated: post.data.last_updated || post.data.creation_date
+        created: post.data.created.formatted,
+        updated: post.data.updated.formatted
       }
     },
   }));
@@ -30,6 +23,6 @@ const { post } = Astro.props;
 const { Content, headings } = await post.render();
 ---
 
-<ArticleLayout post={post} headings={headings} frontmatter={Astro.props.frontmatter}>
+<ArticleLayout post={post} headings={headings}>
   <Content />
 </ArticleLayout>
