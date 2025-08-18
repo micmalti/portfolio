@@ -3,8 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const ctx = canvas.getContext("2d", { alpha: false });
   let animationId;
   let words = [];
-
-  const wordList = ["#productivity", "#graphene", "#linux", "#web crawling", "#tdd", "#raspberry pi", "#windows", "#public speaking", "#android", "#python", "#aws", "#web development", "#bitcoin", "#ai", "#pkm", "#documentation", "#blockchain", "#hpc", "#software development", "#javascript", "#django", "#ui/ux", "#git", "#lightning network", "#cryptography", "#software design", "#probability", "#calculus", "#linear algebra", "#calculus", "#ci/cd", "#dsa", "#system design", "#geospatial data"];
+  const wordList = ["#linear algebra", "#calculus", "#probability", "#statistics", "#stochastic processes", "#machine learning", "#cryptography", "#artificial intelligence", "#llm", "#python", "#c++", "#javascript", "#competitive programming", "#algorithms", "#data structures", "#system design", "#software architecture", "#databases", "#devops", "#ci/cd", "#web development", "#frontend development", "#backend bevelopment", "#ui/ux", "#blockchain", "#bitcoin", "#data science", "#data analysis", "#data visualisation", "#geospatial data", "#technical writing", "#documentation", "#communication", "#productivity", "#memory techniques", "#mental math", "#linux", "#shell scripting", "#git", "#troubleshooting", "#raspberry pi", "#open source", "#free software", "#writing", "#molecular dynamics", "#lammps", "#parallel computing", "#jupyter", "#web crawling", "#automation", "#android", "#node", "#security", "#note taking", "#typography", "#product management", "#etl pipelines"]
   const rows = 30;
   const wordsToShow = 100;
   const opacities = [0.8, 0.7, 0.6, 0.5];
@@ -29,12 +28,13 @@ document.addEventListener("DOMContentLoaded", function () {
       const speed = speeds[Math.floor(Math.random() * speeds.length)];
       const direction = Math.random() > 0.5 ? 1 : -1;
       const x = Math.random() * canvas.width;
+      const y = (row + 0.5) * rowHeight > (canvas.height - 70) ? (canvas.height - 70) : (row + 0.5) * rowHeight
 
       words.push({
         word,
         row,
         x,
-        y: (row + 0.5) * rowHeight,
+        y,
         fontSize,
         opacity,
         speed: speed * direction,

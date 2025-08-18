@@ -56,14 +56,14 @@ const sections = [
         <div class="bg-gradient-to-r from-black/100 via-black/70 to-black/0" style="--tw-gradient-via-position: 25%">
           <div class="timeline-content flex-start mx-4 flex min-h-dvh flex-col gap-4 md:mx-0 md:justify-center">
             <div class="h-full w-3" />
-            <span class="w-full font-sans text-sans-lg font-bold">{section.year}</span>
+            {/* <span class="w-full font-sans text-sans-lg font-bold">{section.year}</span> */}
             {/* <span class="w-full font-serif text-serif-md max-w-title">{section.title}</span> */}
-            <span 
+            <span
               class="w-full font-serif text-serif-md max-w-title"
               set:html={
-                section.breakBefore 
+                section.breakBefore
                   ? section.title.replace(
-                      section.breakBefore, 
+                      section.breakBefore,
                       `<br class='hidden md:inline' />${section.breakBefore}`
                     )
                   : section.title
@@ -89,9 +89,9 @@ const sections = [
       <ul class="m-0 list-none p-0">
         {sections.map((_, index) => (
           <li class="relative mt-4">
-            <a 
-              href={`#section${index + 1}`} 
-              class="block h-3 w-3 rounded-full border border-transparent bg-secondary transition-all duration-300" 
+            <a
+              href={`#section${index + 1}`}
+              class="block h-3 w-3 rounded-full border border-transparent bg-secondary transition-all duration-300"
               aria-label={`Go to section ${index + 1}`}
               data-index={index}
             >

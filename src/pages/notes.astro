@@ -42,19 +42,19 @@ const allPosts = await getCollection("notes");
         <div class="grid grid-rows-[auto_1fr] min-h-screen md:mx-32">
           <div id="header-row" class="sticky top-0 z-20 bg-primary text-secondary selection:bg-secondary selection:text-primary light-cursor overflow-hidden">
             <Header />
-            <div id="collapse-header" class="md:pl-12 pl-4 pt-8 pb-6 md:pt-4 md:pb-12">
-              <span class="block font-serif text-serif-md">Notes</span>
-              <div class="flex pt-4 font-sans text-sans-sm font-light">
-                <span></span>
+            <div id="collapse-header" class="md:p-12 p-4 pt-8 pb-6 md:pt-4">
+              <h1 class="block font-serif text-serif-md">Notes</h1>
+              <div class="grid grid-cols-2 pt-4 font-sans text-sans-md font-normal">
+                <span class="col-span-1">These are living notes. Most of them are incomplete by design, prioritising the capture of new insights over point-in-time conclusions. For this reason, readers should treat them as open-ended explorations, rather than polished articles, with the understanding that there’s always more to discover on a certain topic.</span>
               </div>
             </div>
           </div>
-          <!-- <div class="flex justify-center gap-8">
+          <div class="flex justify-center gap-8">
             {
-              allPosts.map((post) => <PostCard 
+              allPosts.map((post: any) => <PostCard
               {post} />)
             }
-          </div> -->
+          </div>
         </div>
         <div class="mx-4 pb-12 md:mx-32 md:pb-0">
           <Footer footerTheme="dark" />
