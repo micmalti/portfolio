@@ -1,3 +1,12 @@
+---
+title: "Blockchain for business"
+updated: 2025-06-13 08:52:13Z
+created: 2021-06-11 10:51:00Z
+latitude: 35.89547060
+longitude: 14.46650720
+altitude: 0.0000
+---
+
 ==A blockchain is a decentralized, distributed, and oftentimes public, digital ledger that is used to record transactions across many computers so that any involved record cannot be altered retroactively, without== the alteration of all subsequent blocks.
 
 [Various protocols](https://cryptomaniaks.com/blockchain-protocols-list-explained) (or consensus algorithms) emerged to describe how transactions within the network should be validated, which gave rise to different blockchain implementations.

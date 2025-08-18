@@ -1,4 +1,15 @@
+---
+title: "A 30,0000 foot view of web development"
+updated: 2025-06-13 08:52:13Z
+created: 2021-06-11 10:51:00Z
+latitude: 35.89547060
+longitude: 14.46650720
+altitude: 0.0000
+---
+
 So, if you’re probably one of those people who shows a keen interest in web development but feels lost in the sea of terminology that this field is bogged with, then you’re at the right place. What follows is a summary of my journey to get my head wrapped around web development.
+
+*Review 'Python Testing With Pytest' by Brian Okken*
 
 **Client-side** (aka front-end) development deals with user interaction; anything which appears on screen comes from the website’s front-end. Webpage content (forms, buttons, text, etc.) is written in **HTML5**, styled with **CSS** and rendered interactive by **JavaScript**.
 
@@ -77,10 +88,10 @@ The scope of using a **task runner** like Gulp is to automate routine tasks, the
 
 Gulp is being overtaken by **Webpack**, a **module bundler** which comes pre-packaged with Angular, since it extends into the basic functionality of a task runner. A bundler packs together JavaScript modules and other assets into single files for use within a browser while also managing dependencies. In 2023, Webpack was still the go-to solution for project bundling, albeit slower compared to the newcomer Vite.
 
-To get started with Webpack:  
+To get started with Webpack:
 `npm install --save-dev webpack webpack-cli`
 
-Loaders are packages which, when bundled to Webpack, automate common build steps such as transforming TypeScript to JavaScript code, and minification:  
+Loaders are packages which, when bundled to Webpack, automate common build steps such as transforming TypeScript to JavaScript code, and minification:
 `npm i purgecss-webpack-plugin -D`
 
 Plugins allow for customizations of the webpack build process. To avoid the need to compile each time you make changes, install webpack-dev-server:

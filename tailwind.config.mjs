@@ -150,6 +150,19 @@ export default {
             a: {
               hyperlink: "",
             },
+            '.footnotes': {
+              fontSize: theme('fontSize.sm'),
+              color: theme('colors.gray.600'),
+              borderTop: '1px solid #e5e7eb',
+              paddingTop: '1rem',
+            },
+            '.footnote-backref': {
+              // textDecoration: 'none',
+              // color: '#8b5cf6',
+              // '&:hover': {
+                // color: '#7c3aed',
+              fontSize: theme('fontSize.sm'), // Extra small
+            },
           },
         },
       }),

@@ -5,7 +5,6 @@ import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import ContextMenu from "../components/ContextMenu.astro";
-import type { CollectionEntry } from "astro:content";
 
 const { post, headings } = Astro.props;
 const frontmatter = post.data;
@@ -32,19 +31,19 @@ const frontmatter = post.data;
     <div id="smooth-wrapper">
       <div id="smooth-content">
         <div class="grid grid-rows-[auto_1fr] min-h-screen md:mx-32">
-          <div id="header-row" class="sticky top-0 z-20 bg-primary text-secondary selection:bg-secondary selection:text-primary light-cursor overflow-hidden">
+          <div id="header-row" class="sticky top-0 z-20 bg-primary text-secondary select-none light-cursor overflow-hidden">
             <Header />
-            <div id="collapse-header" class="md:pl-12 pl-4 pt-8 pb-6 md:pt-4 md:pb-12">
+            <div id="collapse-header" class="md:p-12 p-4 pt-8 pb-6 md:pt-4">
               <span class="block font-serif text-serif-md">{frontmatter.title}</span>
-              <div class="flex pt-4 font-sans text-sans-sm font-light">
-                <span>Published {frontmatter.creation_date}</span>
-                <span>Updated {frontmatter.last_updated}</span>
+              <div class="flex gap-8 pt-4 font-sans text-sans-md font-normal">
+                <span class="whitespace-nowrap">Published {frontmatter.created.formatted}</span>
+                <span class="whitespace-nowrap">Updated {frontmatter.updated.formatted}</span>
               </div>
             </div>
           </div>
           <div id="content" class="text-left items-center mx-4 md:mx-0 md:flex-row md:items-start mt-4 md:mt-12">
               <div class="flex justify-center gap-8">
-                <div id="markdown-content" class="flex-1 prose prose-a:hyperlink-dark prose-h2:font-serif prose-h2:text-serif-sm prose-h2:text-primary prose-p:text-sans-md prose-p:font-normal prose-p:text-primary prose-strong:text-sans-md prose-strong:font-bold prose-strong:text-primary prose-li:text-sans-md prose-li:font-normal prose-li:text-primary pb-24">
+                <div id="markdown-content" class="flex-1 prose prose-a:hyperlink-dark prose-h2:font-serif prose-h2:text-serif-sm prose-h2:text-primary prose-p:text-sans-md prose-p:font-normal prose-p:text-primary prose-strong:text-sans-md prose-strong:font-bold prose-strong:text-primary prose-li:text-sans-md prose-li:font-normal prose-li:text-primary prose-li:marker:text-primary prose-li:marker:text-xs prose-li:p:text-xs prose-footnotes:text-sm pb-24">
                   <slot />
                 </div>        
                 <div id="context-menu" class="hidden md:block shrink-0">

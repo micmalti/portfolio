@@ -1,3 +1,12 @@
+---
+title: "A primer to parallel programming"
+updated: 2025-06-13 08:52:13Z
+created: 2021-06-11 10:51:00Z
+latitude: 35.89547060
+longitude: 14.46650720
+altitude: 0.0000
+---
+
 ## The dual meaning of multi-threading
 
 Physical CPU cores are single-threaded yet with simultaneous multi-threading (SMT) or hyper-threading (Intel's implementation of SMT), unused execution units are allocated to run another thread, thereby allowing the CPU to approach its theoretical maximum performance. This is possible by the sharing of resources between the *virtual* (or *logical*) cores on the same physical core. 

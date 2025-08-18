@@ -1,8 +1,10 @@
 ---
-title: "My Post"
-creation_date: "12 Feb 2025"
-last_updated: "21 Apr 2025"
-tags: ["astro", "blogging", "learning in public", "successes"]
+title: "Building a cost-effective ETL pipeline with DuckDB, dbt, and Prefect"
+updated: 2025-06-13 08:52:13Z
+created: 2021-06-11 10:51:00Z
+latitude: 35.89547060
+longitude: 14.46650720
+altitude: 0.0000
 ---
 
 I've refrained from going through every aspect of the language, only highlighting those details which are unique to JavaScript. If you're still a beginner, consider this [free JavaScript course](https://javascript.info/). A seasoned developer who writes code in other languages will already be familiar with object-oriented concepts but may not have the same level of exposure to functional concepts.
@@ -33,13 +35,13 @@ ECMAScript proposals don’t cause breaking changes, [in general](https://www.re
 
 In JavaScript, types are resolved at runtime, which means errors will go unnoticed until the code is executed.
 
-What mainly differentiates TypeScript from JavaScript is its statically type system. This makes the code more readable since it shows intent, whilst also narrowing usage, which helps prevent a lot of bugs. 
+What mainly differentiates TypeScript from JavaScript is its statically type system. This makes the code more readable since it shows intent, whilst also narrowing usage, which helps prevent a lot of bugs.
 
 Refactoring is also improved, thanks to TypeScript's superior LSP capabilities. When you make a code change, your editor will instantly show you all the places that need fixing. Having said that, debugging type errors can be painful, but if you're using VSCode, the Pretty Typescript Errors extension can help you with that. To learn more about TypeScript, consider watching this [Youtube series](https://www.youtube.com/playlist?list=PLNqp92_EXZBJYFrpEzdO2EapvU0GOJ09n).
 
 TypeScript is a Javascript superset but also a compiler which compiles its own features
 into JS "workarounds". Its functionality is similar to Babel when it comes to using
-next-gen JS features as they will get compiled down for older browsers. The compiler 
+next-gen JS features as they will get compiled down for older browsers. The compiler
 can be configured according to your requirements.
 
 Instead of switching to TypeScript and be forced to accept all of its other differences, you might want to consider using Flow, a static type checking library that allows you to incrementally add types to your JavaScript code. See this [tutorial](https://www.freecodecamp.org/news/why-use-static-types-in-javascript-part-1-8382da1e0adb/) to get started.
@@ -49,7 +51,7 @@ Instead of switching to TypeScript and be forced to accept all of its other diff
 The Document Object Model (DOM) allows JS code to directly interact with HTML and CSS. Browsers construct the DOM by storing all HTML tags as JS objects:
 ```javascript
 console.dir(document) // displays DOM
-document.querySelectorAll("a")[3]  // searches for a specific HTML tag
+document.querySelectorAll("a")[3]  // searches for a specific HTML tag is this a wrap?
 ```
 jQuery used to be a popular JavaScript library for manipulating the DOM. Notice the syntax changes in the following example, adding an attribute to a matching element index:
 ```javascript
@@ -71,7 +73,7 @@ Introduced in ES5, strict mode provides a way to opt into a restricted variant o
 
 Strict mode can be enabled for an entire script by placing the `"use strict";` directive at the beginning of the script, or limited to a specific function by placing the directive at the beginning of the function.
 
-Note that anything inside a class block is already in strict mode, as well as all the module-level code. Therefore, if you're only writing code for modules, there is no need to include the directive anywhere because it's already implied. 
+Note that anything inside a class block is already in strict mode, as well as all the module-level code. Therefore, if you're only writing code for modules, there is no need to include the directive anywhere because it's already implied.
 
 ## 5. Primitives
 
@@ -83,12 +85,12 @@ The supported primitive data types are *undefined*, *null*, *boolean*, *string*,
 
 Prototype-based programming is a form of object-oriented programming which supports behaviour reuse (the equivalent of inheritance in class-based languages) by cloning existing objects that serve as prototypes. See [here](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes) for details.
 
-Constructors are functions which define the properties and behaviours of new objects 
+Constructors are functions which define the properties and behaviours of new objects
 that are called upon using the `new` keyword.
 
 Use the dot notation or bracket notation (preferred) to access an object's properties.
 
-`hasOwnProperty()` returns a boolean, depending on whether the property is present 
+`hasOwnProperty()` returns a boolean, depending on whether the property is present
 within the object. This method is defined in `Object.prototype`.
 
 ## 7. Callbacks

@@ -1,3 +1,12 @@
+---
+title: "Considerations when developing mobile applications"
+updated: 2025-06-13 08:52:13Z
+created: 2021-06-11 10:51:00Z
+latitude: 35.89547060
+longitude: 14.46650720
+altitude: 0.0000
+---
+
 ## Going native
 
 By and large, Kotlin's advantages over Java are mostly incremental. Coroutines are the only thing that can't easily be translated to Java. But when you add up all those incremental advantages, it does come out ahead, striking a good balance between solid fundamentals and pragmatism. 
