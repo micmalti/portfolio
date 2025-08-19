@@ -9,8 +9,8 @@ window.addEventListener("load", function () {
       scrollTrigger: {
         trigger: element,
         start: "top 80%", // when top of element hits 80% of viewport
-        toggleActions: "play none none none", // only play once when scrolling down
-      },
+        toggleActions: "play none none none" // only play once when scrolling down
+      }
     });
   });
 });

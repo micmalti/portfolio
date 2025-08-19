@@ -1,11 +1,11 @@
 ---
 import "@fontsource-variable/inter/opsz.css";
 import "@fontsource-variable/source-serif-4/opsz.css";
-import "../styles/global.css";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import PostCard from "../components/PostCard.astro";
 import { getCollection } from "astro:content";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import PostCard from "../components/PostCard.astro";
+import "../styles/global.css";
 
 // import type { ArticleFrontmatter } from "../types";
 // import { type CollectionEntry } from "astro:content";
@@ -36,13 +36,13 @@ const allPosts = await getCollection("notes");
     <meta name="generator" content={Astro.generator} />
     <title>Michael Gauci | Notes</title>
   </head>
-  <body class="scroll-smooth bg-secondary text-primary selection:bg-primary selection:text-secondary dark-cursor">
+  <body class="dark-cursor scroll-smooth bg-secondary text-primary selection:bg-primary selection:text-secondary">
     <div id="smooth-wrapper">
       <div id="smooth-content">
-        <div class="grid grid-rows-[auto_1fr] min-h-screen md:mx-32">
-          <div id="header-row" class="sticky top-0 z-20 bg-primary text-secondary selection:bg-secondary selection:text-primary light-cursor overflow-hidden">
+        <div class="grid min-h-screen grid-rows-[auto_1fr] md:mx-32">
+          <div id="header-row" class="light-cursor sticky top-0 z-20 overflow-hidden bg-primary text-secondary selection:bg-secondary selection:text-primary">
             <Header />
-            <div id="collapse-header" class="md:p-12 p-4 pt-8 pb-6 md:pt-4">
+            <div id="collapse-header" class="p-4 pb-6 pt-8 md:p-12 md:pt-4">
               <h1 class="block font-serif text-serif-md">Notes</h1>
               <div class="grid grid-cols-2 pt-4 font-sans text-sans-md font-normal">
                 <span class="col-span-1">These are living notes. Most of them are incomplete by design, prioritising the capture of new insights over point-in-time conclusions. For this reason, readers should treat them as open-ended explorations, rather than polished articles, with the understanding that there’s always more to discover on a certain topic.</span>
@@ -50,10 +50,7 @@ const allPosts = await getCollection("notes");
             </div>
           </div>
           <div class="flex justify-center gap-8">
-            {
-              allPosts.map((post: any) => <PostCard
-              {post} />)
-            }
+            {allPosts.map((post: any) => <PostCard {post} />)}
           </div>
         </div>
         <div class="mx-4 pb-12 md:mx-32 md:pb-0">

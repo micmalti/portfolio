@@ -58,13 +58,8 @@ import { Image } from "astro:assets";
       </div>
     </div>
     <div id="title-container" class="relative flex flex-grow flex-col items-center justify-center overflow-hidden">
-      <Image 
-        src={import("/src/images/cropped-profile.webp")} 
-        id="profile" 
-        class="max-h-[90vh] w-auto max-w-[90vw] absolute z-0 animate-[fadeIn_2s_ease-in-out_forwards] brightness-[0.7] saturate-[0.5] object-contain" 
-        alt="Profile"
-      />
-      <a href="#home" id="title" class="whitespace-nowrap fade-to-black-trigger pointer-events-none relative z-10 origin-center font-serif text-serif-title font-semibold opacity-0 mix-blend-difference overflow-hidden hover:mix-blend-normal">
+      <Image src={import("/src/images/cropped-profile.webp")} id="profile" class="absolute z-0 max-h-[90vh] w-auto max-w-[90vw] animate-[fadeIn_2s_ease-in-out_forwards] object-contain brightness-[0.7] saturate-[0.5]" alt="Profile" />
+      <a href="#home" id="title" class="fade-to-black-trigger pointer-events-none relative z-10 origin-center overflow-hidden whitespace-nowrap font-serif text-serif-title font-semibold opacity-0 mix-blend-difference hover:mix-blend-normal">
         <span class="block animate-textReveal">Michael Gauci</span>
       </a>
     </div>

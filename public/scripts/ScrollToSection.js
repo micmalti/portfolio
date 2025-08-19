@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         window.scrollTo({
           top: targetPosition,
-          behavior: "smooth",
+          behavior: "smooth"
         });
 
         // Update URL without jumping

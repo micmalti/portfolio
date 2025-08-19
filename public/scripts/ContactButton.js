@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return {
       top: rect.top + scrollTop,
       height: rect.height,
-      bottom: rect.top + scrollTop + rect.height,
+      bottom: rect.top + scrollTop + rect.height
     };
   } // get position of #contact section
 

@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
           gsap.to(document.body, {
             backgroundColor: targetColor,
             duration: 0.5, // Transition duration in seconds
-            ease: "power1.out", // Easing function for smoothness
+            ease: "power1.out" // Easing function for smoothness
           });
           currentColor = targetColor;
         }

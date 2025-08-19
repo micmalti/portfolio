@@ -20,7 +20,7 @@ window.addEventListener("load", function () {
       scrub: 1,
       pin: "#about",
       markers: false,
-      onUpdate: updateActiveDot, // Update dots on scroll
+      onUpdate: updateActiveDot // Update dots on scroll
     },
     defaults: { duration: 0.5 }
   });
@@ -58,8 +58,8 @@ window.addEventListener("load", function () {
         ease: "power2.inOut",
         onComplete: () => updateActiveDot() // Update dot after tween completes
       });
-      
-      navDots.forEach(d => d.classList.remove("active"));
+
+      navDots.forEach((d) => d.classList.remove("active"));
       dot.classList.add("active");
     });
   });

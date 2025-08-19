@@ -3,7 +3,7 @@ window.addEventListener("load", function () {
 
   const title = document.getElementById("title");
   const originalHeight = title.offsetHeight;
-  const scaledHeight = originalHeight * 0.20;
+  const scaledHeight = originalHeight * 0.2;
   const offsetY = title.getBoundingClientRect().height * 0.375;
 
   gsap.to(title, {
@@ -20,7 +20,7 @@ window.addEventListener("load", function () {
           top: `${offsetY}px`,
           width: `${title.offsetWidth}px`,
           zIndex: 100,
-          pointerEvents: "auto",
+          pointerEvents: "auto"
         });
       },
       onEnterBack: () => {
@@ -30,13 +30,13 @@ window.addEventListener("load", function () {
           top: "",
           width: "",
           zIndex: "",
-          pointerEvents: "none",
+          pointerEvents: "none"
         });
-      },
+      }
     },
     // scale: 0.25,
     fontSize: "clamp(0.798rem, 0.6485rem + 0.7434vw, 1.853rem)",
     // lineHeight: "0.8",
-    ease: "power2.out",
+    ease: "power2.out"
   });
 });

@@ -14,14 +14,14 @@ window.addEventListener("load", function () {
       modifiers: {
         textContent: function (value) {
           return Math.floor(value).toLocaleString();
-        },
+        }
       },
       scrollTrigger: {
         trigger: "#word-counter",
         start: "top 90%",
         toggleActions: "play none none none",
-        once: true,
-      },
-    },
+        once: true
+      }
+    }
   );
 });

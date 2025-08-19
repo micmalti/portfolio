@@ -1,5 +1,5 @@
 ---
-title: "A 30,0000 foot view of web development"
+title: "A"
 updated: 2025-06-13 08:52:13Z
 created: 2021-06-11 10:51:00Z
 latitude: 35.89547060
@@ -9,7 +9,7 @@ altitude: 0.0000
 
 So, if you’re probably one of those people who shows a keen interest in web development but feels lost in the sea of terminology that this field is bogged with, then you’re at the right place. What follows is a summary of my journey to get my head wrapped around web development.
 
-*Review 'Python Testing With Pytest' by Brian Okken*
+_Review 'Python Testing With Pytest' by Brian Okken_
 
 **Client-side** (aka front-end) development deals with user interaction; anything which appears on screen comes from the website’s front-end. Webpage content (forms, buttons, text, etc.) is written in **HTML5**, styled with **CSS** and rendered interactive by **JavaScript**.
 
@@ -19,7 +19,7 @@ A good place to start is the [MDN Curriculum](https://developer.mozilla.org/en-U
 
 ## HTML is enough, really
 
-*ML* in HTML stands for **markup language**, a language that annotates text that is displayed on a website. Annotations are enclosed in markup tags and serve to instruct browsers on how to display the HTML file contents. For instance, text in between `<p>` and `</p>` tags appears as a paragraph.
+_ML_ in HTML stands for **markup language**, a language that annotates text that is displayed on a website. Annotations are enclosed in markup tags and serve to instruct browsers on how to display the HTML file contents. For instance, text in between `<p>` and `</p>` tags appears as a paragraph.
 
 Custom tags in addition to the ones defined by the [W3C](https://www.lifewire.com/what-is-the-w3c-3469951) can be created using **XML**, which is a language for writing markup languages. Standardised markup languages written in XML also exist such as MathML for defining mathematical notation.
 
@@ -28,12 +28,13 @@ HTMX
 ## CSS for that extra flare
 
 While HTML uses tags, CSS makes use of selectors. Each selector, containing one or more styling properties, is linked to an HTML element either by specifying the latter’s name, thus becoming an **HTML selector** or by defining it as a **class selector** or **ID selector** and adding the corresponding attribute to the HTML element like so:
+
 ```html
 .intro {font-size: 20px }
-<p class=”intro”>This is a paragraph</p>
+<p class="”intro”">This is a paragraph</p>
 
 #words {font-size: 20px }
-<p id=”words”>This is another paragraph</p>
+<p id="”words”">This is another paragraph</p>
 ```
 
 Unlike class attributes which can be defined more than once, ID attributes can only be specified once so there are those who try to avoid using ID selectors. **Nested selectors**, **child selectors** and **adjacent selectors** may very well simplify CSS code and make it more maintainable but the likelihood that conflicts arise with properties specified in and inherited from other selectors increases. For a more comprehensive overview of CSS, check out this [tutorial](https://www.htmldog.com/guides/css/).
@@ -41,6 +42,7 @@ Unlike class attributes which can be defined more than once, ID attributes can o
 Every browser has its own default stylesheet. To avoid cross-browser inconsistencies as much as possible, a set of styles known as the **CSS reset** is loaded prior to your other styles to remove the browser built-in styles. One may [specify it directly](https://gist.github.com/stephan-romhart/91716eb47202163fac5e8a7b6679389f#file-organize-reset-css) or through a [library](https://github.com/sindresorhus/modern-normalize)
 
 **Vendor prefixes** are a way for browser manufacturers to support new CSS features before they are fully implemented by all browsers. In order to implement a new CSS style property such as a transition, you normally have to prepend the prefix for each browser to the standard CSS property (although some browsers have a different syntax for certain properties than others do):
+
 ```css
 -webkit-transition: all 4s ease;
 -moz-transition: all 4s ease;
@@ -48,6 +50,7 @@ Every browser has its own default stylesheet. To avoid cross-browser inconsisten
 -o-transition: all 4s ease;
 transition: all 4s ease;
 ```
+
 Matcha is [just one in a whole slew](https://github.com/dbohdan/classless-css) of classless (semantic) CSS libraries. It's not a CSS framework but a stylesheet creator from which you can import when you don’t want to think about CSS or styling but want a site that looks alright. [CSS Bed](https://www.cssbed.com/) has a collection of **classless themes**.
 
 ### How the processor trend came and went
@@ -88,18 +91,18 @@ The scope of using a **task runner** like Gulp is to automate routine tasks, the
 
 Gulp is being overtaken by **Webpack**, a **module bundler** which comes pre-packaged with Angular, since it extends into the basic functionality of a task runner. A bundler packs together JavaScript modules and other assets into single files for use within a browser while also managing dependencies. In 2023, Webpack was still the go-to solution for project bundling, albeit slower compared to the newcomer Vite.
 
-To get started with Webpack:
-`npm install --save-dev webpack webpack-cli`
+To get started with Webpack: `npm install --save-dev webpack webpack-cli`
 
-Loaders are packages which, when bundled to Webpack, automate common build steps such as transforming TypeScript to JavaScript code, and minification:
-`npm i purgecss-webpack-plugin -D`
+Loaders are packages which, when bundled to Webpack, automate common build steps such as transforming TypeScript to JavaScript code, and minification: `npm i purgecss-webpack-plugin -D`
 
 Plugins allow for customizations of the webpack build process. To avoid the need to compile each time you make changes, install webpack-dev-server:
+
 ```json
 "scripts": {
   "start": "webpack-dev-server  --config webpack.dev.js --open",
 }
 ```
+
 For more information about Webpack, check out this [tutorial](https://www.youtube.com/watch?v=MpGLUVbqoYQ).
 
 The less popular **Browserify** is a pure bundle manager so it's normally used alongside a task runner. The primary advantage of a bundler is faster loading time by reducing the number of files the browser needs to download.
@@ -115,30 +118,37 @@ An alternative to using JavaScript is **TypeScript**, a superset of JavaScript. 
 Modules are scripts that provide instant functionality when added to a project. For example, Mustache is a logic-less templating engine. See [here](https://dev.to/cocoroutine/truth-about-template-engines-3a7) to read about template engines.
 
 **Package managers** are there to ensure that your application's dependencies are installed correctly onto a different machine. **NPM** (a package manager for Javascript) does this by creating a package.json upon being initialised into your project directory:
+
 ```bash
 npm init`
 ```
+
 The `node_modules` folder which is automatically generated to hold your project dependencies won't need to be committed to GitHub because it can be re-created from `package.json`:
+
 ```bash
 npm install
 ```
+
 **Yarn** comes with similar features to NPM with the additional benefit of downloading packages faster. This may not warrant an excuse to switch from NPM since the latter still enjoys support from a larger community and comes with Node.js by default. For those who once used **Bower**, it has since been deprecated by its creators.
 
 The prime benefit of using a **CDN** is improved performance:
-   -  Browsers limit how many files can concurrently be downloaded from a single domain, thus the use of a CDN allows for parallel downloads
-   -  JS libraries cached by a browsers from previously visited sites that used them from a CDN won’t need to be downloaded again
-   -  Site visitors will be delivered static content from the closest point of presence (PoP) instead of the origin server (only relevant if your user is global)
+
+- Browsers limit how many files can concurrently be downloaded from a single domain, thus the use of a CDN allows for parallel downloads
+- JS libraries cached by a browsers from previously visited sites that used them from a CDN won’t need to be downloaded again
+- Site visitors will be delivered static content from the closest point of presence (PoP) instead of the origin server (only relevant if your user is global)
 
 Using a CDN is also cost-effective since it reduces the server load and limits bandwidth consumption and may improve your SEO from a faster load time.
 
 Popular JS libraries are usually available on a CDN as minified and slim versions. As explained earlier, minified files are recommended. The slim version will usually leave out non-core features of the library to reduce the file size so do opt for it whenever possible.
 
 This doesn’t mean you shouldn’t set up fallbacks to ensure that your website remains functional in the event that the CDN is down:
+
 ```plaintext
 <script type="text/javascript">
   window.jQuery || document.write('<script>"/path/to/jquery-3.4.1.slim.min.js"<\x3C/script>')
 </script>
 ```
+
 See this [gist](./_resources/npm.js) to learn more about how to use npm.
 
 ### Semantic versioning
@@ -147,8 +157,7 @@ Consider a package whose version is 4.12.3.
 
 If its update cycle follows semantic versioning, then a newer **major** version will cause breaking changes. Non-breaking changes, such as the deprecation of old functionality or the addition of new features, are tagged by incrementing the **minor** version version. Bug fix updates are tagged using the **patch** version.
 
-^: allows minor and patch updates (default behaviour when running `npm install`)
-~: allows patch updates only
+^: allows minor and patch updates (default behaviour when running `npm install`) ~: allows patch updates only
 
 No preceding symbol means that the module will not be updated.
 
@@ -165,14 +174,18 @@ Programming languages like Python have included threading libraries to [support 
 **Node.js** is a server-side runtime environment for JavaScript which can use multiple threads in the background to execute non-blocking I/O operations. A **callback**, the asynchronous equivalent of a function, is called upon completion of a given task. For instance, a function to read a file may start reading file and return the control to the execution environment immediately so that the next instruction can be executed. Once file I/O is complete, the file content is passed as a parameter of the callback function. This is made possible by the **event loop**. For a more detailed overview of Node.js, check out this [video](https://www.youtube.com/watch?v=L0pjVcIsU6A) and this [gist](./_resources/Nodejs%20fundamentals.js) which also features a comparison between setting up a server in Node.js versus Express.js.
 
 Node.js comes with a large set of built-in modules which you can add to your project:
+
 ```js
-const path = require('packageName')
+const path = require("packageName");
 ```
+
 For custom modules:
+
 ```js
 module.exports = {objectName: objectName, ...};
 const path = require('filePath');
 ```
+
 While you can set up a server using Node.js' built-in `http` module, this is only done in development since a proper web-server can handle SSL much faster besides other safety and caching features. Setting up a server can be easily done with **Express.js**. Alternative frameworks do exist such as **Restify**, a REST-oriented framework, but none of them are quite as popular as Express.js.
 
 It is advisable to put a Node.js server behind a proxy since actual web servers like **nginx** can handle.

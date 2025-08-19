@@ -9,7 +9,7 @@ const lenis = new Lenis({
   mouseMultiplier: 1,
   smoothTouch: false,
   touchMultiplier: 2,
-  infinite: false,
+  infinite: false
 });
 
 // Listen for the 'scroll' event and log the event data to the console

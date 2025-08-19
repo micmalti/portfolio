@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const ctx = canvas.getContext("2d", { alpha: false });
   let animationId;
   let words = [];
-  const wordList = ["#linear algebra", "#calculus", "#probability", "#statistics", "#stochastic processes", "#machine learning", "#cryptography", "#artificial intelligence", "#llm", "#python", "#c++", "#javascript", "#competitive programming", "#algorithms", "#data structures", "#system design", "#software architecture", "#databases", "#devops", "#ci/cd", "#web development", "#frontend development", "#backend bevelopment", "#ui/ux", "#blockchain", "#bitcoin", "#data science", "#data analysis", "#data visualisation", "#geospatial data", "#technical writing", "#documentation", "#communication", "#productivity", "#memory techniques", "#mental math", "#linux", "#shell scripting", "#git", "#troubleshooting", "#raspberry pi", "#open source", "#free software", "#writing", "#molecular dynamics", "#lammps", "#parallel computing", "#jupyter", "#web crawling", "#automation", "#android", "#node", "#security", "#note taking", "#typography", "#product management", "#etl pipelines"]
+  const wordList = ["#linear algebra", "#calculus", "#probability", "#statistics", "#stochastic processes", "#machine learning", "#cryptography", "#artificial intelligence", "#llm", "#python", "#c++", "#javascript", "#competitive programming", "#algorithms", "#data structures", "#system design", "#software architecture", "#databases", "#devops", "#ci/cd", "#web development", "#frontend development", "#backend bevelopment", "#ui/ux", "#blockchain", "#bitcoin", "#data science", "#data analysis", "#data visualisation", "#geospatial data", "#technical writing", "#documentation", "#communication", "#productivity", "#memory techniques", "#mental math", "#linux", "#shell scripting", "#git", "#troubleshooting", "#raspberry pi", "#open source", "#free software", "#writing", "#molecular dynamics", "#lammps", "#parallel computing", "#jupyter", "#web crawling", "#automation", "#android", "#node", "#security", "#note taking", "#typography", "#product management", "#etl pipelines"];
   const rows = 30;
   const wordsToShow = 100;
   const opacities = [0.8, 0.7, 0.6, 0.5];
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const speed = speeds[Math.floor(Math.random() * speeds.length)];
       const direction = Math.random() > 0.5 ? 1 : -1;
       const x = Math.random() * canvas.width;
-      const y = (row + 0.5) * rowHeight > (canvas.height - 70) ? (canvas.height - 70) : (row + 0.5) * rowHeight
+      const y = (row + 0.5) * rowHeight > canvas.height - 70 ? canvas.height - 70 : (row + 0.5) * rowHeight;
 
       words.push({
         word,
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
         fontSize,
         opacity,
         speed: speed * direction,
-        width: 0,
+        width: 0
       });
     }
 

@@ -31,15 +31,18 @@ The lack of regulation has made ICOs a popular way of scamming unwary investors.
 
 In Malta, blockchain-related legislation was passed through Parliament on July 4, 2018 and entered into effect close to a year later, on March 17, 2019:
 
-### Malta Digital Innovation Authority (MDIA) Act  
+### Malta Digital Innovation Authority (MDIA) Act
+
 This was responsible for the creation of a body in charge of regulating Blockchain (distributed ledger technologies) and AI.
 
-### Virtual Financial Assets (VFA) Act  
+### Virtual Financial Assets (VFA) Act
+
 This obliges prospective ICO issuers to apply for a license with MFSA through a VFA agent who will ensure everything is according to the law.
 
-### Innovative Technology Arrangements and Services Act (ITAS) Act  
+### Innovative Technology Arrangements and Services Act (ITAS) Act
+
 This allows MDIA to certify the qualities, features, attributes, behaviours, or aspects of a particular arrangement as fit for a particular purpose/s.
-    
+
 ## Private blockchains
 
 A private blockchain is a blockchain with an access control layer built into the protocol. In practice, this means network participants have control over who can join the network, and who can participate in the consensus process of the blockchain.
@@ -52,14 +55,10 @@ Ultimately, private blockchains provide higher levels of error checking and tran
 
 ## Is blockchain the right choice?
 
-*It depends.* 
+_It depends._
 
 Blockchain should never be viewed as an end in itself but rather as a means to an end. Regular users don't care about the underlying technology as long as they're satisfied with the service.
 
 Advice from Nicholas Mamo:
 
 > Opt for a wallet and query from a transaction history created for each user. Alternative option is to create the transaction asset within the user's wallet but that is a more difficult approach. Update the wallet as needed without creating a currency. Ask drivers for their IBAN account to receive funds from the company's own bank account. Hyperledger Fabric has poor documentation. Composer makes it very easy to link assets to a user.
-
-
-
-

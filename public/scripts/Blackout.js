@@ -12,8 +12,8 @@ window.addEventListener("load", function () {
       trigger: "#home",
       start: "center center",
       end: "bottom center",
-      scrub: true,
-    },
+      scrub: true
+    }
   });
 
   gsap.to("#arrow-container", {
@@ -23,7 +23,7 @@ window.addEventListener("load", function () {
       trigger: "#home",
       start: "10% top",
       end: "center center",
-      scrub: true,
-    },
+      scrub: true
+    }
   });
 });

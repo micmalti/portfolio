@@ -2,18 +2,18 @@ window.addEventListener("load", function () {
   gsap.registerPlugin(ScrollTrigger);
 
   ScrollTrigger.create({
-    start: 'top -80',
+    start: "top -80",
     end: 99999,
-    toggleClass: {className: 'header-row--scrolled', targets: '.header-row'}
+    toggleClass: { className: "header-row--scrolled", targets: ".header-row" }
   });
 
   const collapseHeader = document.getElementById("collapse-header");
-  const headerSpans = collapseHeader.querySelectorAll("span");  
+  const headerSpans = collapseHeader.querySelectorAll("span");
   const headerHeight = collapseHeader.offsetHeight;
-  
+
   gsap.set(collapseHeader, { opacity: 1, height: headerHeight });
   gsap.set(headerSpans, { opacity: 1, y: 0 });
-  
+
   ScrollTrigger.create({
     trigger: "body",
     start: "top top-=50",

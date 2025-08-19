@@ -14,7 +14,7 @@ const { headings, levels = 3 } = Astro.props as Props;
 const filteredHeadings = headings.filter((heading) => heading.depth <= levels);
 ---
 
-<div class="border-base-400 rounded-xs border p-4 text-sm leading-tight max-w-96 select-none">
+<div class="border-base-400 rounded-xs max-w-96 select-none border p-4 text-sm leading-tight">
   <h4 class="text-xl font-medium">Table of Contents</h4>
   <ul class="mt-4 flex flex-col gap-2 pr-4">
     {
@@ -22,20 +22,15 @@ const filteredHeadings = headings.filter((heading) => heading.depth <= levels);
         <li
           class:list={{
             "pl-3": heading.depth === 2,
-            "pl-6": heading.depth === 3,
+            "pl-6": heading.depth === 3
           }}
           class="relative"
         >
-          <a
-            href={`#${heading.slug}`}
-            class="toc-link inline-block max-w-full font-normal hover:font-semibold transition-[font-weight]"
-          >
-            <span class="invisible max-w-full font-semibold opacity-0 pointer-events-none" aria-hidden="true">
+          <a href={`#${heading.slug}`} class="toc-link inline-block max-w-full font-normal transition-[font-weight] hover:font-semibold">
+            <span class="pointer-events-none invisible max-w-full font-semibold opacity-0" aria-hidden="true">
               {heading.text}
             </span>
-            <span class="absolute top-0 left-0 max-w-full">
-              {heading.text}
-            </span>
+            <span class="absolute left-0 top-0 max-w-full">{heading.text}</span>
           </a>
         </li>
       ))

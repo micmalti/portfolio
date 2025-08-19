@@ -24,7 +24,7 @@ async function initAudio() {
     audioSource.connect(gainNode);
     gainNode.connect(audioContext.destination);
 
-    audioElement.addEventListener('play', () => {
+    audioElement.addEventListener("play", () => {
       isChangingState = false;
     });
   }
@@ -56,8 +56,8 @@ async function playWithFade() {
     gainNode.gain.setValueAtTime(0.0001, now);
     gainNode.gain.exponentialRampToValueAtTime(1.0, now + 0.5);
 
-    await audioElement.play().catch(e => {
-      if (e.name !== 'AbortError') throw e;
+    await audioElement.play().catch((e) => {
+      if (e.name !== "AbortError") throw e;
     });
   } catch (error) {
     console.error("Play error:", error);
@@ -75,7 +75,7 @@ function updateUI() {
 async function togglePlayback() {
   if (isChangingState) return;
   isChangingState = true;
-  
+
   const targetState = !isPlaying;
   isPlaying = targetState;
   updateUI();

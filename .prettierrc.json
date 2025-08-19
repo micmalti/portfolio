@@ -5,6 +5,8 @@
   "proseWrap": "always",
   "printWidth": 999,
   "htmlWhitespaceSensitivity": "ignore",
+  "endOfLine": "auto",
+  "trailingComma": "none",
   "overrides": [
     {
       "files": "*.astro",

@@ -6,46 +6,46 @@ const sections = [
     year: "2018",
     title: "Developing core competencies in molecular modeling",
     content: "For his final year dissertation on the topic of patterned defects in graphene, Michael applied molecular dynamics (MD) simulation, a technique similar to Monte Carlo sampling but with the added benefit of adhering to the physical constraits of the chemical system. Due to the high computational demand required for this study, Michael was granted access to the university's high-performance computing facility, where he gained proficiency in the Linux command line.",
-    background: "/images/abstract-expressionism-kandinsky.webp",
+    background: "/images/abstract-expressionism-kandinsky.webp"
   },
   {
     year: "2019",
     title: "Wearing the entrepreneurial hat",
     content: "Michael's involvement in a green tech startup, which he himself founded, was defined by long working hours spent alongside his team of software developers and regular meetings with various stakeholders. This experience showcased his ability to thrive in a stressful environment and deepened his understanding of the critical role that leadership plays in a company's success, fostering his appreciation for the quantamental approach to investing later in his career.",
-    background: "/images/abstract-expressionism-pollock.webp",
+    background: "/images/abstract-expressionism-pollock.webp"
   },
   {
     year: "2020",
     title: "Navigating lockdowns and machine learning",
     content: "Following his participation in a training program on the application of machine learning to gravitational wave research, Michael effectively used the time afforded by the Covid-19 lockdowns to further expand his knowledge in the domain of unsupervised learning. During this period, he developed a Python-based toolkit which combined the use of natural language processing and clustering techniques to aid in academic literature analysis.",
-    background: "/images/abstract-expressionism-rothko.webp",
+    background: "/images/abstract-expressionism-rothko.webp"
   },
   {
     year: "2021",
     title: "A Master's perspective into big data analytics",
     breakBefore: "big data analytics",
     content: "Michael resumed his academic studies by pursuing a Master's program in which he examined novel forms of folded graphene from a theoretical perspective. The accompanying MD simulations yielded large volumes of data, compelling the use of Python to streamline the analysis process and advanced statistical techniques for their interpretation, while high-quality visuals were vital to clearly communicate the results of the study.",
-    background: "/images/avant-garde-malevich.webp",
+    background: "/images/avant-garde-malevich.webp"
   },
   {
     year: "2022",
     title: "Managing an investment portfolio in the cloud",
     content: "Motivated by his lifelong interest in geopolitics and economics, Michael explored ways in which he could apply his multidisciplinary expertise within the world of finance. Consequently, he embarked on a long-term project for the creation of software to facilitate the management of his personal investment portfolio across different equity markets. Owing to its high availability requirement, he leveraged his deep understanding of AWS microservices to host the software in the cloud.",
-    background: "/images/cubism-picasso.webp",
+    background: "/images/cubism-picasso.webp"
   },
   {
     year: "2023",
     title: "The self-study that inspired a book",
     breakBefore: "a book",
     content: "What initially began as supporting research for the technical aspect of his portfolio management system has since grown into a book about quantitative finance slated for publication in 2025. By planning to release the book under a public domain licence, he seeks to position it as a living document, receiving regular contributions from the wider quant community on the latest developments in the field.",
-    background: "/images/de-stijl-mondrian.webp",
+    background: "/images/de-stijl-mondrian.webp"
   },
   {
     year: "2024",
     title: "An open mind to new experiences",
     content: "Having never shied away from a challenge, Michael took it upon himself to design and build his own personal site, all while being away from his home country of Malta on a weeks-long trip across Europe in search of novel opportunities in the quant sector. His travels have brought him into contact with a rich diversity of cultures, an experience he embraced with ease given his proficiency in multiple languages.",
-    background: "/images/futurism-boccioni.webp",
-  },
+    background: "/images/futurism-boccioni.webp"
+  }
 ];
 ---
 
@@ -58,17 +58,7 @@ const sections = [
             <div class="h-full w-3" />
             {/* <span class="w-full font-sans text-sans-lg font-bold">{section.year}</span> */}
             {/* <span class="w-full font-serif text-serif-md max-w-title">{section.title}</span> */}
-            <span
-              class="w-full font-serif text-serif-md max-w-title"
-              set:html={
-                section.breakBefore
-                  ? section.title.replace(
-                      section.breakBefore,
-                      `<br class='hidden md:inline' />${section.breakBefore}`
-                    )
-                  : section.title
-              }
-            />
+            <span class="w-full max-w-title font-serif text-serif-md" set:html={section.breakBefore ? section.title.replace(section.breakBefore, `<br class='hidden md:inline' />${section.breakBefore}`) : section.title} />
             <span class="max-w-paragraph font-sans text-sans-md md:text-sans-timeline">{section.content}</span>
           </div>
         </div>
@@ -87,18 +77,15 @@ const sections = [
     </div>
     <div id="navigation-dots" class="flex-col gap-4 md:flex">
       <ul class="m-0 list-none p-0">
-        {sections.map((_, index) => (
-          <li class="relative mt-4">
-            <a
-              href={`#section${index + 1}`}
-              class="block h-3 w-3 rounded-full border border-transparent bg-secondary transition-all duration-300"
-              aria-label={`Go to section ${index + 1}`}
-              data-index={index}
-            >
-              <span class="sr-only">Section {index + 1}</span>
-            </a>
-          </li>
-        ))}
+        {
+          sections.map((_, index) => (
+            <li class="relative mt-4">
+              <a href={`#section${index + 1}`} class="block h-3 w-3 rounded-full border border-transparent bg-secondary transition-all duration-300" aria-label={`Go to section ${index + 1}`} data-index={index}>
+                <span class="sr-only">Section {index + 1}</span>
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </div>
   </div>

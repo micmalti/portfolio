@@ -28,7 +28,7 @@
     @apply bg-[linear-gradient(transparent_0%,_transparent_calc(55%_-_9px),_rgba(255,_210,_63,_1)_calc(55%_-_9px),_rgba(255,_210,_63,_1)_100%)] bg-[length:100%_200%] text-secondary no-underline transition-[background-position,padding] duration-300 ease-in-out hover:bg-[linear-gradient(transparent_0%,_transparent_calc(55%_-_9px),_rgb(255,_210,_63)_calc(55%_-_9px),_rgb(255,_210,_63)_100%)] hover:bg-[position:0_100%];
   }
   .hyperlink-dark {
-    @apply bg-[linear-gradient(transparent_0%,_transparent_calc(55%_-_9px),_rgba(255,_210,_63,_1)_calc(55%_-_9px),_rgba(255,_210,_63,_1)_100%)] bg-[length:100%_200%] text-primary font-normal no-underline transition-[background-position,padding] duration-300 ease-in-out hover:bg-[linear-gradient(transparent_0%,_transparent_calc(55%_-_9px),_rgb(255,_210,_63)_calc(55%_-_9px),_rgb(255,_210,_63)_100%)] hover:bg-[position:0_100%];
+    @apply bg-[linear-gradient(transparent_0%,_transparent_calc(55%_-_9px),_rgba(255,_210,_63,_1)_calc(55%_-_9px),_rgba(255,_210,_63,_1)_100%)] bg-[length:100%_200%] font-normal text-primary no-underline transition-[background-position,padding] duration-300 ease-in-out hover:bg-[linear-gradient(transparent_0%,_transparent_calc(55%_-_9px),_rgb(255,_210,_63)_calc(55%_-_9px),_rgb(255,_210,_63)_100%)] hover:bg-[position:0_100%];
   }
 }
 
@@ -46,7 +46,7 @@
     letter-spacing: -0.02em; /* defines how letters are spaced */
     text-rendering: optimizelegibility;
   }
-  
+
   .dark-cursor {
     --cursor-default: url(/src/icons/cursor-dark.svg) 16 16;
     --cursor-pointer: url(/src/icons/cursor-light.svg) 16 16;
@@ -57,6 +57,8 @@
     --cursor-pointer: url(/src/icons/cursor-dark.svg) 16 16;
   }
 }
+
+@custom-variant prose-inline-code (&.prose :where(:not(pre)>code):not(:where([class~="not-prose"] *)));
 
 *,
 *:before,

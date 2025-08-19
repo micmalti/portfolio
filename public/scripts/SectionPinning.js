@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         window.removeEventListener("scroll", gsap.ticker.tick);
         scrolling.events.forEach((e, i) => (i ? document : window).removeEventListener(e, scrolling.prevent));
       }
-    },
+    }
   };
 
   function goToSection(section, anim, i) {
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       gsap.to(window, {
         scrollTo: { y: section, autoKill: false },
         onComplete: scrolling.enable,
-        duration: 1,
+        duration: 1
       });
 
       anim && anim.restart();
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       start: "top bottom-=1",
       end: "bottom top+=1",
       onEnter: () => goToSection(section, intoAnim),
-      onEnterBack: () => goToSection(section),
+      onEnterBack: () => goToSection(section)
     });
   });
 });
