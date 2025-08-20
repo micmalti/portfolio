@@ -30,6 +30,10 @@
   .hyperlink-dark {
     @apply bg-[linear-gradient(transparent_0%,_transparent_calc(55%_-_9px),_rgba(255,_210,_63,_1)_calc(55%_-_9px),_rgba(255,_210,_63,_1)_100%)] bg-[length:100%_200%] font-normal text-primary no-underline transition-[background-position,padding] duration-300 ease-in-out hover:bg-[linear-gradient(transparent_0%,_transparent_calc(55%_-_9px),_rgb(255,_210,_63)_calc(55%_-_9px),_rgb(255,_210,_63)_100%)] hover:bg-[position:0_100%];
   }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none !important;
+  }
 }
 
 @layer utilities {
@@ -75,12 +79,37 @@ button {
   cursor: var(--cursor-default), pointer !important;
 }
 
-html,
-body {
-  -ms-overflow-style: none;
-  scrollbar-gutter: stable;
-  scrollbar-width: none;
-  /* scrollbar-color: #555 #222224; */
+::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  /* background: #eaebed; */
+  background: #969696;
+  /* cursor: var(--cursor-default), pointer; */
+};
+
+::-webkit-scrollbar-thumb:hover {
+  background: #969696;
+  cursor: var(--cursor-default), pointer;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+@supports (-moz-appearance: none) {
+  html, body {
+    -ms-overflow-style: none;
+    scrollbar-gutter: stable;
+    scrollbar-color: #eaebed transparent;
+    scrollbar-width: thin;
+  }
 }
 
 p {
@@ -214,6 +243,15 @@ html.lenis body {
 
 .link:hover .icon:nth-child(2) {
   transform: translate(0px);
+}
+
+.katex-display > .katex {
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  white-space: nowrap !important;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 /* section > .footnotes {

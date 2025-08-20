@@ -6,9 +6,15 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import lottie from "astro-integration-lottie";
 import expressiveCode from "astro-expressive-code";
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 export default defineConfig({
   site: "https://michaelgauci.com",
+  markdown: {
+    remarkPlugins: [remarkMath],
+    rehypePlugins: [rehypeKatex],
+  },
   integrations: [
     react(),
     tailwind({
@@ -19,7 +25,7 @@ export default defineConfig({
     lottie(),
     expressiveCode({
       themes: ["github-light"],
-      useThemedScrollbars: true,
+      useThemedScrollbars: false,
       styleOverrides: {
         // frames: {
         // shadowColor: '#f9f9f9',
