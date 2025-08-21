@@ -10,12 +10,13 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import remarkDirective from "remark-directive";
 import starlightAsides from "./src/utils/starlight-asides.js";
+import rehypeFigure from "@microflash/rehype-figure"
 
 export default defineConfig({
   site: "https://michaelgauci.com",
   markdown: {
     remarkPlugins: [remarkMath, remarkDirective, starlightAsides],
-    rehypePlugins: [rehypeKatex],
+    rehypePlugins: [rehypeKatex, rehypeFigure],
   },
   integrations: [
     react(),
