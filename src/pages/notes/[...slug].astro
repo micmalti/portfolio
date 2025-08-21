@@ -1,6 +1,7 @@
 ---
 import { getCollection, type CollectionEntry } from "astro:content";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import "../../styles/admonition.css";
 
 export async function getStaticPaths() {
   const posts = await getCollection("notes");

@@ -10,13 +10,7 @@ tags:
   - ui/ux
 ---
 
-```python
-    def __repr__(self):
-        return f"Student({self.first_name!r}, {self.last_name!r}), {self.last_name!r})"
-```
-$$
-m=\frac{y-y_0}{x-x_0}=\frac{f(x+\Delta x)-f(x_0)}{\cancel{x}+\Delta x-\cancel{x_0}}=\frac{\frac{1}{x_0+\Delta x}-\frac{1}{x_0}}{\Delta x}=\frac{\cancel{x_0}-(\cancel{x_0}+\cancel{\Delta x})}{\cancel{\Delta x}(x_0(x_0+\Delta x))} = -\frac{1}{x_0^2+\Delta x}
-$$
+
 
 setting $h=0$ produces **binomial expansion** limited to linear terms:
 $$
@@ -31,6 +25,15 @@ $$
 when linear approximation insufficient, quadratic approximations used, like log quadratic instead of log linear functions in economics
 
 :::note
+
+```python
+    def __repr__(self):
+        return f"Student({self.first_name!r}, {self.last_name!r}), {self.last_name!r})"
+```
+$$
+m=\frac{y-y_0}{x-x_0}=\frac{f(x+\Delta x)-f(x_0)}{\cancel{x}+\Delta x-\cancel{x_0}}=\frac{\frac{1}{x_0+\Delta x}-\frac{1}{x_0}}{\Delta x}=\frac{\cancel{x_0}-(\cancel{x_0}+\cancel{\Delta x})}{\cancel{\Delta x}(x_0(x_0+\Delta x))} = -\frac{1}{x_0^2+\Delta x}
+$$
+
 for linear approximation of $f(x)=(1+x)^r$, re-expressed in terms of $h$:
 $$
 f(h)=(1+h)^r\\

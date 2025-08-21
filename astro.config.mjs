@@ -8,11 +8,13 @@ import lottie from "astro-integration-lottie";
 import expressiveCode from "astro-expressive-code";
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import remarkDirective from "remark-directive";
+import starlightAsides from "./src/utils/starlight-asides.js";
 
 export default defineConfig({
   site: "https://michaelgauci.com",
   markdown: {
-    remarkPlugins: [remarkMath],
+    remarkPlugins: [remarkMath, remarkDirective, starlightAsides],
     rehypePlugins: [rehypeKatex],
   },
   integrations: [
