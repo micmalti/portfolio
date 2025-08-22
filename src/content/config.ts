@@ -12,7 +12,8 @@ const notesCollection = defineCollection({
       raw: date,
       formatted: date.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }),
       short: date.toLocaleDateString("en-US", { month: "short", day: "numeric" })
-    }))
+    })),
+    tags: z.array(z.string())
   })
 });
 

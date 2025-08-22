@@ -39,6 +39,9 @@ const frontmatter = post.data;
               <div class="flex gap-8 pt-4 font-sans text-sans-md font-normal">
                 <span class="whitespace-nowrap">Published {frontmatter.created.formatted}</span>
                 <span class="whitespace-nowrap">Updated {frontmatter.updated.formatted}</span>
+                  {frontmatter.tags.map((tag: string) => (
+                    <span class="whitespace-nowrap">{tag}</span>
+                  ))}
               </div>
             </div>
           </div>

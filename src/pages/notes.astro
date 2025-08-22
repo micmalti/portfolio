@@ -17,6 +17,10 @@ import "../styles/global.css";
 // }
 
 const allPosts = await getCollection("notes");
+// const filteredPosts = allPosts.filter((post: any) => post.data.tags?.includes(tag));
+const tags = allPosts.map((post: any) => post.data.tags).flat();
+const uniqueTags = [...new Set(tags)];
+
 ---
 
 <html class='lang="en"'>
@@ -45,7 +49,15 @@ const allPosts = await getCollection("notes");
             <div id="collapse-header" class="p-4 pb-6 pt-8 md:p-12 md:pt-4">
               <h1 class="block font-serif text-serif-md">Notes</h1>
               <div class="grid grid-cols-2 pt-4 font-sans text-sans-md font-normal">
-                <span class="col-span-1">These are living notes. Most of them are incomplete by design, prioritising the capture of new insights over point-in-time conclusions. For this reason, readers should treat them as open-ended explorations, rather than polished articles, with the understanding that there’s always more to discover on a certain topic.</span>
+                <span class="col-span-1">These are living notes. Most of them are incomplete by design, prioritising the capture of new insights over point-in-time conclusions. For this reason, readers should treat them as open-ended explorations, rather than polished articles, with the understanding that there’s always more to discover on a certain topic.
+                </span>
+                <div>
+                  {uniqueTags.map((tag: string) => (
+                  <a href=`#${tag}`>
+                  <button data-type={tag} class="box-btn w-fit whitespace-nowrap" id="tagFilter">{tag}</button>
+                  </a>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -62,5 +74,6 @@ const allPosts = await getCollection("notes");
     <script type="text/javascript" src="/scripts/Modal.js"></script>
     <script type="text/javascript" src="/scripts/ScrollbackHeader.js"></script>
     <script type="text/javascript" src="/scripts/visited.js"></script>
+    <script type="text/javascript" src="/scripts/TagFilter.js"></script>
   </body>
 </html>

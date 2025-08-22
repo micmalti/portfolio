@@ -45,7 +45,7 @@ $$
 $$
 where $O((\Delta x)^2)$ represent higher order terms of $\Delta x$, is that as $\Delta x \rarr 0$:
 $$
-\frac{\delta}{\delta x} x^n=\frac{\cancel{x^n}+n(x^{n-1}\cancel{\Delta x})+O((\Delta x)^{\cancel{2}})-\cancel{x^n}}{\cancel{\Delta x}}=nx^{n-1}
+\frac{\delta}{\delta x} x^n=\frac{\cancel{x^n}+n(x^{n-1}\cancel{\Delta x})+O((\Delta x)^{\cancel{2}})-\cancel{x^n}}{\cancel{\Delta x}}=nx^{n-1} 
 
 $$
 but if $n=1$:
@@ -93,7 +93,7 @@ $$
 better expressed as:
 $$
 f(x)=\frac{1}{\sqrt{1+x}} \qquad \textnormal{where}\;\;x=-\frac{v^2}{c^2}
-$$
+$$ 
 setting $h=0$ produces **binomial expansion** limited to linear terms:
 $$
 f(x) \approx1-\frac{1}{2}x
@@ -154,7 +154,7 @@ y=2\frac{1}{x_0}
 $$
 therefore, area equal to $\frac{1}{2}(2x_0)(2\frac{1}{x_0})= 2$
 
-:::caution
+:::warning
 it may be confusing to see role of a letter in a computation change midway, but this done for convenience to avoid need for defining an extra variable
 :::
 
@@ -170,7 +170,7 @@ $$
 s(t)= \Delta d/ \Delta t
 $$
 :::note
-$y(x)$ explicitly denotes $y$ as function of $x$, allowing use of derivative notation shorthand, $y'(x)$ i.e. Lagrange's notation, in favour of Leibniz's notation, $\frac{\delta y}{\delta x}$ or $\frac{\delta }{\delta x}y$ which aptly represents an "operator" applied to a function - both notations valid, provided they explicitly show differentiation with respect to $x$
+$y(x)$ explicitly denotes $y$ as function of $x$, allowing use of derivative notation shorthand, $y'(x)$ i.e. Lagrange's notation, in favour of Leibniz's notation, $\frac{\delta y}{\delta x}$ or $\frac{\delta }{\delta x}y$ which aptly represents an "operator" applied to a function - both notations valid, provided they explicitly show differentiation with respect to $x$ 
 :::
 
 contrast this with integral calculus where, to recover $d(t)$ for time interval $[0,n]$ given $s(t)$, necessary to imagine chopping up interval into infinitesimally small intervals to recover *constant* speed within each interval which, when multiplied by interval size reveals distance travelled, to then sum them up for all intervals:
@@ -196,7 +196,7 @@ a different solid of revolution will be obtained when rotating curve around some
 $$
 \begin{aligned}
 &\qquad \qquad \qquad \qquad\textbf{Integral} & \quad\textbf{Function} &\quad \qquad \quad\textbf{Derivative}\\
-& G(x)=\int y'(x)\delta x=\frac{1}{n+1}x^{n+1} +c;\quad n\neq-1&   y=x^n &  \qquad \frac{\delta y}{\delta x}=nx^{n-1};\quad n\neq0 \\
+& G(x)=\int y'(x)\delta x=\frac{1}{n+1}x^{n+1} +c;\quad n\neq-1&   y=x^n &  \qquad \frac{\delta y}{\delta x}=nx^{n-1};\quad n\neq0 \\ 
 \end{aligned}
 
 $$
@@ -223,7 +223,7 @@ $$
 matrix multiplication is non-commutative, so order of $A$ and $B$ in all terms must be the same - however, vector dot product is commutative, producing same scalar either way:
 $$
 d(x^T x) = x^T(dx) + (dx^T)x = (2x^T)dx
-$$
+$$ 
 
 :::note
 derivation of product rule comes for chain rule expressed for multivariate function:
@@ -240,7 +240,7 @@ df&=g(x+dx)h(x+dx)-g(x)h(x)\\
 &=g(x)dh + dgh(x)
 \end{aligned}
 $$
-for $f(x)=A^2$,
+for $f(x)=A^2$, 
 $$
 df = (A+dA)^2-A^2 = A\;dA +dA\;A + \textcolor{lightgrey}{(dA)^2}
 $$
@@ -253,7 +253,7 @@ g(x) = \int x^3(x^4+2)^5 \delta x
 $$
 if $f(u)=x^4+2$, then $\delta u = 4x^3\delta x$, allowing integral to be redefined in terms of $u$:
 $$
-\int u^5\cdot\frac{1}{4}\delta u = \frac{1}{24}u^6
+\int u^5\cdot\frac{1}{4}\delta u = \frac{1}{24}u^6 
 $$
 $\therefore g(x) = \frac{(x^4+2)^6}{24}+c$
 
@@ -340,7 +340,7 @@ $$
 \int \frac{\delta y}{y} = \int \delta x\\
 \ln \left| y \right| = x + c
 $$
-note that it's superfluous to have constant on both sides when they can always be combined into one - moreover, $c$ is an additive constant right after taking antiderivative, but this might change later on
+note that it's superfluous to have constant on both sides when they can always be combined into one - moreover, $c$ is an additive constant right after taking antiderivative, but this might change later on 
 :::
 
 to maintain equivalence:
@@ -357,7 +357,7 @@ f(x)=\frac{1}{1-x} =1+x^2+x^3+x^4+...
 $$
 contrary to **exponential series**, which becomes equivalent to $e$ when $x=\textcolor{red}{1}$:
 $$
-\lim_{n \rarr \infin} (1+\frac{\textcolor{red}{1}}{n})^n = e \;\longleftrightarrow\; \sum_{n=0}^\infin \frac{1}{n!}x^n \qquad \textnormal{where}\;0!=1
+\lim_{n \rarr \infin} (1+\frac{\textcolor{red}{1}}{n})^n = e \;\longleftrightarrow\; \sum_{n=0}^\infin \frac{1}{n!}x^n \qquad \textnormal{where}\;0!=1 
 $$
 when $x \neq 1$, such as in continuous interest formula where annual rate, $r$ different than 1:
 $$
@@ -398,7 +398,7 @@ but $ \lim_{x \rarr 0^+} x\ln x=0$, therefore limit tends to 1
 
 only if limit of first derivative still inderminate can l'Hôpital's rule be applied once again - an output of the form $\cos x / 2x$ is $\infin$, not indeterminate
 
-**continuity** means at $x_0$,  $\lim_{x \rarr x_0}f(x)=f(x_0)$ - if right-sided limit of $f(x)$, $\lim_{x \rarr a^+}\frac{f(a+\Delta x)-f(a)}{\Delta x}$ different than left-sided limit, $\lim_{x \rarr a^-}\frac{f(a-\Delta x)-f(a)}{\Delta x}$ function is non-continuous - **jump discontinuity** present when both limits exist but are unequal
+**continuity** means at $x_0$,  $\lim_{x \rarr x_0}f(x)=f(x_0)$ - if right-sided limit of $f(x)$, $\lim_{x \rarr a^+}\frac{f(a+\Delta x)-f(a)}{\Delta x}$ different than left-sided limit, $\lim_{x \rarr a^-}\frac{f(a-\Delta x)-f(a)}{\Delta x}$ function is non-continuous - **jump discontinuity** present when both limits exist but are unequal 
 
 for $f(x)=\sqrt{x}$, slope **undefined** at $x \leq 0$, yet continuous for $x > 0$  - **removable discontinuity** occurs when function is undefined at a single point but approaches a unique finite value from both sides of that point, permitting a redefinition of the function to make it continuous (its derivative found by l'Hôpital's rule) - for $f(x)=\sqrt{x}$ , this is inapplicable since function already continuous on its domain $ [0, \infin]$
 
@@ -418,7 +418,7 @@ $$
 given difficulty for polynomial curve, like $y=Ax^n$, to identify growth rate given a set of points, solved by plotting log curve instead:
 $$
 \textnormal{log}\, y=\textnormal{log}\, A+n\,\textnormal{log}\, x
-$$
+$$ 
 error, $E$, the difference between derivative and average slope:
 $$
 \frac{\delta f}{\delta x}-\frac{\Delta f}{\Delta x} \approx A(\Delta x)^n
@@ -435,10 +435,10 @@ logarithm is inverse function of $e^x$, yielding exponent as its output:
 $$
 y=f(x)=e^x \quad \rArr \quad f^{-1}(y)=\ln e^x=x \quad \rArr \quad f(f^{-1}(y))=e^{\ln y}=y
 $$
-which means *any value $y$ may be expressed as an exponential* - it follows that:
+which means *any value $y$ may be expressed as an exponential* - it follows that: 
 $$
 \ln 1 = 0 \qquad \textnormal{and} \qquad \ln e = 1
-$$
+$$ 
 applying the chain rule to solve for derivative of $\ln x$ implicitly:
 $$
 \ln x = w \quad \Rarr \quad e^w=x\\
@@ -470,7 +470,7 @@ $$
 \frac{\delta}{\delta x}\ln u=\left(\frac{\delta \ln u}{\delta u}\right)\left(\frac{\delta u}{\delta x}\right)=\frac{1}{u}\frac{\delta u}{\delta x} =\frac{u'}{u}\\
 \therefore u'(x)=u(\ln u)'
 $$
-where $\ln u=x \ln a$
+where $\ln u=x \ln a$ 
 
 log price data preferred for modelling purposes instead of absolute prices as it considers relative price changes, better accounting for large swings
 
@@ -531,7 +531,7 @@ $$
 \frac{\delta(y^2+x^2)}{\delta t}=\frac{\delta(5^2)}{\delta t}\\
 2y\frac{\delta y}{\delta t}+2x\frac{\delta x}{\delta t}=0
 $$
-given $\frac{\delta x}{\delta t}=1\textnormal{ms}^{-1}$,
+given $\frac{\delta x}{\delta t}=1\textnormal{ms}^{-1}$, 
 $$
 \frac{\delta y}{\delta t}=-\frac{2(4)(-1)}{2(3)}=\frac{4}{3}
 $$
@@ -539,7 +539,7 @@ notice how in an implicit differentiation, there is a common variable tying toge
 $$
 \delta f = f_x\delta x + f_y \delta y \quad \rArr \quad f'(t) = f_x\frac{\delta x}{\delta t}+f_y\frac{\delta y}{\delta t}
 $$
-where $\delta f$, referred to as **total differential**, includes everything causing multivariable function $f$ to change - this extends chain rule to multivariable case - consider yet another example where for $w=x^2y+z$, find  $w'(t)$
+where $\delta f$, referred to as **total differential**, includes everything causing multivariable function $f$ to change - this extends chain rule to multivariable case - consider yet another example where for $w=x^2y+z$, find  $w'(t)$ 
 given  $x=t, y=e^t$ and $z=\sin t$:
 $$
 \begin{aligned}
@@ -597,7 +597,7 @@ f(x) = \sum_{n=0}^\infin a_nx^n= a_0+a_1x +a_2x^2+a_3x^3+...
 $$
 when each $a$ chosen such that at $x=0$, all derivatives ($f(0), f'(0), f''(0),...$) match, series referred to as **MacLaurin series**:
 $$
-f(x) = \sum_{n=0}^\infin \frac{f^n(x)}{n!}x^n \qquad \textnormal{where}\;0!=1
+f(x) = \sum_{n=0}^\infin \frac{f^n(x)}{n!}x^n \qquad \textnormal{where}\;0!=1 
 $$
 but called **Taylor series** when zero not the point where derivatives considered - Taylor's formula evaluated at 0 is just Maclaurin's formula - both series ensure each derivative of polynomial controlled by only one of the coefficients, so for $f(x)=\sin x$:
 $$
@@ -683,7 +683,7 @@ for derative of $\cos \theta$, proof similar but uses a different identity: $\co
 
 arcsine is inverse function of $\sin \theta$:
 $$
-y=f(\theta)=\sin \theta \quad \rArr \quad f^{-1}(y)=\arcsin y =\theta \quad \rArr \quad f(f^{-1}(y))=\sin(\arcsin(y))=y
+y=f(\theta)=\sin \theta \quad \rArr \quad f^{-1}(y)=\arcsin y =\theta \quad \rArr \quad f(f^{-1}(y))=\sin(\arcsin(y))=y   
 $$
 applying the chain rule to the derivative of $\sin(\arcsin(y))$ to find derivative of $\arcsin y$:
 $$
@@ -740,11 +740,11 @@ $$
 $$
 :::
 
-(cont.) if $f$ assumed to be continuous and,
+(cont.) if $f$ assumed to be continuous and, 
 $$
 G(x)=\int_a^x f(t)\delta t \qquad a \leq t \leq x
 $$
-where $a,x$ are fixed when integral calculated ($t$ is dummy variable), then
+where $a,x$ are fixed when integral calculated ($t$ is dummy variable), then 
 $$
 G'(x)=\frac{\delta}{\delta x}\int_a^x f(t)\delta t =f(x)
 $$
@@ -758,16 +758,16 @@ S(x)= \int_0^x \sin(t^2)\delta t
 $$
 
 properties of integrals as direct consequence of this theorem i.e. that integral is a sum:
-1.
+1. 
    $$
    \int_a^b (f(x)+ cg(x))\delta x=\int_a^b f(x)\delta x + c\int_a^b g(x)\delta x
    $$
    where $c$ is a constant, doesn't depend on $x$
-2.
+2. 
    $$
    \int_a^a f(x)\delta x=0\quad \textcolor{lightgrey}{(}=F(a)-F(a)\textcolor{lightgrey}{)}
    $$
-3.
+3. 
    $$
    \int_a^b f(x)\delta x=-\int_b^a f(x)\delta x \quad  \textcolor{lightgrey}{(}=-(F(b)-F(a))\textcolor{lightgrey}{)}
    $$
@@ -854,7 +854,7 @@ $$
 \cos(2\theta) = \cos^2 \theta-\sin^2 \theta \quad \rArr \quad \cos^2\theta=\frac{1+\cos(2\theta)}{2} \;\;\textnormal{and}\;\;\sin^2\theta=\frac{1-\cos(2\theta)}{2}\\
 \sin(2\theta) = 2\sin \theta \cos \theta
 $$
-when $m,n$ are even, like in $\int \sin^2 x \cos^2 x \delta x$, rewriting using above identities becomes necessary:
+when $m,n$ are even, like in $\int \sin^2 x \cos^2 x \delta x$, rewriting using above identities becomes necessary:  
 $$
 \left(\frac{1-\cos(2\theta)}{2}\right)\left(\frac{1+\cos(2\theta)}{2}\right)\\
 \frac{1-\cos^2 (2\theta)}{4}\\
@@ -914,7 +914,7 @@ $$
 \cancel{\frac{A}{x-1}(x+2)} + B=\frac{4x-1}{x-1}\\
 A=\frac{4(-2)-1}{-2-1} = 3
 $$
-cover-up method (last step) works if $Q(x)$, which represents the denominator, has distinct linear factors and degree of numerator $P$ greater than that of $Q$ - if not, will need to apply [algebraic long division](https://www.youtube.com/watch?v=A_S1YcVsO80) first:
+cover-up method (last step) works if $Q(x)$, which represents the denominator, has distinct linear factors and degree of numerator $P$ greater than that of $Q$ - if not, will need to apply [algebraic long division](https://www.youtube.com/watch?v=A_S1YcVsO80) first: 
 $$
 \int \frac{x^3}{x^2+x-2}=\int x-1 + \frac{3x-2}{x^2 + x-2}
 
@@ -988,7 +988,7 @@ to find $Q(t)$:
 $$
 \overrightarrow{Q_0Q(t)} = t\overrightarrow{Q_0Q_1}
 $$
-where $\overrightarrow{Q_0Q_1} =\langle 1-(-1), 3-(2), -1-(2) \rangle = \langle2, 1, -3 \rangle$; $\overrightarrow{Q_0Q(t)} = \langle x(t)+1,y(t)-2,z(t)-2 \rangle$
+where $\overrightarrow{Q_0Q_1} =\langle 1-(-1), 3-(2), -1-(2) \rangle = \langle2, 1, -3 \rangle$; $\overrightarrow{Q_0Q(t)} = \langle x(t)+1,y(t)-2,z(t)-2 \rangle$ 
 $$
 \begin{aligned}
 \therefore x(t) &= -1 + 2t\\
@@ -1010,7 +1010,7 @@ $$
 &=r\delta \theta
 \end{aligned}
 $$
-which means that speed, $\frac{\delta s}{\delta t}$ is constant, $r$
+which means that speed, $\frac{\delta s}{\delta t}$ is constant, $r$ 
 
 ## Lecture S33
 
@@ -1071,7 +1071,7 @@ or
 $$
 \ln N < S_N <\ln N + 1
 $$
-if $f(x)$ is decreasing and positive, then
+if $f(x)$ is decreasing and positive, then 
 $$
 \Big|\sum_{n=1}^\infin f(n) - \int_1^\infin f(x) \delta x\Big| < f(1)
 $$
@@ -1116,8 +1116,8 @@ df &= d\vec x^T (A \vec x)+\vec x^T d(A \vec x)\\
 $$
  ### Optimisation
 
-typically in optimisation problems, function to be minimised or maximised depends on several variables - a point
-$(x_0,y_0) $ considered a local min, local max or saddle (either max or min, depending in which direction you look) when both partial derivatives are zero
+typically in optimisation problems, function to be minimised or maximised depends on several variables - a point 
+$(x_0,y_0) $ considered a local min, local max or saddle (either max or min, depending in which direction you look) when both partial derivatives are zero 
 
 for $f(x,y) = x+y+\frac{1}{xy}$ where $x,y > 0$:
 $$
@@ -1185,7 +1185,7 @@ one ends up solving a linear system of 3 equations
 
 a **contour plot** represents input space of a multivariable function by lines along which output stays constant - for $f(x,y)$, contours will represent its surface given by $z=f(x,y)$, at various levels of $z$ - tangent plane to a surface given by $f(x,y,z) =c$ can be found from its normal vector which is gradient vector, $\nabla_f$, always pointing towards higher values of function because it shows direction of fastest increase of a function
 
-**directional derivatives** - derivatives in the direction of some unit vector $\hat{u}$:
+**directional derivatives** - derivatives in the direction of some unit vector $\hat{u}$: 
 $$
 \frac{\delta w}{\delta s_{| \hat{u}}} = \nabla_w \cdot \hat{u} = |\nabla_w|\cos(\theta)
 $$
@@ -1195,7 +1195,7 @@ $$
 $$
 indeed, directional derivative largest when $\theta = 0$, when $\hat{u}$ in the direction of gradient - therefore, gradient at a specific point shows direction in which function increases most quickly there
 
-in a neural network, $f(x)$, known as **loss function**, takes in large number of input parameters as a vector and returns a scalar, an error measure related to some norm of the difference between NN's evaluated output to a reference output - optimisation required to make that error as small as possible, with negative gradient pointing downhill i.e. **steepest descent** direction, by updating input parameters *simultaneously*, not one at a time -
+in a neural network, $f(x)$, known as **loss function**, takes in large number of input parameters as a vector and returns a scalar, an error measure related to some norm of the difference between NN's evaluated output to a reference output - optimisation required to make that error as small as possible, with negative gradient pointing downhill i.e. **steepest descent** direction, by updating input parameters *simultaneously*, not one at a time - 
 
 there are various algorithms to address how far to go in $-\nabla f$ direction at each backpropagation step, such as backtracking and line search, and to achieve faster convergence, such as conjugate gradient, BFGS, and Adam (popular in ML contexts given its suitability for stochastic, high-dimensional, and noisy problems) - [problem formulation](https://youtu.be/lBfqvBJaFmc?list=PLUl4u3cNGP62EaLLH92E_VCN4izBKK6OE&t=995) is what ultimately counts to inform upon choice of an algorithm
 
@@ -1217,7 +1217,7 @@ trying to minimize or maximize a multivariable function, say $f(x,y,z)$ where va
 $$
 g(x,y,z)=c
 $$
-**Lagrange multipliers**, $\lambda$ allow finding mininum or maximum of $f(x,y,z)$ only when constraint is satisfied -
+**Lagrange multipliers**, $\lambda$ allow finding mininum or maximum of $f(x,y,z)$ only when constraint is satisfied - 
 at a critical point, both $\nabla_f$ and $\nabla_g$ will be parallel to each other, so they must be proportional:
 $$
 \nabla_f = \lambda \nabla_g
@@ -1245,7 +1245,7 @@ $$
 $$
 $\therefore \lambda=\pm2$
 
-taking constraint into account, at $\lambda = 2$, linear system reduces to $x=y$, and $x^2=3 \rArr x = \pm \sqrt 3$, which means $(x,y)=(\sqrt{3}, \sqrt{3}) $ or $(-\sqrt{3}, -\sqrt{3})$ - doing the same for $\lambda = -2$ doesn't produce any solution - both solutions in this example are minima
+taking constraint into account, at $\lambda = 2$, linear system reduces to $x=y$, and $x^2=3 \rArr x = \pm \sqrt 3$, which means $(x,y)=(\sqrt{3}, \sqrt{3}) $ or $(-\sqrt{3}, -\sqrt{3})$ - doing the same for $\lambda = -2$ doesn't produce any solution - both solutions in this example are minima 
 
 in this situation, second derivative test won't apply since input variables not independent - instead, one must compare obtained values for $f$ to reveal whether solution is a maximum or minimum
 
@@ -1327,7 +1327,7 @@ $$
 
 ## Lecture M16
 
-for a function with two variables, its graph will be a surface plot - volume below graph called **double integral**, computed by taking a moving plane that scans from the back to the front, integrating each time with respect to one variable while holding the other constant to obtain area, then integrating a second time with respect to the other variable:
+for a function with two variables, its graph will be a surface plot - volume below graph called **double integral**, computed by taking a moving plane that scans from the back to the front, integrating each time with respect to one variable while holding the other constant to obtain area, then integrating a second time with respect to the other variable: 
 $$
 \int_{x_{\min}}^{x_{\max}}\left[ \int_{y_{\min(x)}}^{y_{\max(x)}} f(x,y)\delta y\right] \delta x=  \lim_{\Delta A \rarr 0} \sum_i f(x,y)\Delta A_i= \iint_R f(x,y)\delta A
 $$
@@ -1378,20 +1378,20 @@ the mathematical way of defining the average of a continuous set of data (like t
 
 ### Change of variables
 
-consider finding area of ellipse with semi-axes $a$ and $b$:
+consider finding area of ellipse with semi-axes $a$ and $b$: 
 $$
 \left(\frac{x}{a}\right)^2+\left(\frac{y}{b}\right)^2 = 1\\
 \int \int_{\left(\frac{x}{a}\right)^2+\left(\frac{y}{b}\right)^2 < 1} 1\delta x \delta y
 $$
-this can be solved by rescaling $x$ and $y$ by $a$ and $b$, restating integral in terms of $u$ and $v$:
+this can be solved by rescaling $x$ and $y$ by $a$ and $b$, restating integral in terms of $u$ and $v$: 
 $$
-\frac{x}{a} =u \quad \rArr \quad \delta u=\frac{1}{a}\delta x\\
+\frac{x}{a} =u \quad \rArr \quad \delta u=\frac{1}{a}\delta x\\ 
 \quad\\
-\frac{y}{b} =v \quad \rArr \quad \delta v=\frac{1}{b}\delta y\\
+\frac{y}{b} =v \quad \rArr \quad \delta v=\frac{1}{b}\delta y\\ 
 $$
 $\therefore \delta x \delta y= ab\; \delta u \delta v$
 $$
-ab\int \int_{u^2+v^2 < 1} 1\delta u \delta v = ab \pi
+ab\int \int_{u^2+v^2 < 1} 1\delta u \delta v = ab \pi 
 $$
 or by expressing ellipse equation in terms of a transformation from a unit circle with coordinates $u$ and $v$:
 $$
@@ -1401,13 +1401,13 @@ a & 0 \\
 \end{bmatrix}
 \begin{bmatrix}
 u \\
-v
+v 
 \end{bmatrix} = \begin{bmatrix}
 x \\
-y
+y 
 \end{bmatrix} \quad \rArr \quad \begin{matrix}
    au=x \\
-   bv=y
+   bv=y 
 \end{matrix}
 $$
 $$
@@ -1421,21 +1421,21 @@ $$
 \Delta v = v_x \Delta x + v_y\Delta y\\
 \begin{bmatrix}
 \Delta u \\
-\Delta v
+\Delta v 
 \end{bmatrix} \approx
-\begin{bmatrix}
+\begin{bmatrix} 
 u_x & u_y \\
-v_x & v_y
+v_x & v_y 
 \end{bmatrix}
 \begin{bmatrix}
 \Delta x \\
-\Delta y
+\Delta y 
 \end{bmatrix}
 $$
 for a function taking in a vector in $R^n$ and returns a vector in $R^m$, in this case a $\Reals^2 \rarr \Reals^2$ linear mapping, its derivative i.e. **Jacobian matrix**, is $m \times n$ where $J_{ij} = \frac{\partial f_i}{\partial x_j}$
 
 :::note
-for linear mapping, Jacobian constant throughout plane, contrary to non-linear mapping where it's dependent on initial position since, for instance, f'(x) of $f(x)=3x^2$ depends on $x$ but for  $f(x)=3x$, it does not
+for linear mapping, Jacobian constant throughout plane, contrary to non-linear mapping where it's dependent on initial position since, for instance, f'(x) of $f(x)=3x^2$ depends on $x$ but for  $f(x)=3x$, it does not 
 :::
 
 for **Jacobian determinant**,
@@ -1511,7 +1511,7 @@ $$
 integrating on a curve means $x$, $y$ are related, either because they depend on each other or because they depend on some other variable, allowing everything to be expressed in terms of one variable for integration to proceed
 :::
 
-an alternative approach to solving this problem is to parameterize the curve in terms of their differentials and then substitute them into integral of vector field equation,
+an alternative approach to solving this problem is to parameterize the curve in terms of their differentials and then substitute them into integral of vector field equation, 
 $$
 W = \int_C -y\delta x + x\delta y
 $$
@@ -1548,13 +1548,13 @@ according to **fundamental theorem of calculus for line integrals**, taking line
 $$
 \oint \vec{F}\cdot \delta \vec{r} =0
 $$
-where circle through integral sign serves as reminder that integration is done along a closed curve,
+where circle through integral sign serves as reminder that integration is done along a closed curve, 
 
 in practice, this explains why perpetual motion from a gravitational field (which is a gradient field) cannot be achieved since going one loop around, nothing is obtained from the point of view of energy provided by that force - energy can be extracted from magnetic field since it is not conservative (not a gradient field)
 
 ## Lecture M21
 
-if $\vec{F} = \nabla f$, then
+if $\vec{F} = \nabla f$, then 
 $$
 M=f_x \quad N=f_y
 $$
@@ -1573,7 +1573,7 @@ P_y \stackrel{!}{=} Q_x \quad P_z \stackrel{!}{=} R_x \quad Q_z \stackrel{!}{=} 
 $$
 and curl then becomes:
 $$
-\textnormal{curl}(\vec{F})=(R_y-Q_z)\hat{\imath} + (P_z-R_x)\hat{\jmath} + (Q_x-P_y)\hat{k}
+\textnormal{curl}(\vec{F})=(R_y-Q_z)\hat{\imath} + (P_z-R_x)\hat{\jmath} + (Q_x-P_y)\hat{k} 
 $$
 which is a vector, not a scalar like in 2-dimensional space - a way to remember this is to realize it is $\nabla \times \vec{F}$
 
@@ -1603,7 +1603,7 @@ $$
 $$
 $\therefore f =\frac{4}{3}x^3+4x^2y + y^3 + c$
 
-for a vector field in 3-dimensional
+for a vector field in 3-dimensional 
 
 ## Lecture M22
 
@@ -1790,7 +1790,7 @@ $$
 $$
 \oint_C \vec{F}\cdot \delta \vec{r} = \iint_S \textnormal{curl}(\vec{F}) \delta \vec{S} =  \iint_S (\nabla \times \vec{F} ) \cdot \hat{n} \delta S
 $$
-where orientations of path $C$ and surface $S$ (bounded by $C$) must be compatible (use right-hand rule), and vector field $\vec F$ is continuous and differentiable everywhere on $S$
+where orientations of path $C$ and surface $S$ (bounded by $C$) must be compatible (use right-hand rule), and vector field $\vec F$ is continuous and differentiable everywhere on $S$ 
 
 $\textnormal{curl}(\vec F)$ displays path independence - doesn't matter which surface is considered as long as boundary is $C$
 

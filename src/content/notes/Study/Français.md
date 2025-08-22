@@ -5,6 +5,8 @@ created: 2025-01-19 12:13:19Z
 latitude: 47.75083900
 longitude: 7.33588800
 altitude: 0.0000
+tags:
+  - french
 ---
 
 *These notes serve as review material while completing a 30-hour [French course](https://www.youtube.com/playlist?list=PLZNV0gmRjgU-DLcr0EonEcFsg1jnk_Ygr), with the goal of reaching C1/C2 fluency and earning certification through École Polytechnique’s [Coursera course](https://www.coursera.org/learn/comprendre-la-france-advanced-french-language-culture-c1-c2). This is supplimented by the daily practice of vocubalary using [Anki](https://ankiweb.net/shared/info/893324022).*
@@ -61,7 +63,7 @@ for further reading, [see here](https://www.lawlessfrench.com/pronunciation/liai
 
 #### Le h muet
 
-in most cases, h is muted when it's at the beginning of a word, making a *liason* possible and usage of the definite article *l'* in place of *le* or *la* - the aspirated h is a consonant in its own right, so it must be taken into account in the pronunciation, preventing the use of *liason* 
+in most cases, h is muted when it's at the beginning of a word, making a *liason* possible and usage of the definite article *l'* in place of *le* or *la* - the aspirated h is a consonant in its own right, so it must be taken into account in the pronunciation, preventing the use of *liason*
 
 :::note
 to know if the h of a word is muted or aspired, consult a dictionary - in 'Le Robert', the sign ['] will indicate the presence of an aspired h
