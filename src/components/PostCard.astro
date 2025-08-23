@@ -1,14 +1,19 @@
 ---
-const { post } = Astro.props;
-
+const { post, year } = Astro.props;
+import { Icon } from "astro-icon/components";
 ---
 
-<div class="flex gap-2 post-card">
-  <a data-tags={JSON.stringify(post.data.tags)} class="visited:text-gray-400" href={`/notes/${post.slug}`}>{post.data.title}</a>
-  <span>{post.data.created.short}</span>
-  <div>
-    {post.data.tags.map((tag: string) => (
-      <div>{tag}</div>
-    ))}
+<div class="post-card group">
+  <div class="flex items-center gap-8">
+    <a data-tags={JSON.stringify(post.data.tags)} data-year={year} class="visited:text-gray-500 flex flex-col gap-1 flex-1 min-w-0" href={`/notes/${post.slug}`} aria-label={`Read note: ${post.data.title}`}>
+      <span class="font-sans text-sans-md font-normal">{post.data.created.short}</span>
+      <span class="font-serif text-serif-heading-list text-wrap leading-6">{post.data.title}</span>
+      <div class="flex gap-4 font-sans text-sans-md font-normal">
+        {post.data.tags.map((tag: string) => (
+          <div>#{tag}</div>
+        ))}
+      </div>
+    </a>
+    <Icon name="right-arrow" class="flex-shrink-0 size-8 opacity-0 -translate-x-4 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0"/>
   </div>
 </div>

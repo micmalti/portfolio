@@ -16,8 +16,36 @@ import "../styles/global.css";
 //   frontmatter: ArticleFrontmatter
 // }
 
-const allPosts = await getCollection("notes");
-// const filteredPosts = allPosts.filter((post: any) => post.data.tags?.includes(tag));
+const allPosts = (await getCollection("notes")).sort(
+  (a, b) => b.data.created.raw.valueOf() - a.data.created.raw.valueOf(),
+);
+// const groupedPosts = allPosts.reduce((acc: any, post) => {
+//   const year = post.data.created.raw.getFullYear();
+//   if (!acc[year]) acc[year] = [];
+//     acc[year].push(post);
+//   return acc;
+// }, {});
+// const groupedPosts = allPosts.reduce((acc: Map<number, typeof allPosts[0][]>, post) => {
+//   const year = post.data.created.raw.getFullYear();
+//   if (!acc.has(year)) acc.set(year, []);
+//   acc.get(year)!.push(post);
+//   return acc;
+// }, new Map<number, typeof allPosts[0][]>());
+const groupedPosts = allPosts.reduce((acc: Map<number, { posts: typeof allPosts[0][], count: number }>, post) => {
+  const year = post.data.created.raw.getFullYear();
+  if (!acc.has(year)) {
+    acc.set(year, { posts: [], count: 0 });
+  }
+  const yearData = acc.get(year)!;
+  yearData.posts.push(post);
+  yearData.count = yearData.posts.length;
+  return acc;
+}, new Map<number, { posts: typeof allPosts[0][], count: number }>());
+
+const sortedPosts = new Map(
+  Array.from(groupedPosts.entries()).sort(([yearA], [yearB]) => yearB - yearA)
+);
+
 const tags = allPosts.map((post: any) => post.data.tags).flat();
 const uniqueTags = [...new Set(tags)];
 
@@ -43,29 +71,55 @@ const uniqueTags = [...new Set(tags)];
   <body class="dark-cursor scroll-smooth bg-secondary text-primary selection:bg-primary selection:text-secondary">
     <div id="smooth-wrapper">
       <div id="smooth-content">
-        <div class="grid min-h-screen grid-rows-[auto_1fr] md:mx-32">
+        <div class="min-h-screen">
           <div id="header-row" class="light-cursor sticky top-0 z-20 overflow-hidden bg-primary text-secondary selection:bg-secondary selection:text-primary">
             <Header />
-            <div id="collapse-header" class="p-4 pb-6 pt-8 md:p-12 md:pt-4">
-              <h1 class="block font-serif text-serif-md">Notes</h1>
-              <div class="grid grid-cols-2 pt-4 font-sans text-sans-md font-normal">
-                <span class="col-span-1">These are living notes. Most of them are incomplete by design, prioritising the capture of new insights over point-in-time conclusions. For this reason, readers should treat them as open-ended explorations, rather than polished articles, with the understanding that there’s always more to discover on a certain topic.
+            <div id="collapse-header" class="mx-4 pb-8 md:pb-12 pt-8 md:pt-4 md:mx-32">
+              <h1 class="block font-serif text-serif-title pb-4 md:pb-8">Notes</h1>
+              <div class="grid md:grid-cols-6 font-sans text-sans-md font-normal">
+                <span class="md:col-span-3">Think of these not as static articles but living notes documenting open-ended explorations into a certain topic. They are deliberately incomplete, capturing ideas as they emerge rather than final conclusions.
                 </span>
-                <div>
-                  {uniqueTags.map((tag: string) => (
-                  <a href=`#${tag}`>
-                  <button data-type={tag} class="box-btn w-fit whitespace-nowrap" id="tagFilter">{tag}</button>
-                  </a>
-                  ))}
-                </div>
               </div>
             </div>
           </div>
-          <div class="flex justify-center gap-8">
-            {allPosts.map((post: any) => <PostCard {post} />)}
+          <div class="mx-4 my-4 md:mx-32 md:my-12 flex flex-wrap gap-2">
+            <a href="#all">
+              <button data-type="all" class="box-btn-light w-fit whitespace-nowrap active-tag" id="tagFilter">all</button>
+            </a>
+            {uniqueTags.map((tag: string) => (
+              <a href=`#${tag}`>
+              <button data-type={tag} class="box-btn-light w-fit whitespace-nowrap" id="tagFilter">{tag}</button>
+              </a>
+            ))}
+          </div>
+          <div class="mx-4 md:mx-32">
+            <!-- {Object.entries(groupedPosts).map(([year, posts]: [string, any]) => (
+              <div class="flex flex-col">
+                <div class="block font-serif text-serif-md pb-12">{year}</div>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 w-full pb-12">
+                  {posts.map((post: any) => <PostCard key={post.id} post={post} />)}
+                </div>
+              </div>
+            ))} -->
+            <!-- {Array.from(sortedPosts.entries()).map(([year, posts, postCount]) => (
+              <div class="flex flex-col">
+                <div data-counter={postCount} id="year-label" class="block font-serif text-serif-md pb-12">{year}</div>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 w-full pb-12">
+                  {posts.map((post) => <PostCard post={post} />)}
+                </div>
+              </div>
+            ))} -->
+            {Array.from(sortedPosts.entries()).map(([year, { posts, count }]) => (
+              <div data-group={year} data-counter={count} class="flex flex-col post-group">
+                <div class="block font-serif text-serif-md pb-4 md:pb-8">{year}</div>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8 w-full pb-8 md:pb-16">
+                  {posts.map((post) => <PostCard post={post} year={year}/>)}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-        <div class="mx-4 pb-12 md:mx-32 md:pb-0">
+        <div class="mx-4 pb-12 pt-24 md:mx-32 md:pb-0">
           <Footer footerTheme="dark" />
         </div>
       </div>

@@ -125,7 +125,7 @@ p {
 }
 
 .active-tag {
-  @apply bg-secondary text-primary
+  @apply bg-primary text-secondary
 }
 
 /* .contact-btn {

@@ -6,16 +6,45 @@ document.addEventListener('DOMContentLoaded', function() {
       const selectedTag = event.currentTarget.getAttribute('data-type');
       const postCards = document.querySelectorAll('.post-card');
 
-      postCards.forEach(card => {
-        card.style.display = 'flex';
+      const postCounter = {};
+      const yearElements = {};
+      const yearLabels = document.querySelectorAll('.post-group');
+
+      yearLabels.forEach(label => {
+        const groupLabel = label.getAttribute('data-group');
+        const postCount = label.getAttribute('data-counter');
+        postCounter[groupLabel] = parseInt(postCount);
+        yearElements[groupLabel] = label;
       });
+
+      postCards.forEach(card => {
+        card.classList.remove('hidden');
+        // card.style.visibility = 'visible';
+      });
+
+      yearLabels.forEach(label => {
+        label.classList.remove('hidden');
+      });
+
+      if (selectedTag === 'all') {
+        updateActiveButton(event.currentTarget);
+        return;
+      }
 
       postCards.forEach(card => {
         const anchorTag = card.querySelector('a[data-tags]');
         const cardTags = anchorTag.getAttribute('data-tags');
+        const cardLabel = anchorTag.getAttribute('data-year');
         const tagsArray = JSON.parse(cardTags);
         if (!tagsArray.includes(selectedTag)) {
-          card.style.display = 'none';
+          card.classList.add('hidden');
+          --postCounter[cardLabel]
+          // card.style.visibility = 'collapse';
+        }
+      });
+      Object.entries(postCounter).forEach(([yearLabel, count]) => {
+        if (count === 0) {
+          yearElements[yearLabel].classList.add('hidden');
         }
       });
       updateActiveButton(event.currentTarget);

@@ -136,6 +136,18 @@ export default {
             fontWeight: "600"
           }
         ], // footer, navigation, section-tag, timeline-year, article-date, button
+        "serif-heading-list": [
+          "var(--step-2)",
+          {
+            fontWeight: "400",
+          }
+        ],
+        "serif-publish-list": [
+          "var(--step-2)",
+          {
+            fontWeight: "300",
+          }
+        ],
         "sans-copyright": ["var(--step--1)"],
         "sans-xs": ["var(--step--2)"] // contact button
       }, // 320px, 14px, 1.125  2560px, 16px, 1.2
