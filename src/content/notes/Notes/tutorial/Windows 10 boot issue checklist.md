@@ -1,12 +1,14 @@
 ---
 title: Windows 10 boot issue checklist
-updated: 2025-07-17 14:03:28Z
+updated: 2025-08-24 17:43:00Z
 created: 2023-03-08 15:25:00Z
 tags:
   - troubleshooting
 ---
 
 To proceed, you must first [download](https://www.microsoft.com/en-us/software-download/windows10ISO) the Windows 10 ISO and transfer it onto a USB drive with Ventoy installed (which sidesteps the use of the Windows Media Creation tool). Then, select the USB drive from the boot menu, and choose: Repair your computer > Advanced options > Troubleshoot.
+
+This checklist is arranged from the simplest remedies to the most advanced, so walk through them sequentially until you find one that works.
 
 ## Use Startup Repair
 
@@ -35,8 +37,10 @@ list vol
 exit
 ```
 
-Run `chkdsk` for all the identifed drives, like so:  
-`chkdsk D: /f`
+Run `chkdsk` for all the identifed drives, like so:
+```dos
+chkdsk D: /f
+```
 
 ## Repair EFI bootloader
 
@@ -51,12 +55,15 @@ With the EFI partition on `B:`, execute:
 cd /d b:\EFI\Microsoft\Boot\
 bootrec /fixboot
 ```
+Delete or rename the BCD file:
+```dos
+ren BCD BCD.bak
+```
 
-Delete or rename the BCD file:  
-`ren BCD BCD.bak`
-
-With the Windows partition on `C:`, recreate the BCD store:  
-`bcdboot c:\Windows /l en-gb /s b: /f ALL`
+With the Windows partition on `C:`, recreate the BCD store:
+```dos
+bcdboot c:\Windows /l en-gb /s b: /f ALL
+```
 
 The `/f ALL` parameter updates the BIOS settings (including UEFI firmware/NVRAM), and `/l` is included to specify a different locale other than the default US English.
 
@@ -75,14 +82,18 @@ If necessary, assign a drive letter to the identified volume:
 sel vol 3
 assign letter=D:
 ```
+Clean out the damaged partition and make it usable for EFI:
+```dos
+format D: /fs:FAT32
+```
+Then, with the Windows partition on `C:`, issue the command:
+```dos
+bcdboot C:\windows /s D:
+```
 
-Clean out the damaged partition and make it usable for EFI:  
-`format D: /fs:FAT32`
-
-With the Windows partition on `C:`, issue the command:  
-`bcdboot C:\windows /s D:`
-
-WARNING: Make sure you know what you’re doing and format the right EFI partition! Not your active C:\\Windows drive or any data drives! Anything over a couple hundred MB in size won’t be an EFI partition.
+:::warning
+Make sure you know what you’re doing and format the right EFI partition, not your active `C:\\Windows` drive or some other data drive! Anything over a couple hundred MB in size won’t be an EFI partition.
+:::
 
 Finally, check that the boot option in the BIOS is set to `UEFI` and not `legacy`.
 
@@ -96,6 +107,4 @@ Follow this [guide](https://www.lifewire.com/fix-computer-that-turns-on-but-disp
 
 ## Conclusion
 
-Hopefully, you managed to resolve your issue using one of the solutions provided in this checklist. If not, my recommendation is to read [this article]( http://rakhesh.com/windows/notes-of-uefi-gpt-uefi-boot-process-disk-partitions-and-hyper-v-differencing-disks-with-a-generation-2-vm/) which begins with an in-depth explanation of GPT/UEFI boot, but then proceeds to lay out some details on how to create a proper disk layout for UEFI boot from a GPT disk.
-
-Good luck.
+By now, you should have resolved your issue using one of the solutions mentioned above. If not, try reading [this]( http://rakhesh.com/windows/notes-of-uefi-gpt-uefi-boot-process-disk-partitions-and-hyper-v-differencing-disks-with-a-generation-2-vm/) article which starts off with an in-depth explanation of GPT/UEFI boot but then proceeds to lay out some details on how to create a proper disk layout for UEFI boot from a GPT disk.

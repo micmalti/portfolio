@@ -1,6 +1,6 @@
 ---
 title: Fixing display issues on a Raspberry Pi
-updated: 2025-07-17 14:04:15Z
+updated: 2025-08-24 14:05:00Z
 created: 2021-12-08 11:00:00Z
 latitude: 35.86036400
 longitude: 14.55678760
@@ -11,12 +11,12 @@ tags:
 
 There are two broad categories of display modes: CEA (TV style resolutions) and DMT (monitor style resolutions). The former is driven with HDMI signalling which supports audio, the latter with DVI signalling which doesn't.
 
-Now, you *can* drive DMT modes with HDMI signalling which allows some monitors to support audio, but according to the spec, they don't have to support this, and may just report unsupported mode and give no picture. That is why this setting has to be enabled manually in `/boot/config.txt` (by default, sound will only work in CEA modes):
+That being said, you *can* drive DMT modes with HDMI signalling and still have audio, but according to the spec, they don't have to support this, and may just report unsupported mode and give no picture. That is why this setting has to be enabled manually in `/boot/config.txt` (by default, sound will only work in CEA modes):
 ```plaintext
 hdmi_drive=1    # default, DVI mode
 # hdmi_drive=2  # forces HDMI mode rather than DVI
 ```
-Note that [other settings](https://learn.adafruit.com/using-weird-displays-with-raspberry-pi/everything-else) may need to be uncommented for the Pi to force an HDMI output when the monitor isn't being detected as HDMI-ready, like:
+[Other settings](https://learn.adafruit.com/using-weird-displays-with-raspberry-pi/everything-else) may also need to be uncommented for the Pi to force an HDMI output when the monitor isn't being detected as HDMI-ready, like:
 ```plaintext
 hdmi_force_hotplug=1
 ```
@@ -37,7 +37,6 @@ If the display is flickering, then this option in `config.txt` will generate a s
 ```plaintext
 config_hdmi_boost=4   # default is normally 2 or 5
 ```
-It can go as high as 11 but that’s not recommended unless you’re seeing issues with very long cables. Work up incrementally (rebooting with each change) to find the lowest reliable value.
+For optimal performance, start with the lowest value and work up incrementally, rebooting after each change, to identify the lowest reliable setting. While the value can be increased up to 11, this is only recommended if you're using very long cables and experiencing persistent issues.
 
-
-[^1]: If no `video` entry is present in `cmdline.txt`, then the Linux kernel (KMS driver) will read the EDID of the HDMI-connected monitor, and automatically pick the best resolution supported by your display. To ignore the EDID negotiation, you need to set the property `hdmi_ignore_edid=0xa5000080` .
+[^1]: If no `video` entry is present in `cmdline.txt`, then the Linux kernel (KMS driver) will read the EDID of the HDMI-connected monitor and automatically pick the best resolution supported by your display. To ignore the EDID negotiation, set the property `hdmi_ignore_edid=0xa5000080` .

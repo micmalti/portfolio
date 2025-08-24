@@ -1,47 +1,39 @@
 ---
 title: 'Finding the right font pair: A step-by-step guide'
-updated: 2025-08-10 09:03:00Z
+updated: 2025-08-24 18:04:27Z
 created: 2024-09-30 23:04:00Z
 latitude: 48.57340530
 longitude: 7.75211130
 altitude: 0.0000
 tags:
+  - tutorial
   - ux/ui
 ---
 
-#### Step 1
+Selecting the right font pairing involves a blend of personal taste and current trends, but it is also a choice that must align with the intended tone and context of the design specification.This guide outlines a multi-step process to move beyond inspiration and make informed typographic decisions for your project.
 
-Relying on [inspiration alone](https://fontofweb.com/) may just not be enough. Check whether the most popular fonts on Fonts in Use are available for download as a [variable font](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variation-settings) on Fontsource. Variable fonts "put more typographic control in the hands of the user". For instance, optical sizing ensures that the style adapts to specific text sizes; it is enabled by default for fonts that have an optical size variation axis. Different optical sizes can be split into separate font files or be assigned to the optical size axis within a variable font.
+## 1. Look for variable fonts only
 
-Typographers know that a large headline will probably require tighter spacing, while small type needs the opposite treatment: letter spaces and word spaces need to be opened up to preserve readability. Dedicated optical sizes allow them to overcome these issues: all formal design decisions — not just spacing, but also letter proportions and shape details — have been tailored to a specific application size.
+To ensure readability, typographic spacing must be adjusted for size: tight for large headlines and open for small text. Optical sizing resolves this by providing dedicated font versions of a typeface where every design detail, from spacing to letter proportions, is optimized for use at different sizes. A [variable font](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variation-settings) will have this by default if it comes with an optical size variation axis.
 
 :::note
 Adding an optical size axis will typically double the font file size, although this depends on the family and the other axes used – it can range between 1.2 — 2.6x.
 :::
 
-These are the most common typefaces in the Fonts in Use database that are also available on Fontsource:
-- Inter
-- Montserrat
-- Open Sans
-- Roboto (unavailable as a variable font)
-- Work Sans
-This part may need to be revisted, partly because the sites under consideration weren't filtered by type.
+But variable fonts are much more than that. They fundamentally shift typographic control to the user by replacing predefined static weights and styles (like "regular" or "bold") with a continuous spectrum of customizable attributes. This allows for fine-tuned adjustments to weight, width, and other axes based on specific design preferences.
 
-#### Step 2
+Check out whether the most popular typefaces on [Fonts in Use](https://fontsinuse.com/) are available for download as a variable font on Fontsource.
 
-Use Fontpair to find matching font types for the fonts that were found. For instance, Montserrat is matched with 
-EB Garamond and Orelega One; Della Respira and Cormorant are matched with Open Sans, and Work Sans is matched with Forum.
+## 2. Pair complimentary fonts
 
-#### Step 3
+[Inspiration](https://fontofweb.com/) is definitely important for professionals in this space, but for up-and-coming entrants, especially those who are self-taught, a more quantitative approach can actually yield an equally valid outcome that is also free from any novice mistakes.
 
-Visually inspect the fonts. Key characters to look for are numbers (particularly 0 and 7), symbols, and the letters a, j, g and f. For instance, Poppins may cause readability issues due to its a being similar to o, [among others](https://medium.com/@chiahoushen/design-system-selecting-a-new-typeface-for-better-readability-e42af6c22c27). This step limited the selection to Inter.
+Use [Fontpair](https://fontpair.co/) to find matching font types for the fonts which you have found in the previous step.
 
-#### Step 4
+## 3. Evaluate readability and character design
 
-Run an advanced search on MaxiBestOf or Fonts in Use and Typ.io for the shortlisted fonts to check whether there are any entries that match your intended use case. If needed, refer to r/Typography for guidance.
+Visually inspect the fonts. Key characters to look out for are numbers (particularly *0* and *7*), symbols, and the letters *a*, *j*, *g*, and *f*. For instance, Poppins may cause readability issues due to its *a* being similar to *o*, [among others](https://medium.com/@chiahoushen/design-system-selecting-a-new-typeface-for-better-readability-e42af6c22c27).
 
-Playfair Display has a large lowercase which helps it work for the mid-sized copy on the web, but its readability is really stretched at small sizes. This may have been rectified with support for optical sizing. Libre Caslon Display is the display version of Libre Caslon Text, optimized for web headlines. 
+## 4. Research real-world use cases
 
-EB Garamond is paired with Inter on Wordpress. Yet, it doesn't come with optical sizing. Roboto Serif and Fraunces have optical sizing as well as grade and softness, respectively.
-
-By the end, the font pair was identified: Inter and Source Serif, with Geist Mono as a monospace font. Refer to the examples [here](https://maple.finance/) and [here](https://venopage.com/).
+Validate your shortlist by searching for real-world examples on sites like Fonts in Use, Typ.io, or MaxiBestOf. Also, consult communities like r/Typography for any prior discussions involving your font options and the intended use case, or start your own to receive valuable feedback from more experienced designers.
