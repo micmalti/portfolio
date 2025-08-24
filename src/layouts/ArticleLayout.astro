@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 import "@fontsource-variable/inter/opsz.css";
 import "@fontsource-variable/source-serif-4/opsz.css";
 import ContextMenu from "../components/ContextMenu.astro";
@@ -31,17 +32,25 @@ const frontmatter = post.data;
   <body class="dark-cursor scroll-smooth bg-secondary text-primary selection:bg-primary selection:text-secondary">
     <div id="smooth-wrapper">
       <div id="smooth-content">
-        <div class="grid min-h-screen grid-cols-1 md:mx-32 md:grid-rows-[auto_1fr]">
+        <div class="grid min-h-screen grid-cols-1 md:grid-rows-[auto_1fr]">
           <div id="header-row" class="light-cursor sticky top-0 z-20 select-none overflow-hidden bg-primary text-secondary">
             <Header />
-            <div id="collapse-header" class="p-4 pb-6 pt-8 md:p-12 md:pt-4">
-              <span class="block font-serif text-serif-md">{frontmatter.title}</span>
-              <div class="flex gap-8 pt-4 font-sans text-sans-md font-normal">
-                <span class="whitespace-nowrap">Published {frontmatter.created.formatted}</span>
-                <span class="whitespace-nowrap">Updated {frontmatter.updated.formatted}</span>
-                  {frontmatter.tags.map((tag: string) => (
-                    <span class="whitespace-nowrap">{tag}</span>
-                  ))}
+            <div id="collapse-header" class="mx-4 pb-8 md:pb-12 pt-8 md:pt-4 md:mx-32 flex flex-col">
+              <div class="flex gap-8 font-sans text-sans-md font-normal pb-2">
+                {frontmatter.tags.map((tag: string) => (
+                  <span class="whitespace-nowrap bg-secondary bg-opacity-30 text-secondary p-1">{tag}</span>
+                ))}
+              </div>
+              <span class="block font-serif text-serif-title pb-8">{frontmatter.title}</span>
+              <div class="flex gap-8 font-sans text-sans-md font-normal">
+                <div class="flex items-center gap-2">
+                  <Icon name="creation" class="size-6" />
+                  <span class="whitespace-nowrap">{frontmatter.created.formatted}</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <Icon name="refresh" class="size-6" />
+                  <span class="whitespace-nowrap">{frontmatter.updated.formatted}</span>
+                </div>
               </div>
             </div>
           </div>
