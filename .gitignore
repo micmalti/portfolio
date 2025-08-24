@@ -25,6 +25,3 @@ pnpm-debug.log*
 
 # work folder for assets and copywriting
 extras/
-
-# markdown notes
-src/content/notes
