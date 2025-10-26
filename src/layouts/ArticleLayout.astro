@@ -42,15 +42,22 @@ const frontmatter = post.data;
                 ))}
               </div>
               <span class="block font-serif text-serif-title pb-8">{frontmatter.title}</span>
-              <div class="flex gap-8 font-sans text-sans-md font-normal">
-                <div class="flex items-center gap-2">
-                  <Icon name="creation" class="size-6" />
-                  <span class="whitespace-nowrap">{frontmatter.created.formatted}</span>
+              <div class="flex justify-between">
+                <div class="flex gap-8 font-sans text-sans-md font-normal">
+                  <div class="flex items-center gap-2">
+                    <!-- <Icon name="creation" class="size-6" /> -->
+                    <span class="whitespace-nowrap"> Created {frontmatter.created.formatted}</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <!-- <Icon name="refresh" class="size-6" /> -->
+                    <span class="whitespace-nowrap">Updated {frontmatter.updated.formatted}</span>
+                  </div>
                 </div>
-                <div class="flex items-center gap-2">
-                  <Icon name="refresh" class="size-6" />
-                  <span class="whitespace-nowrap">{frontmatter.updated.formatted}</span>
-                </div>
+                <!-- <div class="flex gap-8 font-sans text-sans-md font-normal pb-2">
+                  {frontmatter.tags.map((tag: string) => (
+                    <span class="whitespace-nowrap bg-secondary bg-opacity-30 text-secondary p-1">{tag}</span>
+                  ))}
+                </div> -->
               </div>
             </div>
           </div>
